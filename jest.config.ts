@@ -8,7 +8,7 @@ const config: Config.InitialOptions = {
       'jest-transform-stub',
   },
   testEnvironment: 'jsdom',
-  setupFilesAfterEnv: ['<rootDir>/src/setup-tests.ts'],
+  setupFilesAfterEnv: ['<rootDir>/setup-tests.ts'],
 }
 
 export default config

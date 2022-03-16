@@ -29,7 +29,8 @@
       "parser": "@typescript-eslint/parser",
       "rules": {
         "no-undef": "off",
-        "import/extensions": "off"
+        "import/extensions": "off",
+        "no-unused-vars": "error"
       }
     }
   ]

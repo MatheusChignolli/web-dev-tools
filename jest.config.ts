@@ -4,8 +4,7 @@ const config: Config.InitialOptions = {
   verbose: true,
   transform: {
     '^.+\\.tsx?$': 'ts-jest',
-    '.+\\.(svg|css|less|sass|scss|png|jpg|ttf|woff|woff2)$':
-      'jest-transform-stub',
+    '.+\\.(svg|css|less|sass|scss|png|jpg|ttf|woff|woff2)$': 'jest-transform-stub',
   },
   testEnvironment: 'jsdom',
   setupFilesAfterEnv: ['<rootDir>/setup-tests.ts'],

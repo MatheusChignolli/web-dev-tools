@@ -1,13 +1,10 @@
 import path from 'path'
-import alias from './src/commons/configs/aliases'
-
-const SRC = './src'
-const aliases = alias(SRC)
+import tsConfig from './tsconfig.json'
 
 const resolvedAliases = Object.fromEntries(
-  Object.entries(aliases).map(([key, value]) => [
+  Object.entries(tsConfig.compilerOptions.paths).map(([key, value]) => [
     key,
-    path.resolve(__dirname, value),
+    path.resolve(__dirname, value[0]),
   ])
 )
 

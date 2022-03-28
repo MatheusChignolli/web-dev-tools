@@ -1,9 +1,10 @@
 import { Main } from '~pages'
+import { AppStyled } from './styles'
 
 const App = () => (
-  <div id="app">
+  <AppStyled id="app">
     <Main />
-  </div>
+  </AppStyled>
 )
 
 export default App

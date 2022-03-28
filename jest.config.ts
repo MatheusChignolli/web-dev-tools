@@ -1,4 +1,12 @@
 import type { Config } from '@jest/types'
+import tsConfig from './tsconfig.json'
+
+const resolvedAliases = Object.fromEntries(
+  Object.entries(tsConfig.compilerOptions.paths).map(([key, value]) => [
+    `^${key}(.*)$`,
+    `<rootDir>${value[0].replace('./', '/')}$1`,
+  ])
+)
 
 const config: Config.InitialOptions = {
   verbose: true,
@@ -8,6 +16,7 @@ const config: Config.InitialOptions = {
   },
   testEnvironment: 'jsdom',
   setupFilesAfterEnv: ['<rootDir>/setup-tests.ts'],
+  moduleNameMapper: resolvedAliases,
 }
 
 export default config

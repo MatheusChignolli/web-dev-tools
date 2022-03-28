@@ -17,7 +17,9 @@
     "jsx": "react-jsx",
     "paths": {
       "~pages": ["./src/pages"],
-      "~commons": ["./src/commons"]
+      "~commons": ["./src/commons"],
+      "~theme": ["./src/commons/styles/theme.ts"],
+      "~components": ["./src/components"]
     }
   },
   "include": ["src", "setup-tests.ts"]

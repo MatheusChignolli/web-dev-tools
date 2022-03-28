@@ -1,5 +1,12 @@
+import { Header, Footer } from '~components'
+
 const Main = () => {
-  return <div>Main</div>
+  return (
+    <>
+      <Header />
+      <Footer />
+    </>
+  )
 }
 
 export default Main

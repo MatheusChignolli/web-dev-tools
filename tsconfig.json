@@ -18,8 +18,10 @@
     "paths": {
       "~pages": ["./src/pages"],
       "~commons": ["./src/commons"],
+      "~utils": ["./src/commons/utils"],
       "~theme": ["./src/commons/styles/theme.ts"],
-      "~components": ["./src/components"]
+      "~components": ["./src/components"],
+      "~providers": ["./src/providers"]
     }
   },
   "include": ["src", "setup-tests.ts"]

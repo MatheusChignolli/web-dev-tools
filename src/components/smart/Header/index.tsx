@@ -1,7 +1,12 @@
+import { Container } from '~components'
 import { HeaderStyled } from './styles'
 
 const Header = () => {
-  return <HeaderStyled>Header</HeaderStyled>
+  return (
+    <HeaderStyled>
+      <Container>Header</Container>
+    </HeaderStyled>
+  )
 }
 
 export default Header

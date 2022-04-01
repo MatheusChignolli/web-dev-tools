@@ -7,6 +7,11 @@ export const FooterStyled = styled.footer`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  color: ${({ theme }) => theme.palette.secondary.main};
+
+  svg {
+    color: ${({ theme }) => theme.palette.secondary.main};
+  }
 
   p {
     display: flex;

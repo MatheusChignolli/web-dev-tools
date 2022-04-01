@@ -20,6 +20,7 @@
       "~commons": ["./src/commons"],
       "~utils": ["./src/commons/utils"],
       "~theme": ["./src/commons/styles/theme.ts"],
+      "~i18n": ["./src/commons/i18n"],
       "~components": ["./src/components"],
       "~providers": ["./src/providers"],
       "~tests": ["./src/tests"]

@@ -1,6 +1,7 @@
 import { StrictMode } from 'react'
 import ReactDOM from 'react-dom'
 import '~commons/styles/global.css'
+import '~i18n'
 import App from './App'
 import reportWebVitals from './report-web-vitals'
 

@@ -21,7 +21,8 @@
       "~utils": ["./src/commons/utils"],
       "~theme": ["./src/commons/styles/theme.ts"],
       "~components": ["./src/components"],
-      "~providers": ["./src/providers"]
+      "~providers": ["./src/providers"],
+      "~tests": ["./src/tests"]
     }
   },
   "include": ["src", "setup-tests.ts"]

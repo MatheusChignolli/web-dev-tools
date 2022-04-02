@@ -1,10 +1,20 @@
+import { ThemeOptions } from '@mui/material'
 import { createTheme } from '@mui/material/styles'
 import { spacing } from './utils'
 
-const common = {
+const common: ThemeOptions = {
   spacing,
   typography: {
     fontFamily: 'Fira Code',
+    fontSize: 16,
+    fontWeightLight: 300,
+    fontWeightRegular: 400,
+    fontWeightMedium: 500,
+    fontWeightBold: 600,
+    allVariants: {
+      fontFamily: 'Fira Code',
+      textTransform: 'none',
+    },
   },
 }
 

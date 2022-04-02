@@ -1,10 +1,10 @@
-import { Container } from '~components'
+import { Typography } from '~components'
 import { HeaderStyled } from './styles'
 
 const Header = () => {
   return (
     <HeaderStyled>
-      <Container>Header</Container>
+      <Typography variant="h5">Header</Typography>
     </HeaderStyled>
   )
 }

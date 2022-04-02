@@ -11,8 +11,8 @@ const Main = () => {
 
   return (
     <>
-      <Header />
       <Container>
+        <Header />
         <section>
           <button onClick={generateCpf}>Gerar CPF</button>
           <div>CPF: {cpf}</div>

@@ -1,6 +1,13 @@
 import { createTheme } from '@mui/material/styles'
 import { spacing } from './utils'
 
+const common = {
+  spacing,
+  typography: {
+    fontFamily: 'Fira Code',
+  },
+}
+
 const dark = createTheme({
   palette: {
     primary: {
@@ -16,7 +23,7 @@ const dark = createTheme({
       contrastText: '#ffffff',
     },
   },
-  spacing,
+  ...common,
 })
 
 const light = createTheme({
@@ -34,7 +41,7 @@ const light = createTheme({
       contrastText: '#000000',
     },
   },
-  spacing,
+  ...common,
 })
 
 export default {

@@ -7,6 +7,7 @@ export const ClipboardStyled = styled.div`
   color: ${({ theme }) => theme.palette.primary.contrastText};
   display: flex;
   align-items: center;
+  min-height: 26px;
 
   .MuiButtonBase-root {
     margin: ${({ theme }) => theme.spacing(0, 0, 0, 1)};

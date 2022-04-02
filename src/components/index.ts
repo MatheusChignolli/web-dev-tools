@@ -1,4 +1,6 @@
+export { default as Card } from './dumb/Card'
 export { default as Container } from './dumb/Container'
+export { default as Grid } from './dumb/Grid'
 export { default as Link } from './dumb/Link'
 export { default as Typography } from './dumb/Typography'
 export { default as Switch } from './dumb/Switch'

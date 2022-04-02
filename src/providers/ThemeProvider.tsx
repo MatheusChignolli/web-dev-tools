@@ -1,16 +1,14 @@
 import { FC } from 'react'
-import { useRecoilState } from 'recoil'
 import { ThemeProvider as StyledComponentsThemeProvider } from 'styled-components'
 import { ThemeProvider as MuiThemeProvider } from '@mui/material/styles'
-import { themeState } from '~states'
-import theme from '~theme'
+import { useTheme } from '~hooks'
 
 const ThemeProvider: FC = ({ children }) => {
-  const [appTheme] = useRecoilState(themeState)
+  const theme = useTheme()
 
   return (
-    <MuiThemeProvider theme={theme[appTheme]}>
-      <StyledComponentsThemeProvider theme={theme[appTheme]}>
+    <MuiThemeProvider theme={theme}>
+      <StyledComponentsThemeProvider theme={theme}>
         {children}
       </StyledComponentsThemeProvider>
     </MuiThemeProvider>

@@ -18,6 +18,7 @@
     "paths": {
       "~pages": ["./src/pages"],
       "~commons": ["./src/commons"],
+      "~hooks": ["./src/hooks"],
       "~utils": ["./src/commons/utils"],
       "~states": ["./src/commons/states"],
       "~theme": ["./src/commons/styles/theme.ts"],

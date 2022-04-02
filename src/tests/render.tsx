@@ -4,10 +4,15 @@ import {
   RenderOptions,
   RenderResult,
 } from '@testing-library/react'
-import { ThemeProvider } from '~providers'
+import { StateProvider, ThemeProvider } from '~providers'
 
 const render = (ui: ReactElement, options?: RenderOptions): RenderResult => {
-  return TestingLibraryRender(<ThemeProvider>{ui}</ThemeProvider>, options)
+  return TestingLibraryRender(
+    <StateProvider>
+      <ThemeProvider>{ui}</ThemeProvider>
+    </StateProvider>,
+    options
+  )
 }
 
 export default render

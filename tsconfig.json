@@ -19,6 +19,7 @@
       "~pages": ["./src/pages"],
       "~commons": ["./src/commons"],
       "~utils": ["./src/commons/utils"],
+      "~states": ["./src/commons/states"],
       "~theme": ["./src/commons/styles/theme.ts"],
       "~i18n": ["./src/commons/i18n"],
       "~components": ["./src/components"],

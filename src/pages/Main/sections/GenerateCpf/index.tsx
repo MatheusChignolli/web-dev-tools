@@ -20,7 +20,7 @@ const GenerateCpf = () => {
           </IconButton>
         </Grid>
         <Grid item xs="auto">
-          <Clipboard content={cpf || '-'} />
+          <Clipboard content={cpf} />
         </Grid>
       </Grid>
     </Card>

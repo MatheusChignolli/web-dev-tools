@@ -1,3 +1,3 @@
 export interface ClipboardProps {
-  content: string
+  content?: string
 }

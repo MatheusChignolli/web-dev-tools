@@ -8,7 +8,10 @@ const GenerateCpf = () => {
   const [cpf, setCpf] = useState<string>()
 
   const generateCpf = () => {
-    setCpf(CpfUtils.generateCpf(true))
+    const generatedCpf = CpfUtils.generateCpf(true)
+
+    setCpf(generatedCpf)
+    navigator.clipboard.writeText(generatedCpf)
   }
 
   return (

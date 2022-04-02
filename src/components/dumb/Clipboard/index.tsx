@@ -1,3 +1,4 @@
+import ContentCopyIcon from '@mui/icons-material/ContentCopy'
 import { IconButton } from '~components'
 import { ClipboardStyled } from './styles'
 import { ClipboardProps } from './interfaces'
@@ -7,7 +8,15 @@ const Clipboard = ({ content }: ClipboardProps) => {
   return (
     <ClipboardStyled>
       {content || i18n.t('general.noData')}
-      {!!content && <IconButton></IconButton>}
+      {!!content && (
+        <IconButton
+          size="small"
+          color="inherit"
+          onClick={() => navigator.clipboard.writeText(content)}
+        >
+          <ContentCopyIcon />
+        </IconButton>
+      )}
     </ClipboardStyled>
   )
 }

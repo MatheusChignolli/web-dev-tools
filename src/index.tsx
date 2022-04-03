@@ -14,7 +14,8 @@ import reportWebVitals from './report-web-vitals'
 // - Create about page
 // - Responsive layout
 // - Create a name for the app
-// Improve theme switch
+// - Improve theme switch
+// - Add historic to methods
 
 ReactDOM.render(
   <StrictMode>

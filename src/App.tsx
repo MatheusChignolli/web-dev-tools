@@ -1,13 +1,16 @@
 import { Main } from '~pages'
-import { StateProvider, ThemeProvider } from '~providers'
+import { StateProvider, ThemeProvider, ToastProvider } from '~providers'
 import { AppStyled } from './styles'
+import 'react-toastify/dist/ReactToastify.css'
 
 const App = () => (
   <StateProvider>
     <ThemeProvider>
-      <AppStyled id="app">
-        <Main />
-      </AppStyled>
+      <ToastProvider>
+        <AppStyled id="app">
+          <Main />
+        </AppStyled>
+      </ToastProvider>
     </ThemeProvider>
   </StateProvider>
 )

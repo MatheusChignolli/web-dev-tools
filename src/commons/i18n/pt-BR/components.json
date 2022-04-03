@@ -1,5 +1,8 @@
 {
   "clipboard": {
-    "copyButton": "Botão para efetuar a ação de copiar algum texto na área de transferência de arquivos"
+    "copyButton": "Botão para efetuar a ação de copiar algum texto na área de transferência de arquivos",
+    "alerts": {
+      "success": "{{content}} copiado com sucesso"
+    }
   }
 }

@@ -21,6 +21,7 @@
       "~hooks": ["./src/hooks"],
       "~utils": ["./src/commons/utils"],
       "~states": ["./src/commons/states"],
+      "~toast": ["./src/commons/toast"],
       "~theme": ["./src/commons/styles/theme.ts"],
       "~i18n": ["./src/commons/i18n"],
       "~components": ["./src/components"],

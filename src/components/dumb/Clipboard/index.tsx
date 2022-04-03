@@ -13,8 +13,9 @@ const Clipboard = ({ content }: ClipboardProps) => {
           size="small"
           color="inherit"
           onClick={() => navigator.clipboard.writeText(content)}
+          aria-label={i18n.t('components.clipboard.copyButton')}
         >
-          <ContentCopyIcon />
+          <ContentCopyIcon aria-label={i18n.t('icons.ariaLabels.copy')} />
         </IconButton>
       )}
     </ClipboardStyled>

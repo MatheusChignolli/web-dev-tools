@@ -1,5 +1,6 @@
-import { render, screen } from '@testing-library/react'
+import { screen } from '@testing-library/react'
 import styled from 'styled-components'
+import { render } from '~tests'
 import ThemeProvider from '../ThemeProvider'
 
 const DivStyled = styled.div`
@@ -16,6 +17,6 @@ describe('ThemeProvider', () => {
 
     const styledComponent = screen.getByTestId('styled-component')
 
-    expect(styledComponent).toHaveStyle('background-color: rgb(2, 13, 66)')
+    expect(styledComponent).toHaveStyle('background-color: rgb(100, 181, 246)')
   })
 })

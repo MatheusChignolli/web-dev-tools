@@ -1,7 +1,6 @@
 import { Main } from '~pages'
 import { StateProvider, ThemeProvider, ToastProvider } from '~providers'
 import { AppStyled } from './styles'
-import 'react-toastify/dist/ReactToastify.css'
 
 const App = () => (
   <StateProvider>

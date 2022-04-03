@@ -2,6 +2,7 @@ import { StrictMode } from 'react'
 import ReactDOM from 'react-dom'
 import '~commons/styles/global.css'
 import '~i18n'
+import 'react-toastify/dist/ReactToastify.css'
 import App from './App'
 import reportWebVitals from './report-web-vitals'
 

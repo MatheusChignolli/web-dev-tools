@@ -1,3 +1,4 @@
+import { memo, useEffect } from 'react'
 import ContentCopyIcon from '@mui/icons-material/ContentCopy'
 import { IconButton } from '~components'
 import { ClipboardStyled } from './styles'
@@ -12,6 +13,10 @@ const Clipboard = ({ content }: ClipboardProps) => {
       toast.success(i18n.t('components.clipboard.alerts.success', { content }))
     }
   }
+
+  useEffect(() => {
+    copyToClipboard()
+  }, [content])
 
   return (
     <ClipboardStyled>
@@ -30,4 +35,4 @@ const Clipboard = ({ content }: ClipboardProps) => {
   )
 }
 
-export default Clipboard
+export default memo(Clipboard)

@@ -23,17 +23,29 @@ describe('Clipborad', () => {
       render(<Clipboard content={content} />)
     })
 
+    afterEach(() => {
+      clipboardMock.mockReset()
+    })
+
     it('should render content given to content prop', () => {
       expect(screen.getByText(content)).toBeInTheDocument()
     })
 
-    it('should call copy to clipboard method and show success message', async () => {
+    it('should call copy to clipboard method and show success message when click on run button', async () => {
       const copyButton = screen.getByRole('button', {
         name: 'Botão para efetuar a ação de copiar algum texto na área de transferência de arquivos',
       })
 
       fireEvent.click(copyButton)
 
+      expect(clipboardMock).toBeCalledTimes(2)
+      expect(clipboardMock).toBeCalledWith(content)
+      expect(
+        await screen.findByText(`${content} copiado com sucesso`)
+      ).toBeInTheDocument()
+    })
+
+    it('should call copy to clipboard method and show success message on render', async () => {
       expect(clipboardMock).toBeCalledTimes(1)
       expect(clipboardMock).toBeCalledWith(content)
       expect(

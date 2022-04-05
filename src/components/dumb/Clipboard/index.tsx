@@ -1,16 +1,18 @@
 import { memo, useEffect } from 'react'
+import { useTranslation } from 'react-i18next'
 import ContentCopyIcon from '@mui/icons-material/ContentCopy'
 import { IconButton } from '~components'
 import { ClipboardStyled } from './styles'
 import { ClipboardProps } from './interfaces'
-import i18n from '~i18n'
 import toast from '~toast'
 
 const Clipboard = ({ content }: ClipboardProps) => {
+  const { t } = useTranslation()
+
   const copyToClipboard = () => {
     if (!!content) {
       navigator.clipboard.writeText(content)
-      toast.success(i18n.t('components.clipboard.alerts.success', { content }))
+      toast.success(t('components.clipboard.alerts.success', { content }))
     }
   }
 
@@ -20,15 +22,15 @@ const Clipboard = ({ content }: ClipboardProps) => {
 
   return (
     <ClipboardStyled>
-      {content || i18n.t('general.noData')}
+      {content || t('general.noData')}
       {!!content && (
         <IconButton
           size="small"
           color="inherit"
           onClick={copyToClipboard}
-          aria-label={i18n.t('components.clipboard.copyButton')}
+          aria-label={t('components.clipboard.copyButton')}
         >
-          <ContentCopyIcon aria-label={i18n.t('icons.ariaLabels.copy')} />
+          <ContentCopyIcon aria-label={t('icons.ariaLabels.copy')} />
         </IconButton>
       )}
     </ClipboardStyled>

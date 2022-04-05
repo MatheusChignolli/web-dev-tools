@@ -9,7 +9,6 @@ i18n.use(detector).use(initReactI18next).init({
     en,
     pt,
   },
-  lng: 'pt',
 })
 
 export default i18n

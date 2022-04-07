@@ -21,6 +21,7 @@
       "~hooks": ["./src/hooks"],
       "~utils": ["./src/commons/utils"],
       "~states": ["./src/commons/states"],
+      "~constants": ["./src/commons/constants"],
       "~interfaces/*": ["./src/commons/interfaces/*"],
       "~toast": ["./src/commons/toast"],
       "~theme": ["./src/commons/styles/theme.ts"],

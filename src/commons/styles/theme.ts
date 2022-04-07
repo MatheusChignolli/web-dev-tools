@@ -16,6 +16,15 @@ const common: ThemeOptions = {
       textTransform: 'none',
     },
   },
+  components: {
+    MuiList: {
+      styleOverrides: {
+        root: {
+          padding: 0,
+        },
+      },
+    },
+  },
 }
 
 const dark = createTheme({

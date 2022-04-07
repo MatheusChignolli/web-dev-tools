@@ -10,13 +10,13 @@ import reportWebVitals from './report-web-vitals'
 // - Add aria-labels to many places
 // - Put toastfy for user feedback
 // - Add keyboard commands to generate CPF
-// - Add language change and get browser language
 // - Add hamburguer menu to put the About page
 // - Create about page
 // - Responsive layout
 // - Create a name for the app
 // - Improve theme switch
 // - Add historic to methods
+// - add page for cpf, cnpj etc... regex
 
 ReactDOM.render(
   <StrictMode>

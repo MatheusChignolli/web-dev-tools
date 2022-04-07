@@ -1,12 +1,15 @@
 import { ChangeEvent, useMemo } from 'react'
 import { SelectChangeEvent } from '@mui/material'
 import { useRecoilState } from 'recoil'
-import { MenuItem, Select, Switch, Typography } from '~components'
+import { useTranslation } from 'react-i18next'
+import { Switch, Typography } from '~components'
 import { Languages } from '~interfaces/languages'
 import { languageState, themeState } from '~states'
-import { HeaderStyled } from './styles'
+import { LanguagesConstants } from '~constants'
+import { HeaderStyled, SelectStyled, MenuItemStyled } from './styles'
 
 const Header = () => {
+  const { t } = useTranslation()
   const [theme, setTheme] = useRecoilState(themeState)
   const [language, setLanguage] = useRecoilState(languageState)
 
@@ -15,7 +18,7 @@ const Header = () => {
     setTheme(checked ? 'dark' : 'light')
   }
 
-  const handleLanguageSelect = (event: SelectChangeEvent<Languages>) => {
+  const handleLanguageSelect = (event: SelectChangeEvent<unknown>) => {
     const selectedLanguage = event.target.value as Languages
     setLanguage(selectedLanguage)
   }
@@ -25,11 +28,30 @@ const Header = () => {
   return (
     <HeaderStyled>
       <Typography variant="h5">Header</Typography>
-      <Select onChange={handleLanguageSelect} value={language}>
-        <MenuItem value="en">en-US</MenuItem>
-        <MenuItem value="pt">pt-BR</MenuItem>
-      </Select>
-      <Switch onChange={handleThemeSwitch} color="default" checked={switchChecked} />
+      <div>
+        <Switch
+          onChange={handleThemeSwitch}
+          color="default"
+          checked={switchChecked}
+          aria-label={t('header.ariaLabels.themeSwitch')}
+        />
+        <SelectStyled
+          variant="filled"
+          onChange={handleLanguageSelect}
+          value={language}
+          aria-label={t('header.ariaLabels.languageSelect')}
+        >
+          {LanguagesConstants.acronyms.map((languageItem, index) => (
+            <MenuItemStyled
+              key={`${languageItem.value}-${index}`}
+              value={languageItem.value}
+              aria-label={t(`header.ariaLabels.languages.${languageItem.value}`)}
+            >
+              {languageItem.acronym}
+            </MenuItemStyled>
+          ))}
+        </SelectStyled>
+      </div>
     </HeaderStyled>
   )
 }

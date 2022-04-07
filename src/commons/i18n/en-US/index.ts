@@ -3,6 +3,7 @@ import * as icons from './icons.json'
 import * as cpf from './cpf.json'
 import * as general from './general.json'
 import * as components from './components.json'
+import * as header from './header.json'
 
 const en = {
   translation: {
@@ -11,6 +12,7 @@ const en = {
     cpf,
     general,
     components,
+    header,
   },
 }
 

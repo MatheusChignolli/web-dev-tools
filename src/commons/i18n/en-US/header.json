@@ -1,0 +1,10 @@
+{
+  "ariaLabels": {
+    "themeSwitch": "Switch to choose application theme between light mode and dark mode",
+    "languageSelect": "Application language selector",
+    "languages": {
+      "pt": "Brazilian portuguese",
+      "en": "American english"
+    }
+  }
+}

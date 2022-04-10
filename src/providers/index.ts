@@ -1,4 +1,4 @@
-export { default as StateProvider } from './StateProvider'
-export { default as ThemeProvider } from './ThemeProvider'
-export { default as ToastProvider } from './ToastProvider'
-export { default as TranslateProvider } from './TranslateProvider'
+export { default as StateProvider } from './State'
+export { default as ThemeProvider } from './Theme'
+export { default as ToastProvider } from './Toast'
+export { default as TranslateProvider } from './Translate'

@@ -27,7 +27,7 @@ const Header = () => {
 
   return (
     <HeaderStyled>
-      <Typography variant="h5">Header</Typography>
+      <Typography variant="h5">{t('header.title')}</Typography>
       <div>
         <Switch
           onChange={handleThemeSwitch}

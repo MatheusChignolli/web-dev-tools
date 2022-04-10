@@ -1,4 +1,5 @@
 {
+  "title": "Dev helper",
   "ariaLabels": {
     "themeSwitch": "Chave para selecionar o tema da aplicação, variando entre tema claro e tema escuro",
     "languageSelect": "Selecionador de idioma da aplicação",

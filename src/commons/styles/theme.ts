@@ -30,9 +30,9 @@ const common: ThemeOptions = {
 const dark = createTheme({
   palette: {
     primary: {
-      main: '#020d42',
-      light: '#35326e',
-      dark: '#00001d',
+      main: '#004445',
+      light: '#2C7873',
+      dark: '#021C1E',
       contrastText: '#ffffff',
     },
   },
@@ -42,9 +42,9 @@ const dark = createTheme({
 const light = createTheme({
   palette: {
     primary: {
-      main: '#64b5f6',
-      light: '#9be7ff',
-      dark: '#2286c3',
+      main: '#A1D6E2',
+      light: '#F1F1F2',
+      dark: '#1995AD',
       contrastText: '#000000',
     },
   },

@@ -1,10 +1,10 @@
 import { memo, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 import ContentCopyIcon from '@mui/icons-material/ContentCopy'
+import toast from '~toast'
 import { IconButton } from '~components'
 import { ClipboardStyled } from './styles'
 import { ClipboardProps } from './interfaces'
-import toast from '~toast'
 
 const Clipboard = ({ content }: ClipboardProps) => {
   const { t } = useTranslation()
@@ -21,7 +21,11 @@ const Clipboard = ({ content }: ClipboardProps) => {
   }, [content])
 
   return (
-    <ClipboardStyled>
+    <ClipboardStyled
+      aria-label={t('components.clipboard.section', {
+        data: content || t('general.noData'),
+      })}
+    >
       {content || t('general.noData')}
       {!!content && (
         <IconButton

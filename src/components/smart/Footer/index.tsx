@@ -17,6 +17,7 @@ const Footer = () => {
         underline="none"
         color="inherit"
         aria-label={t('footer.ariaLabels.repositoryLink')}
+        target="_blank"
       >
         <GitHubIcon aria-label={t('icons.ariaLabels.github')} />
       </Link>

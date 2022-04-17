@@ -24,6 +24,13 @@ const common: ThemeOptions = {
         },
       },
     },
+    MuiTooltip: {
+      styleOverrides: {
+        tooltip: {
+          background: '#616161',
+        },
+      },
+    },
   },
 }
 

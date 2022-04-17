@@ -6,11 +6,12 @@ import {
   FormGroup,
   FormControlLabel,
   Clipboard,
-  IconButton,
+  Tooltip,
   Card,
   Grid,
 } from '~components'
 import { CpfUtils } from '~utils'
+import { IconButtonStyled } from './styles'
 
 const GenerateCpf = () => {
   const { t } = useTranslation()
@@ -43,13 +44,15 @@ const GenerateCpf = () => {
           </FormGroup>
         </Grid>
         <Grid item xs="auto">
-          <IconButton
-            color="primary"
-            onClick={generateCpf}
-            aria-label={t('cpf.ariaLabels.generateButton')}
-          >
-            <DoubleArrowIcon aria-label={t('icons.ariaLabels.doubleArrow')} />
-          </IconButton>
+          <Tooltip title={`${t('cpf.generate')}`} arrow placement="top-start">
+            <IconButtonStyled
+              color="primary"
+              onClick={generateCpf}
+              aria-label={t('cpf.ariaLabels.generateButton')}
+            >
+              <DoubleArrowIcon aria-label={t('icons.ariaLabels.doubleArrow')} />
+            </IconButtonStyled>
+          </Tooltip>
         </Grid>
         <Grid item xs="auto">
           <Clipboard content={cpf} />

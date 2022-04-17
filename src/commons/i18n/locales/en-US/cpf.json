@@ -1,3 +1,8 @@
 {
-  "generate": "Generate CPF"
+  "generate": "Generate CPF",
+  "withMask": "CPF with mask",
+  "ariaLabels": {
+    "withMaskCheckbox": "Checkbox to decide if generates CPF data with mask or without mask",
+    "generateButton": "Button with an icon which has the action to generate the CPF"
+  }
 }

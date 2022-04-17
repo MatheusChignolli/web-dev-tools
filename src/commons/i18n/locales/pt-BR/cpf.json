@@ -1,3 +1,8 @@
 {
-  "generate": "Gerar CPF"
+  "generate": "Gerar CPF",
+  "withMask": "CPF com máscara",
+  "ariaLabels": {
+    "withMaskCheckbox": "Checkbox para decidir se o CPF será gerado com máscara ou sem máscara",
+    "generateButton": "Botão com um ícone que possui como ação gerar o CPF"
+  }
 }

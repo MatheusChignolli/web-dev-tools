@@ -1,8 +1,13 @@
 {
   "clipboard": {
     "copyButton": "Button to run copy action and put some text on paste action",
+    "section": "Section with content {{data}} to be send to paste actions",
     "alerts": {
       "success": "{{content}} successfully copied"
     }
+  },
+  "card": {
+    "section": "Card`s block",
+    "title": "Card`s title"
   }
 }

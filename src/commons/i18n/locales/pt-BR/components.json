@@ -1,8 +1,13 @@
 {
   "clipboard": {
     "copyButton": "Botão para efetuar a ação de copiar algum texto na área de transferência de arquivos",
+    "section": "Bloco com o conteúdo {{data}} para ser enviado para a área de transferência de arquivos",
     "alerts": {
       "success": "{{content}} copiado com sucesso"
     }
+  },
+  "card": {
+    "section": "Bloco de card",
+    "title": "Título do card"
   }
 }

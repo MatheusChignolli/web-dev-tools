@@ -1,4 +1,4 @@
-import { render } from '@testing-library/react'
+import { render } from '~tests'
 import App from '../App'
 
 test('renders learn react link', () => {

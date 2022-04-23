@@ -10,7 +10,7 @@ Object.assign(navigator, {
   },
 })
 
-describe('GenerateCpf component', () => {
+describe('GenerateCpf', () => {
   beforeEach(() => {
     render(<GenerateCpf />)
   })

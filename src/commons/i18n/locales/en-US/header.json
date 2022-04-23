@@ -1,6 +1,7 @@
 {
   "title": "Dev helper",
   "ariaLabels": {
+    "section": "Site`s header",
     "themeSwitch": "Switch to choose application theme between light mode and dark mode",
     "languageSelect": "Application language selector",
     "languages": {

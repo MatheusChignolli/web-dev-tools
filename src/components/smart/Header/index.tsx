@@ -26,7 +26,7 @@ const Header = () => {
   const switchChecked = useMemo(() => theme === 'dark', [theme])
 
   return (
-    <HeaderStyled>
+    <HeaderStyled aria-label={t('header.ariaLabels.section')}>
       <Typography variant="h5">{t('header.title')}</Typography>
       <div>
         <Switch

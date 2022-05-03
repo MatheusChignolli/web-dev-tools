@@ -1,4 +1,3 @@
-export { default as Button } from './dumb/Button'
 export { default as IconButton } from './dumb/IconButton'
 export { default as Card } from './dumb/Card'
 export { default as Clipboard } from './dumb/Clipboard'

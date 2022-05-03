@@ -52,11 +52,20 @@ describe('GenerateCpf', () => {
 
     await waitFor(() => userEvent.click(generateButton))
 
-    screen.debug()
-
     expect(
       screen.getByLabelText(
         /bloco com o conteúdo .{14} para ser enviado para a área de transferência de arquivos/i
+      )
+    ).toBeInTheDocument()
+    expect(mockWriteText).toBeCalledTimes(1)
+  })
+
+  it('should generate CPF when press Ctrl + q', async () => {
+    await waitFor(() => userEvent.keyboard('{Control>}q{/Control}'))
+
+    expect(
+      screen.getByLabelText(
+        /bloco com o conteúdo .{11} para ser enviado para a área de transferência de arquivos/i
       )
     ).toBeInTheDocument()
     expect(mockWriteText).toBeCalledTimes(1)

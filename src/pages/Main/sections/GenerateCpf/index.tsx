@@ -11,6 +11,7 @@ import {
   Grid,
 } from '~components'
 import { CpfUtils } from '~utils'
+import { useKeyPress } from '~hooks'
 import { IconButtonStyled } from './styles'
 
 const GenerateCpf = () => {
@@ -21,6 +22,12 @@ const GenerateCpf = () => {
   const generateCpf = () => {
     setCpf(CpfUtils.generateCpf(hasMask))
   }
+
+  useKeyPress(['q'], (event: any) => {
+    if (event.ctrlKey) {
+      generateCpf()
+    }
+  })
 
   const handleCheckbox = (event: ChangeEvent<HTMLInputElement>) => {
     setHasMask(event.target.checked)

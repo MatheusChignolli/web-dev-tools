@@ -5,8 +5,8 @@
   "scripts": {
     "start": "craco start",
     "build": "craco build",
-    "test": "jest --config=jest.config.ts",
-    "test:coverage": "jest --config=jest.config.ts --coverage",
+    "test": "jest --maxWorkers=50% --config=jest.config.ts",
+    "test:coverage": "jest --maxWorkers=50% --config=jest.config.ts --coverage",
     "eject": "craco eject",
     "lint": "eslint --ext .js,.ts,.jsx,.tsx .",
     "format": "prettier --ignore-path .gitignore --write \"**/*.+(js|jsx|ts|tsx|json)\""

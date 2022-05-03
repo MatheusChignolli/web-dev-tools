@@ -12,7 +12,7 @@ Object.assign(navigator, {
   },
 })
 
-describe('Clipborad', () => {
+describe('Clipboard', () => {
   it('should render "Sem dado" message when content prop is not given', () => {
     render(<Clipboard />)
     expect(screen.getByText('Sem dado')).toBeInTheDocument()

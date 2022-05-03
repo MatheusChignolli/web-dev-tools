@@ -9,7 +9,6 @@ const useKeyPress = (keys: string[], callback: any) => {
 
   const handleKeyPress = useCallback(
     (event: KeyboardEvent) => {
-      console.log('event', event)
       if (keys.some((key) => key === event.key)) {
         callbackRef.current(event)
       }

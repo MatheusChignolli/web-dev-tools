@@ -23,7 +23,7 @@ const GenerateCpf = () => {
     setCpf(CpfUtils.generateCpf(hasMask))
   }
 
-  useKeyPress(['q'], (event: any) => {
+  useKeyPress(['q', 'Q'], (event: any) => {
     if (event.ctrlKey) {
       generateCpf()
     }
@@ -34,7 +34,7 @@ const GenerateCpf = () => {
   }
 
   return (
-    <Card title={t('cpf.generate')}>
+    <Card title={t('cpf.generate')} keys={['Ctrl', 'q']}>
       <Grid container alignItems="center">
         <Grid item xs={12}>
           <FormGroup>

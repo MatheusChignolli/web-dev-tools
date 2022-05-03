@@ -8,6 +8,10 @@
   },
   "card": {
     "section": "Card`s block",
-    "title": "Card`s title"
+    "title": "Card`s title",
+    "keycaps": "Element that represents the combination of one or more keyboard keys, those keys are the following: {{keys}}"
+  },
+  "keycap": {
+    "content": "Element that represents the keyboard key {{key}}"
   }
 }

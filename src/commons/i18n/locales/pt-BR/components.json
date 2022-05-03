@@ -8,6 +8,10 @@
   },
   "card": {
     "section": "Bloco de card",
-    "title": "Título do card"
+    "title": "Título do card",
+    "keycaps": "Elemento representando a combinação de uma ou mais telcas do teclado, sendo as seguintes: {{keys}}"
+  },
+  "keycap": {
+    "content": "Elemento representando a tecla {{key}} do teclado"
   }
 }

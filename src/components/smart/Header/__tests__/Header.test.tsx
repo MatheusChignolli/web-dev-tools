@@ -1,4 +1,5 @@
-import { fireEvent, screen } from '@testing-library/react'
+import { screen, waitFor } from '@testing-library/react'
+import userEvent from '@testing-library/user-event'
 import { render } from '~tests'
 import Header from '..'
 
@@ -11,16 +12,16 @@ describe('Header', () => {
     expect(screen.getByText('Dev helper')).toBeInTheDocument()
   })
 
-  it('should switch app theme', () => {
+  it('should switch app`s theme', async () => {
     const themeSwitch = screen.getByRole('checkbox')
 
-    fireEvent.click(themeSwitch)
+    await waitFor(() => userEvent.click(themeSwitch))
 
     expect(screen.getByLabelText('Cabeçalho do site')).toHaveStyle(
       'color: rgb(44, 120, 115)'
     )
 
-    fireEvent.click(themeSwitch)
+    await waitFor(() => userEvent.click(themeSwitch))
 
     expect(screen.getByLabelText('Cabeçalho do site')).toHaveStyle(
       'color: rgb(241, 241, 242)'

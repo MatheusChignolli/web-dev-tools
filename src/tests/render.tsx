@@ -4,14 +4,21 @@ import {
   RenderOptions,
   RenderResult,
 } from '@testing-library/react'
-import { StateProvider, ThemeProvider, ToastProvider } from '~providers'
+import {
+  StateProvider,
+  ThemeProvider,
+  ToastProvider,
+  TranslateProvider,
+} from '~providers'
 import '~i18n'
 
 const render = (ui: ReactElement, options?: RenderOptions): RenderResult => {
   return TestingLibraryRender(
     <StateProvider>
       <ThemeProvider>
-        <ToastProvider>{ui}</ToastProvider>
+        <ToastProvider>
+          <TranslateProvider>{ui}</TranslateProvider>
+        </ToastProvider>
       </ThemeProvider>
     </StateProvider>,
     options

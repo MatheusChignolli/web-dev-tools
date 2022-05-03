@@ -1,4 +1,6 @@
-import { screen, fireEvent } from '@testing-library/react'
+import { screen } from '@testing-library/react'
+import userEvent from '@testing-library/user-event'
+import { act } from 'react-dom/test-utils'
 import { render } from '~tests'
 import Clipboard from '..'
 
@@ -27,25 +29,22 @@ describe('Clipborad', () => {
       clipboardMock.mockReset()
     })
 
-    it('should render content given to content prop', () => {
-      expect(screen.getByText(content)).toBeInTheDocument()
-    })
-
     it('should call copy to clipboard method and show success message when click on run button', async () => {
       const copyButton = screen.getByRole('button', {
         name: 'Botão para efetuar a ação de copiar algum texto na área de transferência de arquivos',
       })
 
-      fireEvent.click(copyButton)
+      await act(() => userEvent.click(copyButton))
 
-      expect(clipboardMock).toBeCalledTimes(2)
       expect(clipboardMock).toBeCalledWith(content)
       expect(
-        await screen.findByText(`${content} copiado com sucesso`)
-      ).toBeInTheDocument()
+        await screen.findAllByText(`${content} copiado com sucesso`)
+      ).toHaveLength(2)
     })
 
-    it('should call copy to clipboard method and show success message on render', async () => {
+    it('should render and call copy to clipboard method and show success message on render', async () => {
+      expect(screen.getByText(content)).toBeInTheDocument()
+
       expect(clipboardMock).toBeCalledTimes(1)
       expect(clipboardMock).toBeCalledWith(content)
       expect(

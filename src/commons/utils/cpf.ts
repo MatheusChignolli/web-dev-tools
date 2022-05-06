@@ -37,12 +37,9 @@ const generateCpf = (formatted?: boolean) => {
 
   if (d2 >= 10) d2 = 0
 
-  let cpf = '' + n1 + n2 + n3 + n4 + n5 + n6 + n7 + n8 + n9 + d1 + d2
-
-  if (formatted)
-    cpf = '' + n1 + n2 + n3 + '.' + n4 + n5 + n6 + '.' + n7 + n8 + n9 + '-' + d1 + d2
-
-  return cpf
+  return formatted
+    ? `${n1}${n2}${n3}.${n4}${n5}${n6}.${n7}${n8}${n9}-${d1}${d2}`
+    : `${n1}${n2}${n3}${n4}${n5}${n6}${n7}${n8}${n9}${d1}${d2}`
 }
 
 export default {

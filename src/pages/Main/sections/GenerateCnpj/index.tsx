@@ -10,22 +10,22 @@ import {
   Card,
   Grid,
 } from '~components'
-import { CpfUtils } from '~utils'
+import { CnpjUtils } from '~utils'
 import { useKeyPress } from '~hooks'
 import { IconButtonStyled } from './styles'
 
-const GenerateCpf = () => {
+const GenerateCnpj = () => {
   const { t } = useTranslation()
-  const [cpf, setCpf] = useState<string>()
+  const [cnpj, setCnpj] = useState<string>()
   const [hasMask, setHasMask] = useState(false)
 
-  const generateCpf = () => {
-    setCpf(CpfUtils.generateCpf(hasMask))
+  const generateCnpj = () => {
+    setCnpj(CnpjUtils.generateCnpj(hasMask))
   }
 
-  useKeyPress(['q', 'Q'], (event: any) => {
+  useKeyPress(['r', 'R'], (event: any) => {
     if (event.ctrlKey) {
-      generateCpf()
+      generateCnpj()
     }
   })
 
@@ -34,7 +34,7 @@ const GenerateCpf = () => {
   }
 
   return (
-    <Card title={t('cpf.generate')} keys={['Ctrl', 'Q']}>
+    <Card title={t('cnpj.generate')} keys={['Ctrl', 'R']}>
       <Grid container alignItems="center">
         <Grid item xs={12}>
           <FormGroup>
@@ -43,30 +43,30 @@ const GenerateCpf = () => {
                 <Checkbox
                   size="small"
                   onChange={handleCheckbox}
-                  aria-label={t('cpf.ariaLabels.withMaskCheckbox')}
+                  aria-label={t('cnpj.ariaLabels.withMaskCheckbox')}
                 />
               }
-              label={t('cpf.withMask')}
+              label={t('cnpj.withMask')}
             />
           </FormGroup>
         </Grid>
         <Grid item xs="auto">
-          <Tooltip title={`${t('cpf.generate')}`} arrow placement="top-start">
+          <Tooltip title={`${t('cnpj.generate')}`} arrow placement="top-start">
             <IconButtonStyled
               color="primary"
-              onClick={generateCpf}
-              aria-label={t('cpf.ariaLabels.generateButton')}
+              onClick={generateCnpj}
+              aria-label={t('cnpj.ariaLabels.generateButton')}
             >
               <DoubleArrowIcon aria-label={t('icons.ariaLabels.doubleArrow')} />
             </IconButtonStyled>
           </Tooltip>
         </Grid>
         <Grid item xs="auto">
-          <Clipboard content={cpf} />
+          <Clipboard content={cnpj} />
         </Grid>
       </Grid>
     </Card>
   )
 }
 
-export default GenerateCpf
+export default GenerateCnpj

@@ -4,6 +4,7 @@ import * as cpf from './cpf.json'
 import * as general from './general.json'
 import * as components from './components.json'
 import * as header from './header.json'
+import * as cnpj from './cnpj.json'
 
 const pt = {
   translation: {
@@ -13,6 +14,7 @@ const pt = {
     general,
     components,
     header,
+    cnpj,
   },
 }
 

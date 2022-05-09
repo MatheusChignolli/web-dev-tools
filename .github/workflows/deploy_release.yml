@@ -6,12 +6,17 @@ on:
       - '*'
 
 jobs:
-  build:
+  deploy-prod:
     if: ${{ startsWith(github.ref, 'refs/tags/v') }}
     runs-on: ubuntu-latest
 
+    name: 'Deploy to Netlify'
     steps:
-      - uses: actions/checkout@v2
-
-      - name: Run a one-line script
-        run: echo Hello, world
+      - uses: jsmrcaga/action-netlify-deploy@v1.1.0
+        with:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+          NETLIFY_DEPLOY_MESSAGE: 'Prod deploy v${{ github.ref }}'
+          NETLIFY_DEPLOY_TO_PROD: true
+          build_directory: 'build'
+          build_command: 'yarn build'

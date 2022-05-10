@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Deploy to Netlify
     env:
-      working-directory: ${{ matrix.project }}
+      working-directory: ./
     steps:
       - name: Checkout code
         uses: actions/checkout@v1

@@ -2,7 +2,7 @@ name: Deploy release to Netlify
 
 on:
   push:
-    branch:
+    branches:
       - main
     tags:
       - v*

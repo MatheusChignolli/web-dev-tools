@@ -1,9 +1,9 @@
-import { FC } from 'react'
 import { ThemeProvider as StyledComponentsThemeProvider } from 'styled-components'
 import { ThemeProvider as MuiThemeProvider } from '@mui/material/styles'
 import { useTheme } from '~hooks'
+import { ThemeProviderProps } from './interfaces'
 
-const ThemeProvider: FC = ({ children }) => {
+const ThemeProvider = ({ children }: ThemeProviderProps) => {
   const theme = useTheme()
 
   return (

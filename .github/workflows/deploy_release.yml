@@ -17,10 +17,10 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v1
 
-      - name: Use Node.js 16.x
+      - name: Use Node.js 16.14.0
         uses: actions/setup-node@v1
         with:
-          node-version: 16.x
+          node-version: 16.14.0
 
       - if: steps.skip_check.outputs.should_skip != 'true'
         name: Install packages

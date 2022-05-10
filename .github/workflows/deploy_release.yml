@@ -16,8 +16,8 @@ jobs:
     env:
       working-directory: ./
     steps:
-      # - name: Checkout code
-      #   uses: actions/checkout@v1
+      - name: Checkout code
+        uses: actions/checkout@v1
 
       - name: Use Node.js 16.14.0
         uses: actions/setup-node@v1

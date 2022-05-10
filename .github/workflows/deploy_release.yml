@@ -3,7 +3,7 @@ name: Deploy release to Netlify
 on:
   push:
     tags:
-      - v*
+      - 'v*'
 
 jobs:
   deploy-prod:

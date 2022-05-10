@@ -5,12 +5,11 @@ import { ThemeProviderProps } from './interfaces'
 
 const ThemeProvider = ({ children }: ThemeProviderProps) => {
   const theme = useTheme()
-  console.log(children)
 
   return (
     <MuiThemeProvider theme={theme}>
       <StyledComponentsThemeProvider theme={theme}>
-        teste
+        <div>{children}</div>
       </StyledComponentsThemeProvider>
     </MuiThemeProvider>
   )

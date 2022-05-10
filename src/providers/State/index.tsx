@@ -1,6 +1,8 @@
-import { FC } from 'react'
 import { RecoilRoot } from 'recoil'
+import { StateProviderProps } from './interfaces'
 
-const StateProvider: FC = ({ children }) => <RecoilRoot>{children}</RecoilRoot>
+const StateProvider = ({ children }: StateProviderProps) => (
+  <RecoilRoot>{children}</RecoilRoot>
+)
 
 export default StateProvider

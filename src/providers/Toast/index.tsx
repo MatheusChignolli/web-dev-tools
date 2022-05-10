@@ -1,5 +1,5 @@
-import { FC } from 'react'
 import { ToastContainer, ToastContainerProps } from 'react-toastify'
+import { ToastProviderProps } from './interfaces'
 
 const toastOptions: ToastContainerProps = {
   position: 'top-right',
@@ -14,7 +14,7 @@ const toastOptions: ToastContainerProps = {
   limit: 3,
 }
 
-const ToastProvider: FC = ({ children }) => (
+const ToastProvider = ({ children }: ToastProviderProps) => (
   <>
     <ToastContainer {...toastOptions} />
     {children}

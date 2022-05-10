@@ -2,6 +2,7 @@ import { ThemeProvider as StyledComponentsThemeProvider } from 'styled-component
 import { ThemeProvider as MuiThemeProvider } from '@mui/material/styles'
 import { useTheme } from '~hooks'
 import { ThemeProviderProps } from './interfaces'
+import { SectionStyled } from './styles'
 
 const ThemeProvider = ({ children }: ThemeProviderProps) => {
   const theme = useTheme()
@@ -9,7 +10,7 @@ const ThemeProvider = ({ children }: ThemeProviderProps) => {
   return (
     <MuiThemeProvider theme={theme}>
       <StyledComponentsThemeProvider theme={theme}>
-        <div>{children}</div>
+        <SectionStyled>{children}</SectionStyled>
       </StyledComponentsThemeProvider>
     </MuiThemeProvider>
   )

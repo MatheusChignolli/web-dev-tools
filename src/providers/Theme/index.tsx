@@ -1,3 +1,4 @@
+import { ReactNode } from 'react'
 import { ThemeProvider as StyledComponentsThemeProvider } from 'styled-components'
 import { ThemeProvider as MuiThemeProvider } from '@mui/material/styles'
 import { useTheme } from '~hooks'
@@ -9,7 +10,7 @@ const ThemeProvider = ({ children }: ThemeProviderProps) => {
   return (
     <MuiThemeProvider theme={theme}>
       <StyledComponentsThemeProvider theme={theme}>
-        {children}
+        {children as ReactNode}
       </StyledComponentsThemeProvider>
     </MuiThemeProvider>
   )

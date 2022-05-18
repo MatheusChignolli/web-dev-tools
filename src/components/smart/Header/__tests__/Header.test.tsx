@@ -29,6 +29,8 @@ describe('Header', () => {
   })
 
   it('should switch app`s language', async () => {
+    expect(screen.getByLabelText('Cabeçalho do site')).toBeInTheDocument()
+
     const languageSelect = screen.getByRole('button')
 
     fireEvent.mouseDown(languageSelect)
@@ -40,13 +42,5 @@ describe('Header', () => {
     await waitFor(() => userEvent.click(enButton))
 
     expect(screen.getByLabelText('Site`s header')).toBeInTheDocument()
-
-    fireEvent.mouseDown(languageSelect)
-
-    const ptButton = languageListbox.getByLabelText('Brazilian portuguese')
-
-    await waitFor(() => userEvent.click(ptButton))
-
-    expect(screen.getByLabelText('Cabeçalho do site')).toBeInTheDocument()
   })
 })

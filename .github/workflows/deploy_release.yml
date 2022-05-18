@@ -31,10 +31,7 @@ jobs:
         name: Test coverage
         uses: ArtiomTr/jest-coverage-report-action@v2
         with:
-          test-script: yarn test:coverage
           skip-step: install
-          coverage-file: coverage-final.json
-          base-coverage-file: coverage-final.json
 
       - if: steps.skip_check.outputs.should_skip != 'true'
         name: Build project

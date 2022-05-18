@@ -9,7 +9,7 @@ describe('Header', () => {
   })
 
   it('should render title', () => {
-    expect(screen.getByText('Dev helper')).toBeInTheDocument()
+    expect(screen.getByText('To devs')).toBeInTheDocument()
   })
 
   it('should switch app`s theme', async () => {

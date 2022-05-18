@@ -7,7 +7,7 @@ describe('Card', () => {
     render(<Card title="Title">Content</Card>)
 
     expect(screen.getByText('Title')).toBeInTheDocument()
-    expect(screen.getByText('Content')).toBeInTheDocument()
+    expect(screen.getByText('asdasdasd')).toBeInTheDocument()
   })
 
   it('should not render prop title and not pass it', () => {

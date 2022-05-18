@@ -4,7 +4,7 @@ import { AnalyticsProviderProps } from './interfaces'
 
 const AnalyticsProvider = ({ children }: AnalyticsProviderProps) => {
   useEffect(() => {
-    ReactGA.initialize(process.env.REACT_APP_TRACKING_ID as string)
+    ReactGA.initialize('G-3XEEBEC5S4')
   }, [])
 
   return <>{children}</>

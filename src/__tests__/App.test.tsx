@@ -1,7 +1,20 @@
+import { ReactNode } from 'react'
+import { screen } from '@testing-library/react'
 import { render } from '~tests'
 import App from '../App'
 
-test('renders learn react link', () => {
-  const { container } = render(<App />)
-  expect(container.querySelector('#app')).toBeInTheDocument()
+jest.mock('~providers', () => {
+  const originalModule = jest.requireActual('~providers')
+
+  return {
+    __esModule: true,
+    ...originalModule,
+    AnalyticsProvider: ({ children }: { children: ReactNode }) => children,
+  }
+})
+
+it('should render app', () => {
+  render(<App />)
+
+  expect(screen.getByText('To devs')).toBeInTheDocument()
 })

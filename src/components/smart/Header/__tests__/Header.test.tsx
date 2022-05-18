@@ -35,9 +35,7 @@ describe('Header', () => {
 
     const languageListbox = within(screen.getByRole('listbox'))
 
-    const enButton = languageListbox.getByRole('option', {
-      name: 'Inglês americano',
-    })
+    const enButton = languageListbox.getByLabelText('Inglês americano')
 
     await waitFor(() => userEvent.click(enButton))
 
@@ -45,9 +43,7 @@ describe('Header', () => {
 
     fireEvent.mouseDown(languageSelect)
 
-    const ptButton = languageListbox.getByRole('option', {
-      name: 'Brazilian portuguese',
-    })
+    const ptButton = languageListbox.getByLabelText('Brazilian portuguese')
 
     await waitFor(() => userEvent.click(ptButton))
 

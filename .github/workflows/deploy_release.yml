@@ -28,6 +28,13 @@ jobs:
         run: yarn install
 
       - if: steps.skip_check.outputs.should_skip != 'true'
+        name: Test coverage
+        uses: ArtiomTr/jest-coverage-report-action@v2
+        with:
+          package-manager: yarn
+          test-script: yarn test:coverage
+
+      - if: steps.skip_check.outputs.should_skip != 'true'
         name: Build project
         working-directory: ${{ env.working-directory }}
         run: yarn build

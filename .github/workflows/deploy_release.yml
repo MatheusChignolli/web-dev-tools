@@ -41,7 +41,8 @@ jobs:
         working-directory: ${{ env.working-directory }}
         run: yarn build
 
-      - name: Deploy to netlify
+      - if: steps.skip_check.outputs.should_skip != 'true'
+        name: Deploy to netlify
         uses: netlify/actions/cli@master
         with:
           args: deploy --auth ${{ secrets.NETLIFY_AUTH_TOKEN }} --dir=build --prod

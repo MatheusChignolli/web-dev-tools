@@ -3,9 +3,8 @@ import ReactDOM from 'react-dom'
 import '~commons/styles/global.css'
 import '~i18n'
 import 'react-toastify/dist/ReactToastify.css'
-import App from './App'
 import reportWebVitals from './report-web-vitals'
-
+import App from './App'
 // TODO:
 // - Add aria-labels to many places
 // - Put toastfy for user feedback

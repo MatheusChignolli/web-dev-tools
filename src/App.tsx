@@ -4,21 +4,21 @@ import {
   StateProvider,
   ThemeProvider,
   ToastProvider,
+  AnalyticsProvider,
 } from '~providers'
-import { AppStyled } from './styles'
 
 const App = () => (
-  <StateProvider>
-    <TranslateProvider>
+  <AnalyticsProvider>
+    <StateProvider>
       <ThemeProvider>
-        <ToastProvider>
-          <AppStyled id="app">
+        <TranslateProvider>
+          <ToastProvider>
             <Main />
-          </AppStyled>
-        </ToastProvider>
+          </ToastProvider>
+        </TranslateProvider>
       </ThemeProvider>
-    </TranslateProvider>
-  </StateProvider>
+    </StateProvider>
+  </AnalyticsProvider>
 )
 
 export default App

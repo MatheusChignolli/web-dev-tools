@@ -23,7 +23,7 @@ const GenerateCnpj = () => {
     setCnpj(CnpjUtils.generateCnpj(hasMask))
   }
 
-  useKeyPress(['r', 'R'], (event: any) => {
+  useKeyPress(['w', 'W'], (event: any) => {
     if (event.ctrlKey) {
       generateCnpj()
     }
@@ -34,7 +34,7 @@ const GenerateCnpj = () => {
   }
 
   return (
-    <Card title={t('cnpj.generate')} keys={['Ctrl', 'R']}>
+    <Card title={t('cnpj.generate')} keys={['Ctrl', 'W']}>
       <Grid container alignItems="center">
         <Grid item xs={12}>
           <FormGroup>

@@ -60,8 +60,8 @@ describe('GenerateCnpj', () => {
     expect(mockWriteText).toBeCalledTimes(1)
   })
 
-  it('should generate CNPJ when press Ctrl + r', async () => {
-    await waitFor(() => userEvent.keyboard('{Control>}r{/Control}'))
+  it('should generate CNPJ when press Ctrl + w', async () => {
+    await waitFor(() => userEvent.keyboard('{Control>}w{/Control}'))
 
     expect(
       screen.getByLabelText(

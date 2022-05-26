@@ -4,6 +4,7 @@ import {
   RenderOptions,
   RenderResult,
 } from '@testing-library/react'
+import { BrowserRouter } from 'react-router-dom'
 import {
   StateProvider,
   ThemeProvider,
@@ -14,13 +15,15 @@ import '~i18n'
 
 const render = (ui: ReactElement, options?: RenderOptions): RenderResult => {
   return TestingLibraryRender(
-    <StateProvider>
-      <ThemeProvider>
-        <ToastProvider>
-          <TranslateProvider>{ui}</TranslateProvider>
-        </ToastProvider>
-      </ThemeProvider>
-    </StateProvider>,
+    <BrowserRouter>
+      <StateProvider>
+        <ThemeProvider>
+          <ToastProvider>
+            <TranslateProvider>{ui}</TranslateProvider>
+          </ToastProvider>
+        </ThemeProvider>
+      </StateProvider>
+    </BrowserRouter>,
     options
   )
 }

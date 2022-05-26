@@ -1,3 +1,6 @@
-import { Link } from '@mui/material'
+import { MuiLinkStyled, RouterLinkStyled } from './styles'
 
-export default Link
+export default {
+  External: MuiLinkStyled,
+  Internal: RouterLinkStyled,
+}

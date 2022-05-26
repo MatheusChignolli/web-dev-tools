@@ -1,7 +1,7 @@
 import { screen } from '@testing-library/react'
 import styled from 'styled-components'
 import { render } from '~tests'
-import ThemeProvider from '../Theme'
+import { ThemeProvider } from '..'
 
 const DivStyled = styled.div`
   background-color: ${({ theme }) => theme.palette.primary.main};

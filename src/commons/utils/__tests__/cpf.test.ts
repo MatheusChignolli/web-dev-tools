@@ -2,7 +2,7 @@ import { CpfUtils } from '..'
 
 describe('CpfUtils', () => {
   describe('generateCpf', () => {
-    Array.from(Array(10).keys()).forEach((_, index) => {
+    Array.from(Array(15).keys()).forEach((_, index) => {
       it(`should generate a real cpf - test ${index}`, () => {
         const cpf = CpfUtils.generate()
 
@@ -10,7 +10,7 @@ describe('CpfUtils', () => {
       })
     })
 
-    Array.from(Array(10).keys()).forEach((_, index) => {
+    Array.from(Array(15).keys()).forEach((_, index) => {
       it(`should generate a real formatted cpf - test ${index}`, () => {
         const formattedCpf = CpfUtils.generate(true)
 

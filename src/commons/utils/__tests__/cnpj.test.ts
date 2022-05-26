@@ -2,7 +2,7 @@ import { CnpjUtils } from '..'
 
 describe('CnpjUtils', () => {
   describe('generateCnpj', () => {
-    Array.from(Array(10).keys()).forEach((_, index) => {
+    Array.from(Array(15).keys()).forEach((_, index) => {
       it(`should generate a real cnpj - test ${index}`, () => {
         const cpf = CnpjUtils.generate()
 
@@ -10,7 +10,7 @@ describe('CnpjUtils', () => {
       })
     })
 
-    Array.from(Array(10).keys()).forEach((_, index) => {
+    Array.from(Array(15).keys()).forEach((_, index) => {
       it(`should generate a real formatted cnpj - test ${index}`, () => {
         const formattedCpf = CnpjUtils.generate(true)
 

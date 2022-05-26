@@ -1,0 +1,10 @@
+{
+  "codes": {
+    "404": {
+      "page": "Página não encontrada"
+    }
+  },
+  "ariaLabels": {
+    "code": "Código {{code}} representando {{description}}"
+  }
+}

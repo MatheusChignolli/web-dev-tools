@@ -6,6 +6,7 @@ import * as components from './components.json'
 import * as header from './header.json'
 import * as cnpj from './cnpj.json'
 import * as rg from './rg.json'
+import * as http from './http.json'
 
 const en = {
   translation: {
@@ -17,6 +18,7 @@ const en = {
     header,
     cnpj,
     rg,
+    http,
   },
 }
 

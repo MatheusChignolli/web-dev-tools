@@ -12,7 +12,7 @@ const Footer = () => {
 
   return (
     <FooterStyled>
-      <Link
+      <Link.External
         href="https://github.com/MatheusChignolli/web-dev-tools"
         underline="none"
         color="inherit"
@@ -20,7 +20,7 @@ const Footer = () => {
         target="_blank"
       >
         <GitHubIcon aria-label={t('icons.ariaLabels.github')} />
-      </Link>
+      </Link.External>
       <p aria-label={t('footer.ariaLabels.copyright')}>
         <b>{year}</b>
         <CopyrightIcon

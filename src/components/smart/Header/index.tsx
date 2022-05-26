@@ -2,7 +2,7 @@ import { ChangeEvent, useMemo } from 'react'
 import { SelectChangeEvent } from '@mui/material'
 import { useRecoilState } from 'recoil'
 import { useTranslation } from 'react-i18next'
-import { Switch, Typography } from '~components'
+import { Switch, Typography, Link } from '~components'
 import { Languages } from '~interfaces/languages'
 import { languageState, themeState } from '~states'
 import { LanguagesConstants } from '~constants'
@@ -27,7 +27,9 @@ const Header = () => {
 
   return (
     <HeaderStyled aria-label={t('header.ariaLabels.section')}>
-      <Typography variant="h5">{t('header.title')}</Typography>
+      <Link.Internal to="/">
+        <Typography variant="h5">{t('header.title')}</Typography>
+      </Link.Internal>
       <div>
         <Switch
           onChange={handleThemeSwitch}

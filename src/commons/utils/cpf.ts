@@ -2,7 +2,7 @@ import { NumberUtils } from '.'
 
 const cpfRegex = /([0-9]{3}[\.]?[0-9]{3}[\.]?[0-9]{3}[-]?[0-9]{2})/
 
-const generateCpf = (formatted?: boolean) => {
+const generate = (formatted?: boolean) => {
   const n = 9
   const n1 = NumberUtils.randomNumber(n)
   const n2 = NumberUtils.randomNumber(n)
@@ -44,5 +44,5 @@ const generateCpf = (formatted?: boolean) => {
 
 export default {
   cpfRegex,
-  generateCpf,
+  generate,
 }

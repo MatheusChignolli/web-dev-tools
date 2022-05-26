@@ -20,7 +20,7 @@ const GenerateCnpj = () => {
   const [hasMask, setHasMask] = useState(false)
 
   const generateCnpj = () => {
-    setCnpj(CnpjUtils.generateCnpj(hasMask))
+    setCnpj(CnpjUtils.generate(hasMask))
   }
 
   useKeyPress(['w', 'W'], (event: any) => {

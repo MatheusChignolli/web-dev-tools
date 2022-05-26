@@ -20,7 +20,7 @@ const GenerateCpf = () => {
   const [hasMask, setHasMask] = useState(false)
 
   const generateCpf = () => {
-    setCpf(CpfUtils.generateCpf(hasMask))
+    setCpf(CpfUtils.generate(hasMask))
   }
 
   useKeyPress(['q', 'Q'], (event: any) => {

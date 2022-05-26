@@ -2,7 +2,7 @@ import { NumberUtils } from '.'
 
 const cnpjRegex = /([0-9]{2}[\.]?[0-9]{3}[\.]?[0-9]{3}[\/]?[0-9]{4}[-]?[0-9]{2})/
 
-const generateCnpj = (formatted?: boolean) => {
+const generate = (formatted?: boolean) => {
   const n = 9
   const n1 = NumberUtils.randomNumber(n)
   const n2 = NumberUtils.randomNumber(n)
@@ -61,5 +61,5 @@ const generateCnpj = (formatted?: boolean) => {
 
 export default {
   cnpjRegex,
-  generateCnpj,
+  generate,
 }

@@ -1,6 +1,6 @@
 import { Grid, Header, Footer } from '~components'
 import { useTheme } from '~hooks'
-import { GenerateCpf, GenerateCnpj } from './sections'
+import { GenerateCpf, GenerateCnpj, GenerateRg } from './sections'
 import { ContainerStyled } from './styles'
 
 const Main = () => {
@@ -10,12 +10,15 @@ const Main = () => {
     <>
       <ContainerStyled>
         <Header />
-        <Grid container gap={2} padding={`${theme.spacing(2)} 0px`}>
-          <Grid item xs={12} sm={6} md={4}>
+        <Grid container padding={`${theme.spacing(2)} 0px`}>
+          <Grid item xs={12} sm={6} md={4} padding={theme.spacing(1)}>
             <GenerateCpf />
           </Grid>
-          <Grid item xs={12} sm={6} md={4}>
+          <Grid item xs={12} sm={6} md={4} padding={theme.spacing(1)}>
             <GenerateCnpj />
+          </Grid>
+          <Grid item xs={12} sm={6} md={4} padding={theme.spacing(1)}>
+            <GenerateRg />
           </Grid>
         </Grid>
         <Footer />

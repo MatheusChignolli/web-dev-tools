@@ -5,6 +5,7 @@ import * as general from './general.json'
 import * as components from './components.json'
 import * as header from './header.json'
 import * as cnpj from './cnpj.json'
+import * as rg from './rg.json'
 
 const en = {
   translation: {
@@ -15,6 +16,7 @@ const en = {
     components,
     header,
     cnpj,
+    rg,
   },
 }
 

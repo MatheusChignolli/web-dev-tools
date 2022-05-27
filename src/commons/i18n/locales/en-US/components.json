@@ -13,5 +13,8 @@
   },
   "keycap": {
     "content": "Element that represents the keyboard key {{key}}"
+  },
+  "circularProgress": {
+    "content": "Circle spinning on right way meaning that something is loading"
   }
 }

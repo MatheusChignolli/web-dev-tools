@@ -1,10 +1,11 @@
 import { Suspense } from 'react'
 import { Route, Routes, Navigate } from 'react-router-dom'
 import routes from './routes'
+import { Loader } from './sections'
 
 const Router = () => {
   return (
-    <Suspense fallback={<h1>Carregando...</h1>}>
+    <Suspense fallback={<Loader />}>
       <Routes>
         {routes.map(({ component, path }, index) => (
           <Route

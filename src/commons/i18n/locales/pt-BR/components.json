@@ -13,5 +13,8 @@
   },
   "keycap": {
     "content": "Elemento representando a tecla {{key}} do teclado"
+  },
+  "circularProgress": {
+    "content": "Círculo girando no sentido horário de forma não ordenada representando o carregamento de alguma coisa"
   }
 }

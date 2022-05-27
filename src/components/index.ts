@@ -1,5 +1,6 @@
 export { default as IconButton } from './dumb/IconButton'
 export { default as Card } from './dumb/Card'
+export { default as CircularProgress } from './dumb/CircularProgress'
 export { default as Clipboard } from './dumb/Clipboard'
 export { default as Checkbox } from './dumb/Checkbox'
 export { default as Container } from './dumb/Container'

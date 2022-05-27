@@ -2,7 +2,27 @@ import { ThemeOptions } from '@mui/material'
 import { createTheme } from '@mui/material/styles'
 import { spacing } from './utils'
 
-const common: ThemeOptions = {
+const darkPalette = {
+  primary: {
+    main: '#004445',
+    light: '#2C7873',
+    dark: '#021C1E',
+    contrastText: '#ffffff',
+  },
+} as const
+
+const lightPalette = {
+  primary: {
+    main: '#A1D6E2',
+    light: '#F1F1F2',
+    dark: '#1995AD',
+    contrastText: '#000000',
+  },
+} as const
+
+const getCommonConfig = (
+  palette: typeof darkPalette | typeof lightPalette
+): ThemeOptions => ({
   spacing,
   typography: {
     fontFamily: 'Fira Code',
@@ -27,7 +47,12 @@ const common: ThemeOptions = {
     MuiTooltip: {
       styleOverrides: {
         tooltip: {
-          background: '#616161',
+          background: palette.primary.dark,
+        },
+        arrow: {
+          '::before': {
+            background: palette.primary.dark,
+          },
         },
       },
     },
@@ -39,30 +64,16 @@ const common: ThemeOptions = {
       },
     },
   },
-}
+})
 
 const dark = createTheme({
-  palette: {
-    primary: {
-      main: '#004445',
-      light: '#2C7873',
-      dark: '#021C1E',
-      contrastText: '#ffffff',
-    },
-  },
-  ...common,
+  palette: darkPalette,
+  ...getCommonConfig(darkPalette),
 })
 
 const light = createTheme({
-  palette: {
-    primary: {
-      main: '#A1D6E2',
-      light: '#F1F1F2',
-      dark: '#1995AD',
-      contrastText: '#000000',
-    },
-  },
-  ...common,
+  palette: lightPalette,
+  ...getCommonConfig(lightPalette),
 })
 
 export default {

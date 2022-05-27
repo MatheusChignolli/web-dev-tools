@@ -16,7 +16,9 @@ describe('Router', () => {
 
   it('should render suspense', () => {
     expect(
-      screen.getByRole('heading', { name: /carregando\.\.\./i })
+      screen.getByRole('progressbar', {
+        name: 'Círculo girando no sentido horário de forma não ordenada representando o carregamento de alguma coisa',
+      })
     ).toBeInTheDocument()
   })
 

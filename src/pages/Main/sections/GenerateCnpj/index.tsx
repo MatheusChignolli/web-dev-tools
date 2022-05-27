@@ -34,7 +34,7 @@ const GenerateCnpj = () => {
   }
 
   return (
-    <Card title={t('cnpj.generate')} keys={['Ctrl', 'W']}>
+    <Card title={t('cnpj.generate')} keys={['Ctrl', 'W']} fullHeight>
       <Grid container alignItems="center">
         <Grid item xs={12}>
           <FormGroup>

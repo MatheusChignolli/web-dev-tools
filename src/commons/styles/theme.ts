@@ -31,6 +31,13 @@ const common: ThemeOptions = {
         },
       },
     },
+    MuiIconButton: {
+      styleOverrides: {
+        root: {
+          padding: 0,
+        },
+      },
+    },
   },
 }
 

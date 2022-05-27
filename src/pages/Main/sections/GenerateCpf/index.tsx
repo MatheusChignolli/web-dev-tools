@@ -34,7 +34,7 @@ const GenerateCpf = () => {
   }
 
   return (
-    <Card title={t('cpf.generate')} keys={['Ctrl', 'Q']}>
+    <Card title={t('cpf.generate')} keys={['Ctrl', 'Q']} fullHeight>
       <Grid container alignItems="center">
         <Grid item xs={12}>
           <FormGroup>

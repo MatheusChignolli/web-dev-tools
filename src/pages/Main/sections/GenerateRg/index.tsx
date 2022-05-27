@@ -34,7 +34,7 @@ const GenerateRg = () => {
   }
 
   return (
-    <Card title={t('rg.generate')} keys={['Ctrl', 'E']}>
+    <Card title={t('rg.generate')} keys={['Ctrl', 'E']} fullHeight>
       <Grid container alignItems="center">
         <Grid item xs={12}>
           <FormGroup>

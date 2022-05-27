@@ -7,9 +7,11 @@ describe('Loader', () => {
     render(<Loader />)
 
     expect(
-      screen.getByLabelText(
-        'Círculo girando no sentido horário de forma não ordenada representando o carregamento de alguma coisa'
-      )
+      expect(
+        screen.getByRole('progressbar', {
+          name: 'Círculo girando no sentido horário de forma não ordenada representando o carregamento de alguma coisa',
+        })
+      ).toBeInTheDocument()
     ).toBeInTheDocument()
   })
 })

@@ -4,7 +4,7 @@ import { Keycap, Typography } from '~components'
 import { CardProps } from './interfaces'
 import { CardStyled, KeysComboStyled } from './styles'
 
-const Card = ({ children, title, keys }: CardProps) => {
+const Card = ({ children, title, keys, fullHeight }: CardProps) => {
   const { t } = useTranslation()
 
   const combinedKeys = useMemo(() => {
@@ -22,7 +22,7 @@ const Card = ({ children, title, keys }: CardProps) => {
   }, [keys])
 
   return (
-    <CardStyled aria-label={t('components.card.section')}>
+    <CardStyled aria-label={t('components.card.section')} fullHeight={fullHeight}>
       {!!title && (
         <Typography
           variant="h6"

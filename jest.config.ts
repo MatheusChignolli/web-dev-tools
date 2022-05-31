@@ -12,12 +12,17 @@ const config: Config.InitialOptions = {
   verbose: true,
   transform: {
     '^.+\\.tsx?$': 'ts-jest',
-    '.+\\.(svg|css|less|sass|scss|png|jpg|ttf|woff|woff2)$': 'jest-transform-stub',
+    '.+\\.(svg|css|less|sass|scss|png|jpg|ttf|woff|woff2|md)$':
+      'jest-transform-stub',
   },
   testEnvironment: 'jsdom',
   setupFilesAfterEnv: ['<rootDir>/setup-tests.ts'],
   moduleNameMapper: resolvedAliases,
-  coveragePathIgnorePatterns: ['<rootDir>/src/App.tsx', '<rootDir>/src/index.tsx'],
+  coveragePathIgnorePatterns: [
+    '<rootDir>/src/App.tsx',
+    '<rootDir>/src/index.tsx',
+    '<rootDir>/src/tests/mocks/*',
+  ],
   coverageThreshold: {
     global: {
       branches: 90,

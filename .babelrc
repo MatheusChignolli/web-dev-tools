@@ -1,4 +1,9 @@
 {
-  "presets": ["@babel/preset-env", "@babel/preset-react", "@babel/preset-typescript"],
-  "plugins": []
+  "presets": [
+    "@babel/preset-env",
+    "@babel/preset-react",
+    "@babel/preset-typescript"
+  ],
+  "plugins": [],
+  "loaders": [{ "exclude": " /node_modules/", "loader": "babel-loader" }]
 }

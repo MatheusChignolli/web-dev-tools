@@ -8,28 +8,26 @@ const Main = () => {
   const { t } = useTranslation()
 
   return (
-    <>
-      <Grid container padding={`${theme.spacing(2)} 0px`}>
-        <Grid item xs={12} sm={6} md={4} padding={theme.spacing(1)}>
-          <GenerateCpf />
-        </Grid>
-        <Grid item xs={12} sm={6} md={4} padding={theme.spacing(1)}>
-          <GenerateCnpj />
-        </Grid>
-        <Grid item xs={12} sm={6} md={4} padding={theme.spacing(1)}>
-          <GenerateRg />
-        </Grid>
-        <Grid item xs={12}>
-          <Typography
-            variant="body2"
-            color={theme.palette.primary.light}
-            textAlign="justify"
-          >
-            {t('privacyPolicy.notOurResponsibility')}
-          </Typography>
-        </Grid>
+    <Grid container padding={`${theme.spacing(2)} 0px`}>
+      <Grid item xs={12} sm={6} md={4} padding={theme.spacing(1)}>
+        <GenerateCpf />
       </Grid>
-    </>
+      <Grid item xs={12} sm={6} md={4} padding={theme.spacing(1)}>
+        <GenerateCnpj />
+      </Grid>
+      <Grid item xs={12} sm={6} md={4} padding={theme.spacing(1)}>
+        <GenerateRg />
+      </Grid>
+      <Grid item xs={12}>
+        <Typography
+          variant="body2"
+          color={theme.palette.primary.light}
+          textAlign="justify"
+        >
+          {t('privacyPolicy.notOurResponsibility')}
+        </Typography>
+      </Grid>
+    </Grid>
   )
 }
 

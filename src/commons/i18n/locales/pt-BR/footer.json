@@ -1,6 +1,10 @@
 {
   "ariaLabels": {
     "repositoryLink": "Link para o repositório do projeto",
-    "copyright": "Texto com o ano vigente e um ícone de Copyright"
+    "copyright": "Texto com o ano vigente e um ícone de Copyright",
+    "changelog": "Link para a página de changelog da aplicação"
+  },
+  "links": {
+    "changelog": "Changelog"
   }
 }

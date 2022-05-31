@@ -16,5 +16,8 @@
   },
   "circularProgress": {
     "content": "Circle spinning on right way meaning that something is loading"
+  },
+  "markdown": {
+    "section": "Block of mark language Markdown"
   }
 }

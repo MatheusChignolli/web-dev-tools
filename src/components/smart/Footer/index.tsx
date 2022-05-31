@@ -21,6 +21,9 @@ const Footer = () => {
       >
         <GitHubIcon aria-label={t('icons.ariaLabels.github')} />
       </Link.External>
+      <Link.Internal aria-label={t('footer.ariaLabels.changelog')} to="/changelog">
+        {t('footer.links.changelog')}
+      </Link.Internal>
       <p aria-label={t('footer.ariaLabels.copyright')}>
         <b>{year}</b>
         <CopyrightIcon

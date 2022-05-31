@@ -1,4 +1,5 @@
-import { screen } from '@testing-library/react'
+import { screen, waitFor } from '@testing-library/react'
+import userEvent from '@testing-library/user-event'
 import { format } from 'date-fns'
 import { render } from '~tests'
 import Footer from '..'
@@ -15,6 +16,20 @@ describe('Footer', () => {
     expect(
       screen.getByLabelText('Link para o repositório do projeto')
     ).toHaveAttribute('href', 'https://github.com/MatheusChignolli/web-dev-tools')
+  })
+
+  it('should render changelog`s link and go to changelog`s page', async () => {
+    const changelogPageLink = screen.getByLabelText(
+      'Link para a página de changelog da aplicação'
+    )
+
+    expect(changelogPageLink).toHaveAttribute('href', '/changelog')
+
+    await waitFor(() => userEvent.click(changelogPageLink))
+
+    await waitFor(() => {
+      expect(window.location.pathname).toBe('/changelog')
+    })
   })
 
   it('should render the current year on copyright text', () => {

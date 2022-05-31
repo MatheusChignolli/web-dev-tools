@@ -9,9 +9,21 @@ describe('Router', () => {
     render(
       <>
         <Router />
+        <Link to="/">Link to home</Link>
         <Link to="/404">Link to 404</Link>
+        <Link to="/changelog">Link to changelog</Link>
       </>
     )
+  })
+
+  afterEach(async () => {
+    const linkButton = screen.getByText('Link to home')
+
+    await waitFor(() => userEvent.click(linkButton))
+
+    await waitFor(() => {
+      screen.getByText('Gerar CPF')
+    })
   })
 
   it('should render suspense', () => {
@@ -43,6 +55,22 @@ describe('Router', () => {
 
     await waitFor(() => {
       expect(screen.getByText('404')).toBeInTheDocument()
+    })
+  })
+
+  it('should render "/changelog" route', async () => {
+    await waitFor(() => {
+      expect(screen.getByText('Gerar CPF')).toBeInTheDocument()
+    })
+
+    const linkButton = screen.getByText('Link to changelog')
+
+    await waitFor(() => userEvent.click(linkButton))
+
+    await waitFor(() => {
+      expect(
+        screen.getByLabelText('Bloco de linguagem de marcação Markdown')
+      ).toBeInTheDocument()
     })
   })
 })

@@ -7,6 +7,7 @@ import * as header from './header.json'
 import * as cnpj from './cnpj.json'
 import * as rg from './rg.json'
 import * as http from './http.json'
+import * as privacyPolicy from './privacyPolicy.json'
 
 const pt = {
   translation: {
@@ -19,6 +20,7 @@ const pt = {
     cnpj,
     rg,
     http,
+    privacyPolicy,
   },
 }
 

@@ -29,7 +29,8 @@
       "~i18n": ["./src/commons/i18n"],
       "~components": ["./src/components"],
       "~providers": ["./src/providers"],
-      "~tests": ["./src/tests"]
+      "~tests": ["./src/tests"],
+      "~services": ["./src/services"]
     }
   },
   "include": ["src", "setup-tests.ts"]

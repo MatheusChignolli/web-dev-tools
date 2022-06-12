@@ -1,37 +1,40 @@
+import { Navigate } from 'react-router-dom'
 import { useState } from 'react'
 import { useQuery } from 'react-query'
 import { dateUtils } from '~utils'
-import { Grid } from '~components'
+import { Grid, Loader } from '~components'
 import { useTheme } from '~hooks'
 import { githubServices } from '~services'
 import { Release } from './sections'
 
+const referencePath = 'version-accordion-'
+
 const Changelog = () => {
   const theme = useTheme()
-  const [accordionReference, setAccordionReference] = useState('version-accordion-0')
+  const [accordionReference, setAccordionReference] = useState(`${referencePath}0`)
 
   const { data, isLoading } = useQuery(
     'getReleasesFromRepo',
     () => githubServices.getReleasesFromRepo(githubServices.repoConfig),
     {
       onError(error) {
-        console.log(error, error)
+        console.error('getReleasesFromRepo: \n', error)
       },
     }
   )
 
   if (isLoading) {
-    return <h1>Loading...</h1>
+    return <Loader />
   }
 
   if (data?.length === 0) {
-    return <h1>No content</h1>
+    return <Navigate to="/404" />
   }
 
   return (
     <Grid container padding={`${theme.spacing(2)} 0px`} direction="column">
       {data?.map(({ body, created_at, tag_name }, index) => {
-        const reference = `version-accordion-${index}`
+        const reference = `${referencePath}${index}`
         return (
           <Release
             key={`key-${reference}`}

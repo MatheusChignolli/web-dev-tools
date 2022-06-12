@@ -1,7 +1,7 @@
 import { Suspense } from 'react'
 import { Route, Routes, Navigate } from 'react-router-dom'
 import routes from './routes'
-import { Loader } from './sections'
+import { Loader } from '~components'
 
 const Router = () => {
   return (

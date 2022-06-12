@@ -42,7 +42,7 @@ describe('Changelog', () => {
     render(<Changelog />)
 
     waitFor(() => {
-      expect(mockConsoleError).toBeCalledWith('getReleasesFromRepo: Error')
+      expect(mockConsoleError).toBeCalled()
     })
   })
 
@@ -66,7 +66,7 @@ describe('Changelog', () => {
     })
 
     it('should collapse accordion when click on it', async () => {
-      const accordionItem = await screen.findByText(/31\/12\/2020/)
+      const accordionItem = await screen.findByText(/versão 2/i)
 
       expect(accordionItem).toHaveClass('Mui-expanded')
 

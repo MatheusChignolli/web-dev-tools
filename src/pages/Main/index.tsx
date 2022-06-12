@@ -19,11 +19,7 @@ const Main = () => {
         <GenerateRg />
       </Grid>
       <Grid item xs={12}>
-        <Typography
-          variant="body2"
-          color={theme.palette.primary.light}
-          textAlign="justify"
-        >
+        <Typography variant="body2" textAlign="justify">
           {t('privacyPolicy.notOurResponsibility')}
         </Typography>
       </Grid>

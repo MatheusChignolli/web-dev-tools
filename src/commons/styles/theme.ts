@@ -4,18 +4,18 @@ import { spacing } from './utils'
 
 const darkPalette = {
   primary: {
-    main: '#004445',
-    light: '#2C7873',
-    dark: '#021C1E',
+    main: '#414141',
+    light: '#525252',
+    dark: '#313131',
     contrastText: '#ffffff',
   },
 } as const
 
 const lightPalette = {
   primary: {
-    main: '#A1D6E2',
-    light: '#F1F1F2',
-    dark: '#1995AD',
+    main: '#F9F6F7',
+    light: '#FFFFFF',
+    dark: '#E0E0E0',
     contrastText: '#000000',
   },
 } as const
@@ -37,6 +37,13 @@ const getCommonConfig = (
     },
   },
   components: {
+    MuiTypography: {
+      styleOverrides: {
+        root: {
+          color: palette.primary.contrastText,
+        },
+      },
+    },
     MuiList: {
       styleOverrides: {
         root: {
@@ -48,6 +55,7 @@ const getCommonConfig = (
       styleOverrides: {
         tooltip: {
           background: palette.primary.dark,
+          color: palette.primary.contrastText,
         },
         arrow: {
           '::before': {

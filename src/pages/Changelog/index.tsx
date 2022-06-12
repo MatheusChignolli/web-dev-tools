@@ -1,4 +1,3 @@
-import { Navigate } from 'react-router-dom'
 import { useState } from 'react'
 import { useQuery } from 'react-query'
 import { dateUtils } from '~utils'
@@ -18,7 +17,7 @@ const Changelog = () => {
     () => githubServices.getReleasesFromRepo(githubServices.repoConfig),
     {
       onError(error) {
-        console.error('getReleasesFromRepo: \n', error)
+        console.error('getReleasesFromRepo: ', error)
       },
     }
   )
@@ -28,7 +27,7 @@ const Changelog = () => {
   }
 
   if (data?.length === 0) {
-    return <Navigate to="/404" />
+    return <h1>Sem conteúdo</h1>
   }
 
   return (
@@ -42,6 +41,7 @@ const Changelog = () => {
             title={`[${tag_name}] - ${dateUtils.format(created_at)}`}
             expanded={accordionReference === reference}
             onChange={() => {
+              console.log('reference', reference)
               setAccordionReference((prevState) =>
                 prevState === reference ? '' : reference
               )

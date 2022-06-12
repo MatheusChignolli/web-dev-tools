@@ -60,6 +60,7 @@ const getCommonConfig = (
       styleOverrides: {
         root: {
           padding: 0,
+          borderRadius: '4px',
         },
       },
     },

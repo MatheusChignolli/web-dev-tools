@@ -21,7 +21,7 @@
     "section": "Bloco de linguagem de marcação Markdown"
   },
   "accordion": {
-    "sections": "Component acordeão",
+    "section": "Componente acordeão",
     "summary": "Título do componente acordeão",
     "details": "Detalhes do componente acordeão"
   }

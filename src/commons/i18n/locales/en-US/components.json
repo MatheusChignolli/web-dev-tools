@@ -21,7 +21,7 @@
     "section": "Block of mark language Markdown"
   },
   "accordion": {
-    "sections": "Accordion component",
+    "section": "Accordion component",
     "summary": "Title of accordion component",
     "details": "Details of accordion component"
   }

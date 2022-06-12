@@ -63,6 +63,27 @@ const getCommonConfig = (
         },
       },
     },
+    MuiAccordion: {
+      styleOverrides: {
+        root: {
+          background: palette.primary.main,
+          boxShadow: 'none',
+          color: palette.primary.contrastText,
+          '&::before': {
+            background: palette.primary.dark,
+          },
+        },
+      },
+    },
+    MuiAccordionSummary: {
+      styleOverrides: {
+        root: {
+          '&.Mui-expanded': {
+            borderBottom: `1px solid ${palette.primary.dark}`,
+          },
+        },
+      },
+    },
   },
 })
 

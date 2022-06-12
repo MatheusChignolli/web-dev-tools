@@ -1,8 +1,6 @@
 import styled from 'styled-components'
 
 export const WrapperStyled = styled.div`
-  color: ${({ theme }) => theme.palette.primary.light};
-
   ul {
     margin: 0;
     padding: ${({ theme }) => theme.spacing(0, 2.5)};

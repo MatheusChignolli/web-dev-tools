@@ -1,14 +1,14 @@
-import { format } from 'date-fns'
 import { useTranslation } from 'react-i18next'
 import GitHubIcon from '@mui/icons-material/GitHub'
 import CopyrightIcon from '@mui/icons-material/Copyright'
+import { DateUtils } from '~utils'
 import { Link } from '~components'
 import { FooterStyled } from './styles'
 
 const Footer = () => {
   const { t } = useTranslation()
 
-  const year = format(new Date(), 'yyyy')
+  const year = DateUtils.format('', 'yyyy')
 
   return (
     <FooterStyled>

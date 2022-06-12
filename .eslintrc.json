@@ -1,10 +1,6 @@
 {
-  "extends": [
-    "prettier",
-    "plugin:prettier/recommended",
-    "plugin:jest/recommended"
-  ],
-  "plugins": ["prettier", "jest", "unicorn"],
+  "extends": ["prettier", "plugin:prettier/recommended", "plugin:jest/recommended"],
+  "plugins": ["prettier", "@typescript-eslint", "jest", "unicorn"],
   "parserOptions": {
     "sourceType": "module",
     "ecmaFeatures": {
@@ -30,7 +26,8 @@
       "rules": {
         "no-undef": "off",
         "import/extensions": "off",
-        "no-unused-vars": "error"
+        "no-unused-vars": "off",
+        "@typescript-eslint/no-unused-vars": ["error"]
       }
     }
   ]

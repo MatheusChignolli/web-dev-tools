@@ -1,20 +1,20 @@
-import { CpfUtils } from '..'
+import { cpfUtils } from '..'
 
-describe('CpfUtils', () => {
+describe('cpfUtils', () => {
   describe('generateCpf', () => {
     Array.from(Array(15).keys()).forEach((_, index) => {
       it(`should generate a real cpf - test ${index}`, () => {
-        const cpf = CpfUtils.generate()
+        const cpf = cpfUtils.generate()
 
-        expect(CpfUtils.cpfRegex.test(cpf)).toBeTruthy()
+        expect(cpfUtils.cpfRegex.test(cpf)).toBeTruthy()
       })
     })
 
     Array.from(Array(15).keys()).forEach((_, index) => {
       it(`should generate a real formatted cpf - test ${index}`, () => {
-        const formattedCpf = CpfUtils.generate(true)
+        const formattedCpf = cpfUtils.generate(true)
 
-        expect(CpfUtils.cpfRegex.test(formattedCpf)).toBeTruthy()
+        expect(cpfUtils.cpfRegex.test(formattedCpf)).toBeTruthy()
       })
     })
   })

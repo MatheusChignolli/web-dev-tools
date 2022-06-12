@@ -10,7 +10,7 @@ import {
   Card,
   Grid,
 } from '~components'
-import { RgUtils } from '~utils'
+import { rgUtils } from '~utils'
 import { useKeyPress } from '~hooks'
 import { IconButtonStyled } from './styles'
 
@@ -20,7 +20,7 @@ const GenerateRg = () => {
   const [hasMask, setHasMask] = useState(false)
 
   const generateRg = () => {
-    setRg(RgUtils.generate(hasMask))
+    setRg(rgUtils.generate(hasMask))
   }
 
   useKeyPress(['e', 'E'], (event: any) => {

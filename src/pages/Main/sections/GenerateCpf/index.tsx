@@ -10,7 +10,7 @@ import {
   Card,
   Grid,
 } from '~components'
-import { CpfUtils } from '~utils'
+import { cpfUtils } from '~utils'
 import { useKeyPress } from '~hooks'
 import { IconButtonStyled } from './styles'
 
@@ -20,7 +20,7 @@ const GenerateCpf = () => {
   const [hasMask, setHasMask] = useState(false)
 
   const generateCpf = () => {
-    setCpf(CpfUtils.generate(hasMask))
+    setCpf(cpfUtils.generate(hasMask))
   }
 
   useKeyPress(['q', 'Q'], (event: any) => {

@@ -1,20 +1,20 @@
-import { CnpjUtils } from '..'
+import { cnpjUtils } from '..'
 
-describe('CnpjUtils', () => {
+describe('cnpjUtils', () => {
   describe('generateCnpj', () => {
     Array.from(Array(15).keys()).forEach((_, index) => {
       it(`should generate a real cnpj - test ${index}`, () => {
-        const cpf = CnpjUtils.generate()
+        const cpf = cnpjUtils.generate()
 
-        expect(CnpjUtils.cnpjRegex.test(cpf)).toBeTruthy()
+        expect(cnpjUtils.cnpjRegex.test(cpf)).toBeTruthy()
       })
     })
 
     Array.from(Array(15).keys()).forEach((_, index) => {
       it(`should generate a real formatted cnpj - test ${index}`, () => {
-        const formattedCpf = CnpjUtils.generate(true)
+        const formattedCpf = cnpjUtils.generate(true)
 
-        expect(CnpjUtils.cnpjRegex.test(formattedCpf)).toBeTruthy()
+        expect(cnpjUtils.cnpjRegex.test(formattedCpf)).toBeTruthy()
       })
     })
   })

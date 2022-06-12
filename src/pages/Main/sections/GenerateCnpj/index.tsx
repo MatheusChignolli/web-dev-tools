@@ -10,7 +10,7 @@ import {
   Card,
   Grid,
 } from '~components'
-import { CnpjUtils } from '~utils'
+import { cnpjUtils } from '~utils'
 import { useKeyPress } from '~hooks'
 import { IconButtonStyled } from './styles'
 
@@ -20,7 +20,7 @@ const GenerateCnpj = () => {
   const [hasMask, setHasMask] = useState(false)
 
   const generateCnpj = () => {
-    setCnpj(CnpjUtils.generate(hasMask))
+    setCnpj(cnpjUtils.generate(hasMask))
   }
 
   useKeyPress(['w', 'W'], (event: any) => {

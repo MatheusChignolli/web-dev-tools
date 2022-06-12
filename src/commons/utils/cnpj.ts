@@ -1,17 +1,17 @@
-import { NumberUtils } from '.'
+import { numberUtils } from '.'
 
 const cnpjRegex = /([0-9]{2}[\.]?[0-9]{3}[\.]?[0-9]{3}[\/]?[0-9]{4}[-]?[0-9]{2})/
 
 const generate = (formatted?: boolean) => {
   const n = 9
-  const n1 = NumberUtils.randomNumber(n)
-  const n2 = NumberUtils.randomNumber(n)
-  const n3 = NumberUtils.randomNumber(n)
-  const n4 = NumberUtils.randomNumber(n)
-  const n5 = NumberUtils.randomNumber(n)
-  const n6 = NumberUtils.randomNumber(n)
-  const n7 = NumberUtils.randomNumber(n)
-  const n8 = NumberUtils.randomNumber(n)
+  const n1 = numberUtils.randomNumber(n)
+  const n2 = numberUtils.randomNumber(n)
+  const n3 = numberUtils.randomNumber(n)
+  const n4 = numberUtils.randomNumber(n)
+  const n5 = numberUtils.randomNumber(n)
+  const n6 = numberUtils.randomNumber(n)
+  const n7 = numberUtils.randomNumber(n)
+  const n8 = numberUtils.randomNumber(n)
   const n9 = 0
   const n10 = 0
   const n11 = 0

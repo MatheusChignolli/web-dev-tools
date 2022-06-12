@@ -1,6 +1,6 @@
 import { rgUtils } from '..'
 
-const testArray = Array.from(Array(25).values())
+const testArray = Array.from(Array(25), (_, x) => x)
 
 describe('rgUtils', () => {
   describe('generateRg', () => {

@@ -1,10 +1,10 @@
 import ReactMarkdown from './react-markdown'
 
-// @ts-ignore
-global.fetch = jest.fn((request) =>
+global.fetch = jest.fn(() =>
   Promise.resolve({
-    text: () => Promise.resolve(request),
+    json: jest.fn(),
+    text: jest.fn(),
   })
-)
+) as any
 
 jest.mock('react-markdown', () => ReactMarkdown)

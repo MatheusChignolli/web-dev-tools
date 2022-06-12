@@ -18,6 +18,7 @@ const config: Config.InitialOptions = {
   testEnvironment: 'jsdom',
   setupFilesAfterEnv: ['<rootDir>/setup-tests.ts'],
   moduleNameMapper: resolvedAliases,
+  testMatch: ['**/__tests__/**/?(*.)+(spec|test).[jt]s?(x)'],
   coveragePathIgnorePatterns: [
     '<rootDir>/src/App.tsx',
     '<rootDir>/src/index.tsx',

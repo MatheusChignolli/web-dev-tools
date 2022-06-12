@@ -5,18 +5,26 @@ import {
   RenderResult,
 } from '@testing-library/react'
 import { BrowserRouter } from 'react-router-dom'
+import { QueryClient, QueryClientProvider } from 'react-query'
 import {
-  FetchProvider,
-  StateProvider,
   ThemeProvider,
   ToastProvider,
   TranslateProvider,
+  StateProvider,
 } from '~providers'
 import '~i18n'
 
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      retry: false,
+    },
+  },
+})
+
 const render = (ui: ReactElement, options?: RenderOptions): RenderResult => {
   return TestingLibraryRender(
-    <FetchProvider>
+    <QueryClientProvider client={queryClient}>
       <BrowserRouter>
         <StateProvider>
           <ThemeProvider>
@@ -26,7 +34,7 @@ const render = (ui: ReactElement, options?: RenderOptions): RenderResult => {
           </ThemeProvider>
         </StateProvider>
       </BrowserRouter>
-    </FetchProvider>,
+    </QueryClientProvider>,
     options
   )
 }

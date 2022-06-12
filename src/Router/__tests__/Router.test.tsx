@@ -4,6 +4,12 @@ import { Link } from 'react-router-dom'
 import { render } from '~tests'
 import Router from '..'
 
+global.fetch = jest.fn(() =>
+  Promise.resolve({
+    json: () => [],
+  })
+) as any
+
 describe('Router', () => {
   beforeEach(() => {
     render(
@@ -68,9 +74,7 @@ describe('Router', () => {
     await waitFor(() => userEvent.click(linkButton))
 
     await waitFor(() => {
-      expect(
-        screen.getByLabelText('Bloco de linguagem de marcação Markdown')
-      ).toBeInTheDocument()
+      expect(screen.getByText('Sem conteúdo')).toBeInTheDocument()
     })
   })
 })

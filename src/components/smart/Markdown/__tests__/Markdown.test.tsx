@@ -6,12 +6,14 @@ import Markdown from '..'
 describe('Markdown', () => {
   it('should render component Markdown', async () => {
     await act(async () => {
-      render(<Markdown path="/markdown.md" />)
+      render(
+        <Markdown body="# Title \n ## Bloco de linguagem de marcação Markdown" />
+      )
     })
 
     expect(
       screen.getByLabelText('Bloco de linguagem de marcação Markdown')
     ).toBeInTheDocument()
-    expect(screen.getByText('/markdown.md')).toBeInTheDocument()
+    expect(screen.getByText('Title')).toBeInTheDocument()
   })
 })

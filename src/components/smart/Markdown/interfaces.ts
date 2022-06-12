@@ -1,3 +1,3 @@
 export interface MarkdownProps {
-  path: string
+  body: string
 }

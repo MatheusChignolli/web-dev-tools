@@ -1,21 +1,15 @@
 import { cpfUtils } from '..'
 
+const testArray = Array.from(Array(15), (_, x) => x)
+
 describe('cpfUtils', () => {
   describe('generateCpf', () => {
-    Array.from(Array(15).keys()).forEach((_, index) => {
-      it(`should generate a real cpf - test ${index}`, () => {
-        const cpf = cpfUtils.generate()
-
-        expect(cpfUtils.cpfRegex.test(cpf)).toBeTruthy()
-      })
+    it.each(testArray)('should generate a real cpf - test %s', () => {
+      expect(cpfUtils.cpfRegex.test(cpfUtils.generate())).toBeTruthy()
     })
 
-    Array.from(Array(15).keys()).forEach((_, index) => {
-      it(`should generate a real formatted cpf - test ${index}`, () => {
-        const formattedCpf = cpfUtils.generate(true)
-
-        expect(cpfUtils.cpfRegex.test(formattedCpf)).toBeTruthy()
-      })
+    it.each(testArray)('should generate a real formatted cpf - test %s', () => {
+      expect(cpfUtils.cpfRegex.test(cpfUtils.generate(true))).toBeTruthy()
     })
   })
 })

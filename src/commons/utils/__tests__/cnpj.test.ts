@@ -1,21 +1,15 @@
 import { cnpjUtils } from '..'
 
+const testArray = Array.from(Array(15), (_, x) => x)
+
 describe('cnpjUtils', () => {
   describe('generateCnpj', () => {
-    Array.from(Array(15).keys()).forEach((_, index) => {
-      it(`should generate a real cnpj - test ${index}`, () => {
-        const cpf = cnpjUtils.generate()
-
-        expect(cnpjUtils.cnpjRegex.test(cpf)).toBeTruthy()
-      })
+    it.each(testArray)('should generate a real cnpj - test %s', () => {
+      expect(cnpjUtils.cnpjRegex.test(cnpjUtils.generate())).toBeTruthy()
     })
 
-    Array.from(Array(15).keys()).forEach((_, index) => {
-      it(`should generate a real formatted cnpj - test ${index}`, () => {
-        const formattedCpf = cnpjUtils.generate(true)
-
-        expect(cnpjUtils.cnpjRegex.test(formattedCpf)).toBeTruthy()
-      })
+    it.each(testArray)('should generate a real formatted cnpj - test %s', () => {
+      expect(cnpjUtils.cnpjRegex.test(cnpjUtils.generate(true))).toBeTruthy()
     })
   })
 })

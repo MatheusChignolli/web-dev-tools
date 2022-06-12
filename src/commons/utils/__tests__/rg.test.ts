@@ -1,21 +1,15 @@
 import { rgUtils } from '..'
 
+const testArray = Array.from(Array(25).values())
+
 describe('rgUtils', () => {
   describe('generateRg', () => {
-    Array.from(Array(15).keys()).forEach((_, index) => {
-      it(`should generate a real rg - test ${index}`, () => {
-        const rg = rgUtils.generate()
-
-        expect(rgUtils.rgRegex.test(rg)).toBeTruthy()
-      })
+    it.each(testArray)('should generate a real rg - test %s', () => {
+      expect(rgUtils.rgRegex.test(rgUtils.generate())).toBeTruthy()
     })
 
-    Array.from(Array(15).keys()).forEach((_, index) => {
-      it(`should generate a real formatted rg - test ${index}`, () => {
-        const formattedRg = rgUtils.generate(true)
-
-        expect(rgUtils.rgRegex.test(formattedRg)).toBeTruthy()
-      })
+    it.each(testArray)('should generate a real formatted rg - test %s', () => {
+      expect(rgUtils.rgRegex.test(rgUtils.generate(true))).toBeTruthy()
     })
   })
 })

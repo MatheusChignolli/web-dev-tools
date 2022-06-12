@@ -5,23 +5,26 @@ import {
   ThemeProvider,
   ToastProvider,
   LayoutProvider,
+  FetchProvider,
 } from '~providers'
 import Router from './Router'
 
 const App = () => (
-  <BrowserRouter>
-    <StateProvider>
-      <ThemeProvider>
-        <TranslateProvider>
-          <LayoutProvider>
-            <ToastProvider>
-              <Router />
-            </ToastProvider>
-          </LayoutProvider>
-        </TranslateProvider>
-      </ThemeProvider>
-    </StateProvider>
-  </BrowserRouter>
+  <FetchProvider>
+    <BrowserRouter>
+      <StateProvider>
+        <ThemeProvider>
+          <TranslateProvider>
+            <LayoutProvider>
+              <ToastProvider>
+                <Router />
+              </ToastProvider>
+            </LayoutProvider>
+          </TranslateProvider>
+        </ThemeProvider>
+      </StateProvider>
+    </BrowserRouter>
+  </FetchProvider>
 )
 
 export default App

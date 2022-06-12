@@ -6,6 +6,7 @@ import {
 } from '@testing-library/react'
 import { BrowserRouter } from 'react-router-dom'
 import {
+  FetchProvider,
   StateProvider,
   ThemeProvider,
   ToastProvider,
@@ -15,15 +16,17 @@ import '~i18n'
 
 const render = (ui: ReactElement, options?: RenderOptions): RenderResult => {
   return TestingLibraryRender(
-    <BrowserRouter>
-      <StateProvider>
-        <ThemeProvider>
-          <ToastProvider>
-            <TranslateProvider>{ui}</TranslateProvider>
-          </ToastProvider>
-        </ThemeProvider>
-      </StateProvider>
-    </BrowserRouter>,
+    <FetchProvider>
+      <BrowserRouter>
+        <StateProvider>
+          <ThemeProvider>
+            <ToastProvider>
+              <TranslateProvider>{ui}</TranslateProvider>
+            </ToastProvider>
+          </ThemeProvider>
+        </StateProvider>
+      </BrowserRouter>
+    </FetchProvider>,
     options
   )
 }

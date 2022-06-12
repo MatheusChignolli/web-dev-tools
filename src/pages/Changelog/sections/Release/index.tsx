@@ -1,3 +1,4 @@
+import { memo } from 'react'
 import { Accordion, Markdown } from '~components'
 import { ReleaseProps } from './interfaces'
 
@@ -12,4 +13,4 @@ const Release = ({ body, title, expanded, onChange }: ReleaseProps) => {
   )
 }
 
-export default Release
+export default memo(Release)

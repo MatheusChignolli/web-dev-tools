@@ -5,7 +5,7 @@ on:
     tags:
       - v*
     release:
-      - v*
+      types: [released]
 
 jobs:
   deploy-prod:

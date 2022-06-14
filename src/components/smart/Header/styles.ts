@@ -14,7 +14,7 @@ export const SelectStyled = styled(Select)`
   .MuiSelect-select,
   .MuiSelect-select:hover {
     border: none;
-    padding: ${({ theme }) => theme.spacing(1)};
+    padding-top: ${({ theme }) => theme.spacing(1)};
     background-color: ${({ theme }) => theme.palette.primary.light};
     border-radius: 4px;
     color: ${({ theme }) => theme.palette.primary.contrastText};

@@ -41,7 +41,6 @@ const Changelog = () => {
             title={`[${tag_name}] - ${dateUtils.format(created_at)}`}
             expanded={accordionReference === reference}
             onChange={() => {
-              console.log('reference', reference)
               setAccordionReference((prevState) =>
                 prevState === reference ? '' : reference
               )

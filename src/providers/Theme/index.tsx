@@ -1,16 +1,20 @@
+import { useEffect } from 'react'
 import { ThemeProvider as StyledComponentsThemeProvider } from 'styled-components'
 import { ThemeProvider as MuiThemeProvider } from '@mui/material/styles'
 import { useTheme } from '~hooks'
 import { ThemeProviderProps } from './interfaces'
-import { SectionStyled } from './styles'
 
 const ThemeProvider = ({ children }: ThemeProviderProps) => {
   const theme = useTheme()
 
+  useEffect(() => {
+    document.body.style.backgroundColor = theme.palette.primary.dark
+  })
+
   return (
     <MuiThemeProvider theme={theme}>
       <StyledComponentsThemeProvider theme={theme}>
-        <SectionStyled>{children}</SectionStyled>
+        {children}
       </StyledComponentsThemeProvider>
     </MuiThemeProvider>
   )

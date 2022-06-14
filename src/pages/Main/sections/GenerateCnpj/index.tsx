@@ -46,7 +46,7 @@ const GenerateCnpj = () => {
                   aria-label={t('cnpj.ariaLabels.withMaskCheckbox')}
                 />
               }
-              label={t('cnpj.withMask')}
+              label={t('cnpj.withMask') as string}
             />
           </FormGroup>
         </Grid>

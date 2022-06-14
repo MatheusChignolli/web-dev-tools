@@ -1,5 +1,6 @@
 import { screen, waitFor } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
+import { act } from 'react-dom/test-utils'
 import { Link } from 'react-router-dom'
 import { render } from '~tests'
 import Router from '..'
@@ -11,15 +12,17 @@ global.fetch = jest.fn(() =>
 ) as any
 
 describe('Router', () => {
-  beforeEach(() => {
-    render(
-      <>
-        <Router />
-        <Link to="/">Link to home</Link>
-        <Link to="/404">Link to 404</Link>
-        <Link to="/changelog">Link to changelog</Link>
-      </>
-    )
+  beforeEach(async () => {
+    await act(async () => {
+      render(
+        <>
+          <Router />
+          <Link to="/">Link to home</Link>
+          <Link to="/404">Link to 404</Link>
+          <Link to="/changelog">Link to changelog</Link>
+        </>
+      )
+    })
   })
 
   afterEach(async () => {
@@ -30,14 +33,6 @@ describe('Router', () => {
     await waitFor(() => {
       screen.getByText('Gerar CPF')
     })
-  })
-
-  it('should render suspense', () => {
-    expect(
-      screen.getByRole('progressbar', {
-        name: 'Círculo girando no sentido horário de forma não ordenada representando o carregamento de alguma coisa',
-      })
-    ).toBeInTheDocument()
   })
 
   it('should render "/" route', async () => {

@@ -1,6 +1,5 @@
-import { screen } from '@testing-library/react'
+import { screen, waitFor } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
-import { act } from 'react-dom/test-utils'
 import { render } from '~tests'
 import Clipboard from '..'
 
@@ -34,7 +33,7 @@ describe('Clipboard', () => {
         name: 'Botão para efetuar a ação de copiar algum texto na área de transferência de arquivos',
       })
 
-      await act(() => userEvent.click(copyButton))
+      await waitFor(() => userEvent.click(copyButton))
 
       expect(clipboardMock).toBeCalledWith(content)
       expect(

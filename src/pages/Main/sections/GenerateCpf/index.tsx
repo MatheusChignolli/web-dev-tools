@@ -46,7 +46,7 @@ const GenerateCpf = () => {
                   aria-label={t('cpf.ariaLabels.withMaskCheckbox')}
                 />
               }
-              label={t('cpf.withMask')}
+              label={t('cpf.withMask') as string}
             />
           </FormGroup>
         </Grid>

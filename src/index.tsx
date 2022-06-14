@@ -1,5 +1,5 @@
 import { StrictMode } from 'react'
-import ReactDOM from 'react-dom'
+import { createRoot } from 'react-dom/client'
 import '~commons/styles/global.css'
 import '~i18n'
 import 'react-toastify/dist/ReactToastify.css'
@@ -14,11 +14,10 @@ import App from './App'
 // - Add historic to methods
 // - add page for cpf, cnpj etc... regex
 
-ReactDOM.render(
+createRoot(document.querySelector('#root') as Element).render(
   <StrictMode>
     <App />
-  </StrictMode>,
-  document.querySelector('#root')
+  </StrictMode>
 )
 
 reportWebVitals()

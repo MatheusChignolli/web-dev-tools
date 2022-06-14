@@ -20,7 +20,7 @@ const Main = () => {
       </Grid>
       <Grid item xs={12}>
         <Typography variant="body2" textAlign="justify">
-          {t('privacyPolicy.notOurResponsibility')}
+          {t('privacyPolicy.notOurResponsibility') as string}
         </Typography>
       </Grid>
     </Grid>

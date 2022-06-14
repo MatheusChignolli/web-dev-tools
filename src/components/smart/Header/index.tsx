@@ -28,7 +28,7 @@ const Header = () => {
   return (
     <HeaderStyled aria-label={t('header.ariaLabels.section')}>
       <Link.Internal to="/">
-        <Typography variant="h5">{t('header.title')}</Typography>
+        <Typography variant="h5">{t('header.title') as string}</Typography>
       </Link.Internal>
       <div>
         <Switch

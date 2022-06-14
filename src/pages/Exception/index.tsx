@@ -15,7 +15,7 @@ const Exception = ({ code }: ExceptionProps) => {
       })}
     >
       <Typography variant="h2">{code}</Typography>
-      <Typography variant="h5">{t(`http.codes.${code}.page`)}</Typography>
+      <Typography variant="h5">{t(`http.codes.${code}.page`) as string}</Typography>
     </ContainerStyled>
   )
 }

@@ -46,7 +46,7 @@ const GenerateRg = () => {
                   aria-label={t('rg.ariaLabels.withMaskCheckbox')}
                 />
               }
-              label={t('rg.withMask')}
+              label={t('rg.withMask') as string}
             />
           </FormGroup>
         </Grid>

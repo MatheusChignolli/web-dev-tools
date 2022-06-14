@@ -1,5 +1,6 @@
 import { screen, waitFor } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
+import { act } from 'react-dom/test-utils'
 import { render } from '~tests'
 import mocks from './mocks'
 import Changelog from '../'
@@ -8,11 +9,13 @@ describe('Changelog', () => {
   it('should render loading while request is running', async () => {
     render(<Changelog />)
 
-    expect(
-      screen.getByLabelText(
-        'Círculo girando no sentido horário de forma não ordenada representando o carregamento de alguma coisa'
-      )
-    ).toBeTruthy()
+    await act(async () =>
+      expect(
+        screen.getByLabelText(
+          'Círculo girando no sentido horário de forma não ordenada representando o carregamento de alguma coisa'
+        )
+      ).toBeTruthy()
+    )
   })
 
   it('should redirect to 404 page when request returns an empty array', async () => {
@@ -21,6 +24,7 @@ describe('Changelog', () => {
         json: () => mocks.empty,
       })
     ) as any
+
     render(<Changelog />)
 
     await waitFor(() => {
@@ -39,6 +43,7 @@ describe('Changelog', () => {
         },
       })
     ) as any
+
     render(<Changelog />)
 
     waitFor(() => {
@@ -53,6 +58,7 @@ describe('Changelog', () => {
           json: () => mocks.releases,
         })
       ) as any
+
       render(<Changelog />)
     })
 

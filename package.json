@@ -6,7 +6,7 @@
     "start": "craco start",
     "build": "craco build",
     "test": "jest --maxWorkers=50% --config=jest.config.ts",
-    "test:coverage": "jest --ci --json --maxWorkers=50% --config=jest.config.ts --coverage --testLocationInResults --outputFile=report.json",
+    "test:coverage": "jest --maxWorkers=50% --config=jest.config.ts --coverage",
     "eject": "craco eject",
     "lint": "eslint --ext .js,.ts,.jsx,.tsx .",
     "format": "prettier --ignore-path .gitignore --write \"**/*.+(js|jsx|ts|tsx|json)\""

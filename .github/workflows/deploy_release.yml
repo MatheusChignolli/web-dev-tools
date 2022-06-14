@@ -27,12 +27,14 @@ jobs:
         working-directory: ${{ env.working-directory }}
         run: yarn install
 
-      - if: steps.skip_check.outputs.should_skip != 'true'
-        name: Test coverage
-        uses: ArtiomTr/jest-coverage-report-action@v2
+      - name: Test coverage
+        run: yarn test:coverage
+
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v1
         with:
-          skip-step: install
-          test-script: yarn test:coverage
+          fail_ci_if_error: true
+          verbose: true
 
       - if: steps.skip_check.outputs.should_skip != 'true'
         name: Create .env

@@ -38,7 +38,7 @@ describe('Clipboard', () => {
       expect(clipboardMock).toBeCalledWith(content)
       expect(
         await screen.findAllByText(`${content} copiado com sucesso`)
-      ).toHaveLength(2)
+      ).toHaveLength(1)
     })
 
     it('should render and call copy to clipboard method and show success message on render', async () => {

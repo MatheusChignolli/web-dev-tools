@@ -34,7 +34,7 @@ const GenerateCnpj = () => {
   }
 
   return (
-    <Card title={t('cnpj.generate')} keys={['Ctrl', 'W']} fullHeight>
+    <Card title={t<string>('cnpj.generate')} keys={['Ctrl', 'W']} fullHeight>
       <Grid container alignItems="center">
         <Grid item xs={12}>
           <FormGroup>
@@ -43,10 +43,10 @@ const GenerateCnpj = () => {
                 <Checkbox
                   size="small"
                   onChange={handleCheckbox}
-                  aria-label={t('cnpj.ariaLabels.withMaskCheckbox')}
+                  aria-label={t<string>('cnpj.ariaLabels.withMaskCheckbox')}
                 />
               }
-              label={t('cnpj.withMask') as string}
+              label={t<string>('cnpj.withMask')}
             />
           </FormGroup>
         </Grid>
@@ -55,7 +55,7 @@ const GenerateCnpj = () => {
             <IconButtonStyled
               color="primary"
               onClick={generateCnpj}
-              aria-label={t('cnpj.ariaLabels.generateButton')}
+              aria-label={t<string>('cnpj.ariaLabels.generateButton')}
             >
               <DoubleArrowIcon aria-label={t('icons.ariaLabels.doubleArrow')} />
             </IconButtonStyled>

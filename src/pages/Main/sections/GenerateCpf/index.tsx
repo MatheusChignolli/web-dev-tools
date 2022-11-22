@@ -34,7 +34,7 @@ const GenerateCpf = () => {
   }
 
   return (
-    <Card title={t('cpf.generate')} keys={['Ctrl', 'Q']} fullHeight>
+    <Card title={t<string>('cpf.generate')} keys={['Ctrl', 'Q']} fullHeight>
       <Grid container alignItems="center">
         <Grid item xs={12}>
           <FormGroup>
@@ -43,10 +43,10 @@ const GenerateCpf = () => {
                 <Checkbox
                   size="small"
                   onChange={handleCheckbox}
-                  aria-label={t('cpf.ariaLabels.withMaskCheckbox')}
+                  aria-label={t<string>('cpf.ariaLabels.withMaskCheckbox')}
                 />
               }
-              label={t('cpf.withMask') as string}
+              label={t<string>('cpf.withMask')}
             />
           </FormGroup>
         </Grid>
@@ -55,9 +55,11 @@ const GenerateCpf = () => {
             <IconButtonStyled
               color="primary"
               onClick={generateCpf}
-              aria-label={t('cpf.ariaLabels.generateButton')}
+              aria-label={t<string>('cpf.ariaLabels.generateButton')}
             >
-              <DoubleArrowIcon aria-label={t('icons.ariaLabels.doubleArrow')} />
+              <DoubleArrowIcon
+                aria-label={t<string>('icons.ariaLabels.doubleArrow')}
+              />
             </IconButtonStyled>
           </Tooltip>
         </Grid>

@@ -7,7 +7,7 @@ const Markdown = ({ body }: MarkdownProps) => {
   const { t } = useTranslation()
 
   return (
-    <WrapperStyled aria-label={t('components.markdown.section')}>
+    <WrapperStyled aria-label={t<string>('components.markdown.section')}>
       <ReactMarkdown>{body}</ReactMarkdown>
     </WrapperStyled>
   )

@@ -26,28 +26,30 @@ const Header = () => {
   const switchChecked = useMemo(() => theme === 'dark', [theme])
 
   return (
-    <HeaderStyled aria-label={t('header.ariaLabels.section')}>
+    <HeaderStyled aria-label={t<string>('header.ariaLabels.section')}>
       <Link.Internal to="/">
-        <Typography variant="h5">{t('header.title') as string}</Typography>
+        <Typography variant="h5">{t<string>('header.title')}</Typography>
       </Link.Internal>
       <div>
         <Switch
           onChange={handleThemeSwitch}
           color="default"
           checked={switchChecked}
-          aria-label={t('header.ariaLabels.themeSwitch')}
+          aria-label={t<string>('header.ariaLabels.themeSwitch')}
         />
         <SelectStyled
           variant="filled"
           onChange={handleLanguageSelect}
           value={language}
-          aria-label={t('header.ariaLabels.languageSelect')}
+          aria-label={t<string>('header.ariaLabels.languageSelect')}
         >
           {LanguagesConstants.acronyms.map((languageItem, index) => (
             <MenuItemStyled
               key={`${languageItem.value}-${index}`}
               value={languageItem.value}
-              aria-label={t(`header.ariaLabels.languages.${languageItem.value}`)}
+              aria-label={t<string>(
+                `header.ariaLabels.languages.${languageItem.value}`
+              )}
             >
               {languageItem.acronym}
             </MenuItemStyled>

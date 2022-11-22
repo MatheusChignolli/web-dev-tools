@@ -12,7 +12,7 @@ const Clipboard = ({ content }: ClipboardProps) => {
   const copyToClipboard = () => {
     if (!!content) {
       navigator.clipboard.writeText(content)
-      toast.success(t('components.clipboard.alerts.success', { content }) as string)
+      toast.success(t<string>('components.clipboard.alerts.success', { content }))
     }
   }
 
@@ -22,7 +22,7 @@ const Clipboard = ({ content }: ClipboardProps) => {
 
   return (
     <ClipboardStyled
-      aria-label={t('components.clipboard.section', {
+      aria-label={t<string>('components.clipboard.section', {
         data: content || t('general.noData'),
       })}
     >
@@ -34,7 +34,7 @@ const Clipboard = ({ content }: ClipboardProps) => {
               size="small"
               color="inherit"
               onClick={copyToClipboard}
-              aria-label={t('components.clipboard.copyButton')}
+              aria-label={t<string>('components.clipboard.copyButton')}
             >
               <ContentCopyIcon aria-label={t('icons.ariaLabels.copy')} />
             </IconButton>

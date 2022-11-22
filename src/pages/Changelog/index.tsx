@@ -16,6 +16,7 @@ const Changelog = () => {
     'getReleasesFromRepo',
     () => githubServices.getReleasesFromRepo(githubServices.repoConfig),
     {
+      refetchOnWindowFocus: false,
       onError(error) {
         console.error('getReleasesFromRepo: ', error)
       },

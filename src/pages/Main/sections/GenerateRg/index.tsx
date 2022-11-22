@@ -34,7 +34,7 @@ const GenerateRg = () => {
   }
 
   return (
-    <Card title={t('rg.generate')} keys={['Ctrl', 'E']} fullHeight>
+    <Card title={t<string>('rg.generate')} keys={['Ctrl', 'E']} fullHeight>
       <Grid container alignItems="center">
         <Grid item xs={12}>
           <FormGroup>
@@ -43,19 +43,19 @@ const GenerateRg = () => {
                 <Checkbox
                   size="small"
                   onChange={handleCheckbox}
-                  aria-label={t('rg.ariaLabels.withMaskCheckbox')}
+                  aria-label={t<string>('rg.ariaLabels.withMaskCheckbox')}
                 />
               }
-              label={t('rg.withMask') as string}
+              label={t<string>('rg.withMask')}
             />
           </FormGroup>
         </Grid>
         <Grid item xs="auto">
-          <Tooltip title={`${t('rg.generate')}`} arrow placement="top-start">
+          <Tooltip title={t<string>('rg.generate')} arrow placement="top-start">
             <IconButtonStyled
               color="primary"
               onClick={generateRg}
-              aria-label={t('rg.ariaLabels.generateButton')}
+              aria-label={t<string>('rg.ariaLabels.generateButton')}
             >
               <DoubleArrowIcon aria-label={t('icons.ariaLabels.doubleArrow')} />
             </IconButtonStyled>

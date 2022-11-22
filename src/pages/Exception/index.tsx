@@ -9,13 +9,13 @@ const Exception = ({ code }: ExceptionProps) => {
   return (
     <ContainerStyled
       maxWidth="sm"
-      aria-label={t(`http.ariaLabels.code`, {
+      aria-label={t<string>(`http.ariaLabels.code`, {
         code,
-        description: t(`http.codes.${code}.page`),
+        description: t<string>(`http.codes.${code}.page`),
       })}
     >
       <Typography variant="h2">{code}</Typography>
-      <Typography variant="h5">{t(`http.codes.${code}.page`) as string}</Typography>
+      <Typography variant="h5">{t<string>(`http.codes.${code}.page`)}</Typography>
     </ContainerStyled>
   )
 }

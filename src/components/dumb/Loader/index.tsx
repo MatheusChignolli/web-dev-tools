@@ -8,7 +8,7 @@ const Loader = () => {
   return (
     <WrapperStyled>
       <CircularProgress
-        aria-label={t('components.circularProgress.content')}
+        aria-label={t<string>('components.circularProgress.content')}
         color="primary"
         size={60}
       />

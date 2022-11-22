@@ -22,19 +22,22 @@ const Card = ({ children, title, keys, fullHeight }: CardProps) => {
   }, [keys])
 
   return (
-    <CardStyled aria-label={t('components.card.section')} fullHeight={fullHeight}>
+    <CardStyled
+      aria-label={t<string>('components.card.section')}
+      fullHeight={fullHeight}
+    >
       {!!title && (
         <Typography
           variant="h6"
           component="h2"
-          aria-label={t('components.card.title')}
+          aria-label={t<string>('components.card.title')}
         >
           {title}
         </Typography>
       )}
       {!!keys?.length && (
         <KeysComboStyled
-          aria-label={t('components.card.keycaps', {
+          aria-label={t<string>('components.card.keycaps', {
             keys: combinedKeys,
           })}
         >

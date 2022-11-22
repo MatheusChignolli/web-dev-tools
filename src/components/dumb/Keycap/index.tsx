@@ -7,7 +7,7 @@ const Keycap = ({ text }: KeycapProps) => {
   const { t } = useTranslation()
 
   return (
-    <KeycapStyled aria-label={t('components.keycap.content', { key: text })}>
+    <KeycapStyled aria-label={t<string>('components.keycap.content', { key: text })}>
       {text}
     </KeycapStyled>
   )

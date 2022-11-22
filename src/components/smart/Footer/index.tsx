@@ -16,19 +16,22 @@ const Footer = () => {
         href="https://github.com/MatheusChignolli/web-dev-tools"
         underline="none"
         color="inherit"
-        aria-label={t('footer.ariaLabels.repositoryLink')}
+        aria-label={t<string>('footer.ariaLabels.repositoryLink')}
         target="_blank"
       >
-        <GitHubIcon aria-label={t('icons.ariaLabels.github')} />
+        <GitHubIcon aria-label={t<string>('icons.ariaLabels.github')} />
       </Link.External>
-      <Link.Internal aria-label={t('footer.ariaLabels.changelog')} to="/changelog">
-        {t('footer.links.changelog') as string}
+      <Link.Internal
+        aria-label={t<string>('footer.ariaLabels.changelog')}
+        to="/changelog"
+      >
+        {t<string>('footer.links.changelog')}
       </Link.Internal>
-      <p aria-label={t('footer.ariaLabels.copyright')}>
+      <p aria-label={t<string>('footer.ariaLabels.copyright')}>
         <b>{year}</b>
         <CopyrightIcon
           fontSize="small"
-          aria-label={t('icons.ariaLabels.copyright')}
+          aria-label={t<string>('icons.ariaLabels.copyright')}
         />
       </p>
     </FooterStyled>

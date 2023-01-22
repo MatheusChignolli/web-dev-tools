@@ -1,6 +1,5 @@
 import { ChangeEvent, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import DoubleArrowIcon from '@mui/icons-material/DoubleArrow'
 import {
   Checkbox,
   FormGroup,
@@ -9,10 +8,10 @@ import {
   Tooltip,
   Card,
   Grid,
+  Button,
 } from '~components'
 import { cpfUtils } from '~utils'
 import { useKeyPress } from '~hooks'
-import { IconButtonStyled } from './styles'
 
 const GenerateCpf = () => {
   const { t } = useTranslation()
@@ -23,7 +22,7 @@ const GenerateCpf = () => {
     setCpf(cpfUtils.generate(hasMask))
   }
 
-  useKeyPress(['q', 'Q'], (event: any) => {
+  useKeyPress(['g', 'G'], (event: any) => {
     if (event.ctrlKey) {
       generateCpf()
     }
@@ -34,9 +33,15 @@ const GenerateCpf = () => {
   }
 
   return (
-    <Card title={t<string>('cpf.generate')} keys={['Ctrl', 'Q']} fullHeight>
+    <Card title={t<string>('cpf.generate')} keys={['Ctrl', 'G']} fullHeight>
       <Grid container alignItems="center">
-        <Grid item xs={12}>
+        <Grid
+          item
+          xs={12}
+          display="flex"
+          justifyContent="space-between"
+          margin="0 0 8px 0"
+        >
           <FormGroup>
             <FormControlLabel
               control={
@@ -46,24 +51,21 @@ const GenerateCpf = () => {
                   aria-label={t<string>('cpf.ariaLabels.withMaskCheckbox')}
                 />
               }
-              label={t<string>('cpf.withMask')}
+              label={t<string>('general.withMask')}
             />
           </FormGroup>
-        </Grid>
-        <Grid item xs="auto">
           <Tooltip title={`${t('cpf.generate')}`} arrow placement="top-start">
-            <IconButtonStyled
+            <Button
               color="primary"
+              variant="contained"
               onClick={generateCpf}
               aria-label={t<string>('cpf.ariaLabels.generateButton')}
             >
-              <DoubleArrowIcon
-                aria-label={t<string>('icons.ariaLabels.doubleArrow')}
-              />
-            </IconButtonStyled>
+              {t('general.generate')}
+            </Button>
           </Tooltip>
         </Grid>
-        <Grid item xs="auto">
+        <Grid item xs={12}>
           <Clipboard content={cpf} />
         </Grid>
       </Grid>

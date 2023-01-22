@@ -93,6 +93,16 @@ const getCommonConfig = (
         },
       },
     },
+    MuiCheckbox: {
+      styleOverrides: {
+        root: {
+          color: palette.primary.contrastText,
+          '&.Mui-checked': {
+            color: palette.primary.contrastText,
+          },
+        },
+      },
+    },
   },
 })
 

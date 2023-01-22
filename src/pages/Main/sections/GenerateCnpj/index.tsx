@@ -1,18 +1,17 @@
 import { ChangeEvent, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import DoubleArrowIcon from '@mui/icons-material/DoubleArrow'
 import {
   Checkbox,
   FormGroup,
   FormControlLabel,
   Clipboard,
   Tooltip,
+  Button,
   Card,
   Grid,
 } from '~components'
 import { cnpjUtils } from '~utils'
 import { useKeyPress } from '~hooks'
-import { IconButtonStyled } from './styles'
 
 const GenerateCnpj = () => {
   const { t } = useTranslation()
@@ -36,7 +35,13 @@ const GenerateCnpj = () => {
   return (
     <Card title={t<string>('cnpj.generate')} keys={['Ctrl', 'W']} fullHeight>
       <Grid container alignItems="center">
-        <Grid item xs={12}>
+        <Grid
+          item
+          xs={12}
+          display="flex"
+          justifyContent="space-between"
+          margin="0 0 8px 0"
+        >
           <FormGroup>
             <FormControlLabel
               control={
@@ -46,22 +51,21 @@ const GenerateCnpj = () => {
                   aria-label={t<string>('cnpj.ariaLabels.withMaskCheckbox')}
                 />
               }
-              label={t<string>('cnpj.withMask')}
+              label={t<string>('general.withMask')}
             />
           </FormGroup>
-        </Grid>
-        <Grid item xs="auto">
           <Tooltip title={`${t('cnpj.generate')}`} arrow placement="top-start">
-            <IconButtonStyled
+            <Button
               color="primary"
+              variant="contained"
               onClick={generateCnpj}
               aria-label={t<string>('cnpj.ariaLabels.generateButton')}
             >
-              <DoubleArrowIcon aria-label={t('icons.ariaLabels.doubleArrow')} />
-            </IconButtonStyled>
+              {t('general.generate')}
+            </Button>
           </Tooltip>
         </Grid>
-        <Grid item xs="auto">
+        <Grid item xs={12}>
           <Clipboard content={cnpj} />
         </Grid>
       </Grid>

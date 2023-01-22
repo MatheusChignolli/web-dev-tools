@@ -36,13 +36,11 @@ describe('GenerateRg', () => {
         /bloco com o conteúdo .{9} para ser enviado para a área de transferência de arquivos/i
       )
     ).toBeInTheDocument()
-    expect(mockWriteText).toBeCalledTimes(1)
+    expect(mockWriteText).toHaveBeenCalledTimes(1)
   })
 
   it('should generate RG with mask and copy it', async () => {
-    const maskCheckbox = screen.getByRole('checkbox', {
-      name: 'Checkbox para decidir se o RG será gerado com máscara ou sem máscara RG com máscara',
-    })
+    const maskCheckbox = screen.getByRole('checkbox')
 
     await waitFor(() => userEvent.click(maskCheckbox))
 
@@ -57,7 +55,7 @@ describe('GenerateRg', () => {
         /bloco com o conteúdo .{12} para ser enviado para a área de transferência de arquivos/i
       )
     ).toBeInTheDocument()
-    expect(mockWriteText).toBeCalledTimes(1)
+    expect(mockWriteText).toHaveBeenCalledTimes(1)
   })
 
   it('should generate RG when press Ctrl + e', async () => {
@@ -68,6 +66,6 @@ describe('GenerateRg', () => {
         /bloco com o conteúdo .{9} para ser enviado para a área de transferência de arquivos/i
       )
     ).toBeInTheDocument()
-    expect(mockWriteText).toBeCalledTimes(1)
+    expect(mockWriteText).toHaveBeenCalledTimes(1)
   })
 })

@@ -1,4 +1,6 @@
 {
+  "copy": "Copiar",
   "noData": "Sem dado",
-  "copy": "Copiar"
+  "generate": "Gerar",
+  "withMask": "Pontuação"
 }

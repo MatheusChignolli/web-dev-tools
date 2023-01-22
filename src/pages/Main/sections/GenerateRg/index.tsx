@@ -1,6 +1,5 @@
 import { ChangeEvent, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import DoubleArrowIcon from '@mui/icons-material/DoubleArrow'
 import {
   Checkbox,
   FormGroup,
@@ -9,10 +8,10 @@ import {
   Tooltip,
   Card,
   Grid,
+  Button,
 } from '~components'
 import { rgUtils } from '~utils'
 import { useKeyPress } from '~hooks'
-import { IconButtonStyled } from './styles'
 
 const GenerateRg = () => {
   const { t } = useTranslation()
@@ -36,7 +35,13 @@ const GenerateRg = () => {
   return (
     <Card title={t<string>('rg.generate')} keys={['Ctrl', 'E']} fullHeight>
       <Grid container alignItems="center">
-        <Grid item xs={12}>
+        <Grid
+          item
+          xs={12}
+          display="flex"
+          justifyContent="space-between"
+          margin="0 0 8px 0"
+        >
           <FormGroup>
             <FormControlLabel
               control={
@@ -46,22 +51,21 @@ const GenerateRg = () => {
                   aria-label={t<string>('rg.ariaLabels.withMaskCheckbox')}
                 />
               }
-              label={t<string>('rg.withMask')}
+              label={t<string>('general.withMask')}
             />
           </FormGroup>
-        </Grid>
-        <Grid item xs="auto">
           <Tooltip title={t<string>('rg.generate')} arrow placement="top-start">
-            <IconButtonStyled
+            <Button
               color="primary"
+              variant="contained"
               onClick={generateRg}
               aria-label={t<string>('rg.ariaLabels.generateButton')}
             >
-              <DoubleArrowIcon aria-label={t('icons.ariaLabels.doubleArrow')} />
-            </IconButtonStyled>
+              {t('general.generate')}
+            </Button>
           </Tooltip>
         </Grid>
-        <Grid item xs="auto">
+        <Grid item xs={12}>
           <Clipboard content={rg} />
         </Grid>
       </Grid>

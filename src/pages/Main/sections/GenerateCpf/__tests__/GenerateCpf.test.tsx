@@ -36,13 +36,11 @@ describe('GenerateCpf', () => {
         /bloco com o conteúdo .{11} para ser enviado para a área de transferência de arquivos/i
       )
     ).toBeInTheDocument()
-    expect(mockWriteText).toBeCalledTimes(1)
+    expect(mockWriteText).toHaveBeenCalledTimes(1)
   })
 
   it('should generate CPF with mask and copy it', async () => {
-    const maskCheckbox = screen.getByRole('checkbox', {
-      name: 'Checkbox para decidir se o CPF será gerado com máscara ou sem máscara CPF com máscara',
-    })
+    const maskCheckbox = screen.getByRole('checkbox')
 
     await waitFor(() => userEvent.click(maskCheckbox))
 
@@ -57,7 +55,7 @@ describe('GenerateCpf', () => {
         /bloco com o conteúdo .{14} para ser enviado para a área de transferência de arquivos/i
       )
     ).toBeInTheDocument()
-    expect(mockWriteText).toBeCalledTimes(1)
+    expect(mockWriteText).toHaveBeenCalledTimes(1)
   })
 
   it('should generate CPF when press Ctrl + q', async () => {
@@ -68,6 +66,6 @@ describe('GenerateCpf', () => {
         /bloco com o conteúdo .{11} para ser enviado para a área de transferência de arquivos/i
       )
     ).toBeInTheDocument()
-    expect(mockWriteText).toBeCalledTimes(1)
+    expect(mockWriteText).toHaveBeenCalledTimes(1)
   })
 })

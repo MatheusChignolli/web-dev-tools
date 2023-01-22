@@ -1,4 +1,6 @@
 {
+  "copy": "Copy",
   "noData": "No data",
-  "copy": "Copy"
+  "generate": "Generate",
+  "withMask": "With mask"
 }

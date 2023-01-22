@@ -13,7 +13,7 @@ describe('Header', () => {
   })
 
   it('should switch app`s theme', async () => {
-    const themeSwitch = screen.getByRole('checkbox')
+    const themeSwitch = screen.getByRole('button', { name: '' })
 
     await waitFor(() => userEvent.click(themeSwitch))
 
@@ -31,7 +31,7 @@ describe('Header', () => {
   it('should switch app`s language', async () => {
     expect(screen.getByLabelText('Cabeçalho do site')).toBeInTheDocument()
 
-    const languageSelect = screen.getByRole('button')
+    const languageSelect = screen.getAllByRole('button')[1]
 
     fireEvent.mouseDown(languageSelect)
 

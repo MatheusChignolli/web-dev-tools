@@ -58,8 +58,8 @@ describe('GenerateCpf', () => {
     expect(mockWriteText).toHaveBeenCalledTimes(1)
   })
 
-  it('should generate CPF when press Ctrl + q', async () => {
-    await waitFor(() => userEvent.keyboard('{Control>}q{/Control}'))
+  it('should generate CPF when press Ctrl + g', async () => {
+    await waitFor(() => userEvent.keyboard('{Control>}g{/Control}'))
 
     expect(
       screen.getByLabelText(

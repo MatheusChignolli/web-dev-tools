@@ -28,7 +28,7 @@ describe('Router', () => {
   afterEach(async () => {
     const linkButton = screen.getByText('Link to home')
 
-    await waitFor(() => userEvent.click(linkButton))
+    await userEvent.click(linkButton)
 
     await waitFor(() => {
       screen.getByText('Gerar CPF')
@@ -52,7 +52,7 @@ describe('Router', () => {
 
     const linkButton = screen.getByText('Link to 404')
 
-    await waitFor(() => userEvent.click(linkButton))
+    await userEvent.click(linkButton)
 
     await waitFor(() => {
       expect(screen.getByText('404')).toBeInTheDocument()
@@ -66,7 +66,7 @@ describe('Router', () => {
 
     const linkButton = screen.getByText('Link to changelog')
 
-    await waitFor(() => userEvent.click(linkButton))
+    await userEvent.click(linkButton)
 
     await waitFor(() => {
       expect(screen.getByText('Sem conteúdo')).toBeInTheDocument()

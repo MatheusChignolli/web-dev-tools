@@ -1,4 +1,4 @@
-import { screen, waitFor } from '@testing-library/react'
+import { screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { render } from '~tests'
 import GenerateRg from '..'
@@ -29,7 +29,7 @@ describe('GenerateRg', () => {
       name: 'Botão com um ícone que possui como ação gerar o RG',
     })
 
-    await waitFor(() => userEvent.click(generateButton))
+    await userEvent.click(generateButton)
 
     expect(
       screen.getByLabelText(
@@ -42,13 +42,13 @@ describe('GenerateRg', () => {
   it('should generate RG with mask and copy it', async () => {
     const maskCheckbox = screen.getByRole('checkbox')
 
-    await waitFor(() => userEvent.click(maskCheckbox))
+    await userEvent.click(maskCheckbox)
 
     const generateButton = screen.getByRole('button', {
       name: 'Botão com um ícone que possui como ação gerar o RG',
     })
 
-    await waitFor(() => userEvent.click(generateButton))
+    await userEvent.click(generateButton)
 
     expect(
       screen.getByLabelText(
@@ -59,7 +59,7 @@ describe('GenerateRg', () => {
   })
 
   it('should generate RG when press Ctrl + e', async () => {
-    await waitFor(() => userEvent.keyboard('{Control>}e{/Control}'))
+    await userEvent.keyboard('{Control>}e{/Control}')
 
     expect(
       screen.getByLabelText(

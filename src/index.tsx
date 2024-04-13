@@ -8,11 +8,7 @@ import App from './App'
 
 // TODO:
 // - Add aria-labels to many places
-// - Add hamburguer menu to put the About page
-// - Create about page
-// - Improve theme switch
 // - Add historic to methods
-// - add page for cpf, cnpj etc... regex
 
 createRoot(document.querySelector('#root') as Element).render(
   <StrictMode>

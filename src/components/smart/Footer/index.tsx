@@ -30,6 +30,7 @@ const Footer = () => {
       <p aria-label={t<string>('footer.ariaLabels.copyright')}>
         <b>{year}</b>
         <CopyrightIcon
+          sx={{ ml: 0.5 }}
           fontSize="small"
           aria-label={t<string>('icons.ariaLabels.copyright')}
         />

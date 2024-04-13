@@ -18,6 +18,7 @@ export const SelectStyled = styled(Select)`
     background-color: ${({ theme }) => theme.palette.primary.light};
     border-radius: 4px;
     color: ${({ theme }) => theme.palette.primary.contrastText};
+    padding: ${({ theme }) => theme.spacing(1, 2)};
 
     &[aria-expanded='false'] {
       border-radius: 4px;

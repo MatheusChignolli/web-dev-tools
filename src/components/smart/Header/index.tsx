@@ -33,7 +33,7 @@ const Header = () => {
           {theme === 'dark' ? <Brightness7Icon /> : <Brightness4Icon />}
         </IconButton>
         <SelectStyled
-          variant="filled"
+          variant="standard"
           onChange={handleLanguageSelect}
           value={language}
           aria-label={t<string>('header.ariaLabels.languageSelect')}

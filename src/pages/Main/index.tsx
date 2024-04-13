@@ -8,14 +8,14 @@ const Main = () => {
   const { t } = useTranslation()
 
   return (
-    <Grid container padding={`${theme.spacing(2)} 0px`}>
-      <Grid item xs={12} sm={6} md={4} padding={theme.spacing(1)}>
+    <Grid container padding={`${theme.spacing(2)} 0px`} spacing={1}>
+      <Grid item xs={12} sm={6} md={4}>
         <GenerateCpf />
       </Grid>
-      <Grid item xs={12} sm={6} md={4} padding={theme.spacing(1)}>
+      <Grid item xs={12} sm={6} md={4}>
         <GenerateCnpj />
       </Grid>
-      <Grid item xs={12} sm={6} md={4} padding={theme.spacing(1)}>
+      <Grid item xs={12} sm={6} md={4}>
         <GenerateRg />
       </Grid>
       <Grid item xs={12}>

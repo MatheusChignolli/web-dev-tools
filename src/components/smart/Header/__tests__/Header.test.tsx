@@ -1,4 +1,4 @@
-import { fireEvent, screen, waitFor, within } from '@testing-library/react'
+import { screen, within } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { render } from '~tests'
 import Header from '..'
@@ -15,13 +15,13 @@ describe('Header', () => {
   it('should switch app`s theme', async () => {
     const themeSwitch = screen.getByRole('button', { name: '' })
 
-    await waitFor(() => userEvent.click(themeSwitch))
+    await userEvent.click(themeSwitch)
 
     expect(screen.getByLabelText('Cabeçalho do site')).toHaveStyle(
       'color: rgb(255, 255, 255)'
     )
 
-    await waitFor(() => userEvent.click(themeSwitch))
+    await userEvent.click(themeSwitch)
 
     expect(screen.getByLabelText('Cabeçalho do site')).toHaveStyle(
       'color: rgb(0, 0, 0)'
@@ -31,15 +31,15 @@ describe('Header', () => {
   it('should switch app`s language', async () => {
     expect(screen.getByLabelText('Cabeçalho do site')).toBeInTheDocument()
 
-    const languageSelect = screen.getAllByRole('button')[1]
+    const languageSelect = screen.getByRole('combobox')
 
-    fireEvent.mouseDown(languageSelect)
+    await userEvent.click(languageSelect)
 
     const languageListbox = within(screen.getByRole('listbox'))
 
     const enButton = languageListbox.getByLabelText('Inglês americano')
 
-    await waitFor(() => userEvent.click(enButton))
+    await userEvent.click(enButton)
 
     expect(screen.getByLabelText('Site`s header')).toBeInTheDocument()
   })

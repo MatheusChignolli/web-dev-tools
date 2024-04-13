@@ -2,16 +2,16 @@ import { ToastContainer, ToastContainerProps } from 'react-toastify'
 import { ToastProviderProps } from './interfaces'
 
 const toastOptions: ToastContainerProps = {
-  position: 'top-right',
-  autoClose: 5000,
-  hideProgressBar: false,
-  newestOnTop: false,
+  position: 'bottom-center',
+  autoClose: 1300,
+  hideProgressBar: true,
+  newestOnTop: true,
   closeOnClick: true,
   rtl: false,
   pauseOnFocusLoss: false,
-  draggable: true,
-  pauseOnHover: true,
-  limit: 3,
+  draggable: false,
+  pauseOnHover: false,
+  limit: 10,
 }
 
 const ToastProvider = ({ children }: ToastProviderProps) => (

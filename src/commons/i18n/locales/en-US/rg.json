@@ -1,8 +1,12 @@
 {
+  "document": "RG",
+  "documentWithMask": "RG + mask",
   "generate": "Generate RG",
+  "generateWithMask": "Generate CNPJ with mask",
   "withMask": "RG with mask",
   "ariaLabels": {
     "withMaskCheckbox": "Checkbox to decide if generates RG data with mask or without mask",
-    "generateButton": "Button with an icon which has the action to generate the RG"
+    "generateButton": "Button with an icon which has the action to generate the RG",
+    "generateWithMaskButton": "Button with an icon which has the action to generate the RG with mask"
   }
 }

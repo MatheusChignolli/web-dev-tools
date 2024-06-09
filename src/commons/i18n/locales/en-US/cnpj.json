@@ -1,8 +1,12 @@
 {
+  "document": "CNPJ",
+  "documentWithMask": "CNPJ + mask",
   "generate": "Generate CNPJ",
+  "generateWithMask": "Generate CNPJ with mask",
   "withMask": "CNPJ with mask",
   "ariaLabels": {
     "withMaskCheckbox": "Checkbox to decide if generates CNPJ data with mask or without mask",
-    "generateButton": "Button with an icon which has the action to generate the CNPJ"
+    "generateButton": "Button with an icon which has the action to generate the CNPJ",
+    "generateWithMaskButton": "Button with an icon which has the action to generate the CNPJ with mask"
   }
 }

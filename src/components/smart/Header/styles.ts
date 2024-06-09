@@ -3,7 +3,6 @@ import { MenuItem, Select } from '~components'
 
 export const HeaderStyled = styled.header`
   padding: ${({ theme }) => theme.spacing(2, 0)};
-  border-bottom: 1px solid ${({ theme }) => theme.palette.primary.contrastText};
   display: flex;
   justify-content: space-between;
   align-items: center;

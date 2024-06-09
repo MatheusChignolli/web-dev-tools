@@ -15,11 +15,4 @@ describe('Card', () => {
 
     expect(screen.queryByLabelText('Título do card')).not.toBeInTheDocument()
   })
-
-  it('should render keycaps for shortcuts', () => {
-    render(<Card keys={['Ctrl', 'Q']}>Content</Card>)
-
-    expect(screen.getByText('Ctrl')).toBeInTheDocument()
-    expect(screen.getByText('Q')).toBeInTheDocument()
-  })
 })

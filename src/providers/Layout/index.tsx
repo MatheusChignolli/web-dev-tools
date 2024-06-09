@@ -1,12 +1,15 @@
 import { Container, Header, Footer } from '~components'
 import { LayoutProviderProps } from './interfaces'
+import { Box, Stack } from '@mui/material'
 
 const LayoutProvider = ({ children }: LayoutProviderProps) => {
   return (
     <Container>
-      <Header />
-      {children}
-      <Footer />
+      <Stack minHeight="100dvh">
+        <Header />
+        <Box flex={1}>{children}</Box>
+        <Footer />
+      </Stack>
     </Container>
   )
 }

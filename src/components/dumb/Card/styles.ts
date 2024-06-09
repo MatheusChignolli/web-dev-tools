@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 import { CardStyledProps } from './interfaces'
 
 export const CardStyled = styled.div<CardStyledProps>`
@@ -12,23 +12,5 @@ export const CardStyled = styled.div<CardStyledProps>`
   h2 {
     color: ${({ theme }) => theme.palette.primary.contrastText};
     margin-bottom: ${({ theme }) => theme.spacing(1)};
-  }
-
-  ${({ fullHeight }) =>
-    fullHeight &&
-    css`
-      height: 100%;
-    `}
-`
-
-export const KeysComboStyled = styled.span`
-  display: flex;
-  justify-content: space-between;
-  position: absolute;
-  top: 16px;
-  right: 16px;
-
-  div + div {
-    margin-left: ${({ theme }) => theme.spacing(1)};
   }
 `

@@ -2,5 +2,6 @@
   "copy": "Copiar",
   "noData": "Sem dado",
   "generate": "Gerar",
+  "generateWithMask": "Gerar pontuado",
   "withMask": "Pontuação"
 }

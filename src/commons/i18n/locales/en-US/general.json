@@ -2,5 +2,6 @@
   "copy": "Copy",
   "noData": "No data",
   "generate": "Generate",
+  "generateWithMask": "Generate masked",
   "withMask": "With mask"
 }

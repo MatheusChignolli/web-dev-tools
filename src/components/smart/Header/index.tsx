@@ -1,4 +1,4 @@
-import { SelectChangeEvent } from '@mui/material'
+import { SelectChangeEvent, Stack } from '@mui/material'
 import Brightness4Icon from '@mui/icons-material/Brightness4'
 import Brightness7Icon from '@mui/icons-material/Brightness7'
 import { useRecoilState } from 'recoil'
@@ -8,6 +8,7 @@ import { Languages } from '~interfaces/languages'
 import { languageState, themeState } from '~states'
 import { LanguagesConstants } from '~constants'
 import { HeaderStyled, SelectStyled, MenuItemStyled } from './styles'
+import CodeIcon from '@mui/icons-material/Code'
 
 const Header = () => {
   const { t } = useTranslation()
@@ -26,7 +27,10 @@ const Header = () => {
   return (
     <HeaderStyled aria-label={t<string>('header.ariaLabels.section')}>
       <Link.Internal to="/">
-        <Typography variant="h5">{t<string>('header.title')}</Typography>
+        <Stack flexDirection="row" alignItems="center" gap={0.5}>
+          <CodeIcon fontSize="large" />
+          <Typography variant="h5">{t<string>('header.title')}</Typography>
+        </Stack>
       </Link.Internal>
       <div>
         <IconButton sx={{ p: 1, mr: 2 }} onClick={handleThemeSwitch} color="inherit">

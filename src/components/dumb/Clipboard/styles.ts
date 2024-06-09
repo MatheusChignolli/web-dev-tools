@@ -1,7 +1,8 @@
+import { alpha } from '@mui/material'
 import styled from 'styled-components'
 
 export const ClipboardStyled = styled.div`
-  background-color: ${({ theme }) => theme.palette.primary.main};
+  background-color: ${({ theme }) => alpha(theme.palette.primary.main, 0.25)};
   padding: ${({ theme }) => theme.spacing(1)};
   border-radius: 4px;
   color: ${({ theme }) => theme.palette.primary.contrastText};

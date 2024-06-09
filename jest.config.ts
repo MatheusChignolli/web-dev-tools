@@ -10,6 +10,7 @@ const resolvedAliases = Object.fromEntries(
 
 const config: Config.InitialOptions = {
   verbose: true,
+  maxWorkers: 2,
   transform: {
     '^.+\\.tsx?$': 'ts-jest',
     '.+\\.(svg|css|less|sass|scss|png|jpg|ttf|woff|woff2|md)$':
@@ -26,12 +27,13 @@ const config: Config.InitialOptions = {
   ],
   coverageThreshold: {
     global: {
-      branches: 90,
-      functions: 90,
-      lines: 90,
-      statements: 90,
+      branches: 99,
+      functions: 99,
+      lines: 99,
+      statements: 99,
     },
   },
+  testTimeout: 20000,
 }
 
 export default config

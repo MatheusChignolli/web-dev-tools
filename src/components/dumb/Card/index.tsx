@@ -1,25 +1,11 @@
-import { memo, useMemo } from 'react'
+import { memo } from 'react'
 import { useTranslation } from 'react-i18next'
-import { Keycap, Typography } from '~components'
+import { Typography } from '~components'
 import { CardProps } from './interfaces'
-import { CardStyled, KeysComboStyled } from './styles'
+import { CardStyled } from './styles'
 
-const Card = ({ children, title, keys, fullHeight }: CardProps) => {
+const Card = ({ children, title, fullHeight }: CardProps) => {
   const { t } = useTranslation()
-
-  const combinedKeys = useMemo(() => {
-    let combined = ''
-
-    if (!keys?.length) {
-      return combined
-    }
-
-    keys.forEach((key, index) => {
-      combined = combined + (index === 0 ? key : ` mais ${key}`)
-    })
-
-    return combined
-  }, [keys])
 
   return (
     <CardStyled
@@ -34,17 +20,6 @@ const Card = ({ children, title, keys, fullHeight }: CardProps) => {
         >
           {title}
         </Typography>
-      )}
-      {!!keys?.length && (
-        <KeysComboStyled
-          aria-label={t<string>('components.card.keycaps', {
-            keys: combinedKeys,
-          })}
-        >
-          {keys.map((key, index) => (
-            <Keycap key={`key-${key}-${index}`} text={key} />
-          ))}
-        </KeysComboStyled>
       )}
       {children}
     </CardStyled>

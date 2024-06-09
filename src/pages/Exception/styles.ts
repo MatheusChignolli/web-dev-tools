@@ -1,5 +1,5 @@
+import { Container } from '@mui/material'
 import styled from 'styled-components'
-import { Container } from '~components'
 
 export const ContainerStyled = styled(Container)`
   text-align: center;

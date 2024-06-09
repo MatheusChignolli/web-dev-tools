@@ -1,7 +1,7 @@
 import { memo, useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import ContentCopyIcon from '@mui/icons-material/ContentCopy'
-import { IconButton, Tooltip } from '~components'
+import { IconButton, Tooltip } from '@mui/material'
 import { ClipboardStyled } from './styles'
 import { ClipboardProps } from './interfaces'
 

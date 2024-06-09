@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next'
-import { Typography } from '~components'
 import { ExceptionProps } from './interfaces'
 import { ContainerStyled } from './styles'
+import { Typography } from '@mui/material'
 
 const Exception = ({ code }: ExceptionProps) => {
   const { t } = useTranslation()

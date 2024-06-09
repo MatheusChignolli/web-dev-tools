@@ -1,10 +1,11 @@
 import { useState } from 'react'
 import { useQuery } from 'react-query'
 import { dateUtils } from '~utils'
-import { Grid, Loader } from '~components'
+import { Loader } from '~components'
 import { useTheme } from '~hooks'
 import { githubServices } from '~services'
 import { Release } from './sections'
+import { Grid } from '@mui/material'
 
 const referencePath = 'version-accordion-'
 

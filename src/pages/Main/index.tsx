@@ -1,5 +1,6 @@
+import { Grid, Typography } from '@mui/material'
 import { useTranslation } from 'react-i18next'
-import { GenerateDocument, Grid, Typography } from '~components'
+import { GenerateDocument } from '~components'
 import { DocumentsConstants } from '~constants'
 
 const Main = () => {

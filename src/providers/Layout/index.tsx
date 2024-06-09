@@ -1,6 +1,6 @@
-import { Container, Header, Footer } from '~components'
+import { Header, Footer } from '~components'
 import { LayoutProviderProps } from './interfaces'
-import { Box, Stack } from '@mui/material'
+import { Box, Container, Stack } from '@mui/material'
 
 const LayoutProvider = ({ children }: LayoutProviderProps) => {
   return (

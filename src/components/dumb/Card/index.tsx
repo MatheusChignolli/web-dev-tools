@@ -1,8 +1,8 @@
 import { memo } from 'react'
 import { useTranslation } from 'react-i18next'
-import { Typography } from '~components'
 import { CardProps } from './interfaces'
 import { CardStyled } from './styles'
+import { Typography } from '@mui/material'
 
 const Card = ({ children, title, fullHeight }: CardProps) => {
   const { t } = useTranslation()

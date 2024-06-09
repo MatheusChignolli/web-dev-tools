@@ -1,8 +1,8 @@
 import { memo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { Clipboard, Tooltip, Card, Button, KeysCombo } from '~components'
+import { Clipboard, Card, KeysCombo } from '~components'
 import { useKeyPress } from '~hooks'
-import { Stack } from '@mui/material'
+import { Button, Stack, Tooltip } from '@mui/material'
 import { GenerateDocumentProps } from './interfaces'
 
 const GenerateDocument = ({ document, generate, keys }: GenerateDocumentProps) => {
@@ -29,7 +29,7 @@ const GenerateDocument = ({ document, generate, keys }: GenerateDocumentProps) =
           justifyContent="space-between"
           gap={0.5}
         >
-          <Tooltip title={t(`${document}.generate`)} arrow placement="top-start">
+          <Tooltip title={t(`${document}.generate`)} arrow placement="right">
             <Button
               size="small"
               color="primary"
@@ -48,11 +48,7 @@ const GenerateDocument = ({ document, generate, keys }: GenerateDocumentProps) =
           justifyContent="space-between"
           gap={0.5}
         >
-          <Tooltip
-            title={t(`${document}.generateWithMask`)}
-            arrow
-            placement="bottom-start"
-          >
+          <Tooltip title={t(`${document}.generateWithMask`)} arrow placement="right">
             <Button
               size="small"
               color="primary"

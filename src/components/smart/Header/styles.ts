@@ -1,5 +1,5 @@
+import { MenuItem, Select } from '@mui/material'
 import styled from 'styled-components'
-import { MenuItem, Select } from '~components'
 
 export const HeaderStyled = styled.header`
   padding: ${({ theme }) => theme.spacing(2, 0)};

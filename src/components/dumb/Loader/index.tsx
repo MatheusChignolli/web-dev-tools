@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next'
-import { CircularProgress } from '~components'
 import { WrapperStyled } from './styles'
+import { CircularProgress } from '@mui/material'
 
 const Loader = () => {
   const { t } = useTranslation()

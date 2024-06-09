@@ -33,7 +33,12 @@ const Header = () => {
         </Stack>
       </Link.Internal>
       <Stack gap={1} flexDirection="row" alignItems="center">
-        <IconButton sx={{ p: 1 }} onClick={handleThemeSwitch} color="inherit">
+        <IconButton
+          sx={{ p: 1 }}
+          onClick={handleThemeSwitch}
+          color="inherit"
+          aria-label={t<string>('header.ariaLabels.themeSwitch')}
+        >
           {theme === 'dark' ? <DarkModeIcon /> : <LightModeIcon />}
         </IconButton>
         <SelectStyled

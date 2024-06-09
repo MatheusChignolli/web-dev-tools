@@ -1,6 +1,6 @@
 import { SelectChangeEvent, Stack } from '@mui/material'
-import Brightness4Icon from '@mui/icons-material/Brightness4'
-import Brightness7Icon from '@mui/icons-material/Brightness7'
+import LightModeIcon from '@mui/icons-material/LightMode'
+import DarkModeIcon from '@mui/icons-material/DarkMode'
 import { useRecoilState } from 'recoil'
 import { useTranslation } from 'react-i18next'
 import { Typography, Link, IconButton } from '~components'
@@ -32,9 +32,9 @@ const Header = () => {
           <Typography variant="h5">{t<string>('header.title')}</Typography>
         </Stack>
       </Link.Internal>
-      <div>
-        <IconButton sx={{ p: 1, mr: 2 }} onClick={handleThemeSwitch} color="inherit">
-          {theme === 'dark' ? <Brightness7Icon /> : <Brightness4Icon />}
+      <Stack gap={1} flexDirection="row" alignItems="center">
+        <IconButton sx={{ p: 1 }} onClick={handleThemeSwitch} color="inherit">
+          {theme === 'dark' ? <DarkModeIcon /> : <LightModeIcon />}
         </IconButton>
         <SelectStyled
           variant="standard"
@@ -54,7 +54,7 @@ const Header = () => {
             </MenuItemStyled>
           ))}
         </SelectStyled>
-      </div>
+      </Stack>
     </HeaderStyled>
   )
 }

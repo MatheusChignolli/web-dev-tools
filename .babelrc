@@ -5,6 +5,6 @@
     "@babel/preset-typescript"
   ],
   "plugins": [],
-  "compact": false,
+  "compact": true,
   "loaders": [{ "exclude": " /node_modules/", "loader": "babel-loader" }]
 }

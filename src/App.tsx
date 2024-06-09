@@ -3,7 +3,6 @@ import {
   TranslateProvider,
   StateProvider,
   ThemeProvider,
-  ToastProvider,
   LayoutProvider,
   FetchProvider,
 } from '~providers'
@@ -16,9 +15,7 @@ const App = () => (
         <ThemeProvider>
           <TranslateProvider>
             <LayoutProvider>
-              <ToastProvider>
-                <Router />
-              </ToastProvider>
+              <Router />
             </LayoutProvider>
           </TranslateProvider>
         </ThemeProvider>

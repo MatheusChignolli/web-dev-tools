@@ -6,12 +6,7 @@ import {
 } from '@testing-library/react'
 import { BrowserRouter } from 'react-router-dom'
 import { QueryClient, QueryClientProvider } from 'react-query'
-import {
-  ThemeProvider,
-  ToastProvider,
-  TranslateProvider,
-  StateProvider,
-} from '~providers'
+import { ThemeProvider, TranslateProvider, StateProvider } from '~providers'
 import '~i18n'
 
 const queryClient = new QueryClient({
@@ -28,9 +23,7 @@ const render = (ui: ReactElement, options?: RenderOptions): RenderResult => {
       <BrowserRouter>
         <StateProvider>
           <ThemeProvider>
-            <ToastProvider>
-              <TranslateProvider>{ui}</TranslateProvider>
-            </ToastProvider>
+            <TranslateProvider>{ui}</TranslateProvider>
           </ThemeProvider>
         </StateProvider>
       </BrowserRouter>

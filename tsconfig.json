@@ -24,7 +24,6 @@
       "~constants": ["./src/commons/constants"],
       "~constants/interfaces": ["./src/commons/constants/interfaces"],
       "~interfaces/*": ["./src/commons/interfaces/*"],
-      "~toast": ["./src/commons/toast"],
       "~theme": ["./src/commons/styles/theme.ts"],
       "~i18n": ["./src/commons/i18n"],
       "~components": ["./src/components"],

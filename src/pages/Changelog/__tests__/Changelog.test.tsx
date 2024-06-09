@@ -1,9 +1,9 @@
 import { screen, waitFor } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
-import { act } from 'react-dom/test-utils'
 import { render } from '~tests'
 import mocks from './mocks'
 import Changelog from '../'
+import { act } from 'react'
 
 describe('Changelog', () => {
   it('should render loading while request is running', async () => {
@@ -47,7 +47,7 @@ describe('Changelog', () => {
     render(<Changelog />)
 
     waitFor(() => {
-      expect(mockConsoleError).toBeCalled()
+      expect(mockConsoleError).toHaveBeenCalled()
     })
   })
 

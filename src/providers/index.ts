@@ -1,6 +1,5 @@
 export { default as StateProvider } from './State'
 export { default as ThemeProvider } from './Theme'
-export { default as ToastProvider } from './Toast'
 export { default as TranslateProvider } from './Translate'
 export { default as LayoutProvider } from './Layout'
 export { default as FetchProvider } from './Fetch'

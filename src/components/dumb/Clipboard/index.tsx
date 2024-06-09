@@ -1,18 +1,24 @@
-import { memo, useEffect } from 'react'
+import { memo, useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import ContentCopyIcon from '@mui/icons-material/ContentCopy'
-import toast from '~toast'
 import { IconButton, Tooltip } from '~components'
 import { ClipboardStyled } from './styles'
 import { ClipboardProps } from './interfaces'
 
 const Clipboard = ({ content }: ClipboardProps) => {
   const { t } = useTranslation()
+  const [copied, setCopied] = useState(false)
 
-  const copyToClipboard = () => {
+  const copyToClipboard = (changeStatus?: boolean) => {
     if (!!content) {
       navigator.clipboard.writeText(content)
-      toast.success(t<string>('components.clipboard.alerts.success', { content }))
+
+      if (changeStatus) {
+        setCopied(true)
+        setTimeout(() => {
+          setCopied(false)
+        }, 3000)
+      }
     }
   }
 
@@ -29,11 +35,33 @@ const Clipboard = ({ content }: ClipboardProps) => {
       <>
         {content || t('general.noData')}
         {!!content && (
-          <Tooltip title={`${t('general.copy')}`} placement="top-start" arrow>
+          <Tooltip
+            title={t(`general.${copied ? 'copied' : 'copy'}`)}
+            placement="top-start"
+            arrow
+            leaveDelay={copied ? 2000 : 0}
+            color={copied ? 'success' : 'default'}
+            componentsProps={
+              copied
+                ? {
+                    popper: {
+                      sx: {
+                        '& .MuiTooltip-tooltip': {
+                          backgroundColor: (theme) => theme.palette.success.main,
+                        },
+                        '& .MuiTooltip-arrow::before': {
+                          backgroundColor: (theme) => theme.palette.success.main,
+                        },
+                      },
+                    },
+                  }
+                : undefined
+            }
+          >
             <IconButton
               size="small"
               color="inherit"
-              onClick={copyToClipboard}
+              onClick={() => copyToClipboard(true)}
               aria-label={t<string>('components.clipboard.copyButton')}
             >
               <ContentCopyIcon aria-label={t('icons.ariaLabels.copy')} />

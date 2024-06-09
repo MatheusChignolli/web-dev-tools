@@ -40,7 +40,7 @@ const GenerateDocument = ({ document, generate, keys }: GenerateDocumentProps) =
               {t(`${document}.document`)}
             </Button>
           </Tooltip>
-          <KeysCombo keys={['Shift', documentKey]} />
+          <KeysCombo keys={['Ctrl', documentKey]} />
         </Stack>
         <Stack
           flexDirection="row"

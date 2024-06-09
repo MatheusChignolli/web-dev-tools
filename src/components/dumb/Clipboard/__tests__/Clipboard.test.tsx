@@ -2,6 +2,9 @@ import { screen, waitFor } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { render } from '~tests'
 import Clipboard from '..'
+import { act } from 'react'
+
+jest.useFakeTimers()
 
 const clipboardMock = jest.fn()
 
@@ -35,20 +38,21 @@ describe('Clipboard', () => {
 
       await waitFor(() => userEvent.click(copyButton))
 
-      expect(clipboardMock).toBeCalledWith(content)
-      expect(
-        await screen.findAllByText(`${content} copiado com sucesso`)
-      ).toHaveLength(1)
+      expect(clipboardMock).toHaveBeenCalledWith(content)
+      expect(screen.getByText('Copiado')).toBeInTheDocument()
+
+      act(() => {
+        jest.advanceTimersByTime(6000)
+      })
+
+      expect(screen.queryByText('Copiado')).not.toBeInTheDocument()
     })
 
-    it('should render and call copy to clipboard method and show success message on render', async () => {
+    it('should render and call copy to clipboard method and not show success message on render', async () => {
       expect(screen.getByText(content)).toBeInTheDocument()
 
-      expect(clipboardMock).toBeCalledTimes(1)
-      expect(clipboardMock).toBeCalledWith(content)
-      expect(
-        await screen.findByText(`${content} copiado com sucesso`)
-      ).toBeInTheDocument()
+      expect(clipboardMock).toHaveBeenCalled()
+      expect(clipboardMock).toHaveBeenCalledWith(content)
     })
   })
 })

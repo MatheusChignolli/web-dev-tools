@@ -1,9 +1,9 @@
 import { screen, waitFor } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
-import { act } from 'react-dom/test-utils'
 import { Link } from 'react-router-dom'
 import { render } from '~tests'
 import Router from '..'
+import { act } from 'react'
 
 global.fetch = jest.fn(() =>
   Promise.resolve({
@@ -41,7 +41,6 @@ describe('Router', () => {
     })
 
     expect(screen.getByText('Gerar CNPJ')).toBeInTheDocument()
-    expect(screen.getByText('Gerar RG')).toBeInTheDocument()
     expect(screen.getByText('Gerar RG')).toBeInTheDocument()
   })
 

@@ -7,18 +7,25 @@ import { ClipboardProps } from './interfaces'
 
 const Clipboard = ({ content }: ClipboardProps) => {
   const { t } = useTranslation()
+  const [hover, setHover] = useState(false)
   const [copied, setCopied] = useState(false)
 
-  const copyToClipboard = (changeStatus?: boolean) => {
+  const copyToClipboard = (isHover?: boolean) => {
     if (!!content) {
       navigator.clipboard.writeText(content)
 
-      if (changeStatus) {
-        setCopied(true)
-        setTimeout(() => {
-          setCopied(false)
-        }, 3000)
+      setCopied(true)
+
+      if (!isHover) {
+        setHover(true)
       }
+
+      setTimeout(() => {
+        setCopied(false)
+        if (!isHover) {
+          setHover(false)
+        }
+      }, 2000)
     }
   }
 
@@ -36,10 +43,15 @@ const Clipboard = ({ content }: ClipboardProps) => {
         <Typography variant="body2">{content || t('general.noData')}</Typography>
         {!!content && (
           <Tooltip
+            arrow
             title={t(`general.${copied ? 'copied' : 'copy'}`)}
             placement="top-start"
-            arrow
-            leaveDelay={copied ? 2000 : 0}
+            open={hover}
+            onMouseEnter={() => setHover(true)}
+            onMouseLeave={() => {
+              setHover(false)
+              setCopied(false)
+            }}
             color={copied ? 'success' : 'default'}
             componentsProps={
               copied

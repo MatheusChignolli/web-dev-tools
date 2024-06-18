@@ -13,7 +13,9 @@ describe('Header', () => {
   })
 
   it('should switch app`s theme', async () => {
-    const themeSwitch = screen.getByRole('button', { name: '' })
+    const themeSwitch = screen.getByRole('button', {
+      name: 'Chave para selecionar o tema da aplicação, variando entre tema claro e tema escuro',
+    })
 
     await userEvent.click(themeSwitch)
 

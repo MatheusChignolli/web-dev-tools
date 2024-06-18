@@ -15,7 +15,6 @@ import { DocumentBatchDialogProps } from './interfaces'
 import { useTranslation } from 'react-i18next'
 
 const DocumentBatchDialog = ({ document, generate }: DocumentBatchDialogProps) => {
-  console.log('document: ', document)
   const { t } = useTranslation()
   const [open, setOpen] = useState(false)
   const [result, setResult] = useState<string>()

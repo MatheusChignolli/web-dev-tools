@@ -1,7 +1,7 @@
 import { memo, useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import ContentCopyIcon from '@mui/icons-material/ContentCopy'
-import { IconButton, Tooltip } from '@mui/material'
+import { IconButton, Tooltip, Typography } from '@mui/material'
 import { ClipboardStyled } from './styles'
 import { ClipboardProps } from './interfaces'
 
@@ -33,7 +33,7 @@ const Clipboard = ({ content }: ClipboardProps) => {
       })}
     >
       <>
-        {content || t('general.noData')}
+        <Typography variant="body2">{content || t('general.noData')}</Typography>
         {!!content && (
           <Tooltip
             title={t(`general.${copied ? 'copied' : 'copy'}`)}
@@ -47,10 +47,10 @@ const Clipboard = ({ content }: ClipboardProps) => {
                     popper: {
                       sx: {
                         '& .MuiTooltip-tooltip': {
-                          backgroundColor: (theme) => theme.palette.success.main,
+                          backgroundColor: (theme) => theme.palette.success.light,
                         },
                         '& .MuiTooltip-arrow::before': {
-                          backgroundColor: (theme) => theme.palette.success.main,
+                          backgroundColor: (theme) => theme.palette.success.light,
                         },
                       },
                     },
@@ -64,7 +64,10 @@ const Clipboard = ({ content }: ClipboardProps) => {
               onClick={() => copyToClipboard(true)}
               aria-label={t<string>('components.clipboard.copyButton')}
             >
-              <ContentCopyIcon aria-label={t('icons.ariaLabels.copy')} />
+              <ContentCopyIcon
+                fontSize="inherit"
+                aria-label={t('icons.ariaLabels.copy')}
+              />
             </IconButton>
           </Tooltip>
         )}

@@ -51,6 +51,13 @@ const getCommonConfig = (
         },
       },
     },
+    MuiPaper: {
+      styleOverrides: {
+        root: {
+          backgroundColor: palette.primary.light,
+        },
+      },
+    },
     MuiTooltip: {
       styleOverrides: {
         tooltip: {
@@ -61,6 +68,37 @@ const getCommonConfig = (
           '::before': {
             background: palette.primary.dark,
           },
+        },
+      },
+    },
+    MuiTextField: {
+      styleOverrides: {
+        root: {
+          '& label': {
+            color: palette.primary.contrastText,
+          },
+          '& label.Mui-focused': {
+            color: palette.primary.contrastText,
+          },
+          '& .MuiOutlinedInput-root': {
+            color: palette.primary.contrastText,
+            '& fieldset': {
+              borderColor: palette.primary.contrastText,
+            },
+            '&:hover fieldset': {
+              borderColor: palette.primary.contrastText,
+            },
+            '&.Mui-focused fieldset': {
+              borderColor: palette.primary.contrastText,
+            },
+          },
+        },
+      },
+    },
+    MuiInputLabel: {
+      styleOverrides: {
+        root: {
+          color: palette.primary.contrastText,
         },
       },
     },

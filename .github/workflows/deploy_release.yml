@@ -22,13 +22,18 @@ jobs:
         with:
           node-version: 18
 
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v3
+        with:
+          version: 8
+
       - if: steps.skip_check.outputs.should_skip != 'true'
         name: Install packages
         working-directory: ${{ env.working-directory }}
-        run: yarn install
+        run: pnpm i
 
       - name: Run tests
-        run: yarn test:coverage
+        run: pnpm test:coverage
 
       - if: steps.skip_check.outputs.should_skip != 'true'
         name: Create .env
@@ -41,7 +46,7 @@ jobs:
       - if: steps.skip_check.outputs.should_skip != 'true'
         name: Build project
         working-directory: ${{ env.working-directory }}
-        run: yarn build
+        run: pnpm build
 
       - if: steps.skip_check.outputs.should_skip != 'true'
         name: Deploy to netlify

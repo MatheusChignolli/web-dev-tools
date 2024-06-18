@@ -24,7 +24,7 @@ const DocumentBatchDialog = ({ document, generate }: DocumentBatchDialogProps) =
       <Button
         variant="contained"
         onClick={() => setOpen(true)}
-        aria-label={t<string>('components.documentBatchDialog.ariaLabels.actions', {
+        aria-label={t<string>('components.documentBatchDialog.ariaLabels.action', {
           document,
         })}
       >
@@ -64,16 +64,16 @@ const DocumentBatchDialog = ({ document, generate }: DocumentBatchDialogProps) =
               margin="dense"
               label={t('components.documentBatchDialog.quantityInput')}
               variant="outlined"
-              InputProps={{ inputProps: { min: 0, max: 100000 } }}
+              InputProps={{ inputProps: { min: 1, max: 100000 } }}
               aria-label={t<string>(
-                'components.ariaLabels.documentBatchDialog.quantityInput'
+                'components.documentBatchDialog.ariaLabels.quantityInput'
               )}
             />
             <FormControlLabel
               control={<Checkbox id="hasMask" name="hasMask" />}
               label={t('components.documentBatchDialog.withMaskCheckbox')}
               aria-label={t<string>(
-                'components.ariaLabels.documentBatchDialog.withMaskCheckbox',
+                'components.documentBatchDialog.ariaLabels.withMaskCheckbox',
                 { document }
               )}
             />
@@ -86,7 +86,7 @@ const DocumentBatchDialog = ({ document, generate }: DocumentBatchDialogProps) =
             color="info"
             type="submit"
             aria-label={t<string>(
-              'components.ariaLabels.documentBatchDialog.action',
+              'components.documentBatchDialog.ariaLabels.generate',
               { document }
             )}
           >
@@ -97,7 +97,7 @@ const DocumentBatchDialog = ({ document, generate }: DocumentBatchDialogProps) =
             color="error"
             variant="contained"
             onClick={() => setOpen(false)}
-            aria-label={t<string>('components.ariaLabels.documentBatchDialog.close')}
+            aria-label={t<string>('components.documentBatchDialog.ariaLabels.close')}
           >
             {t('components.documentBatchDialog.close')}
           </Button>

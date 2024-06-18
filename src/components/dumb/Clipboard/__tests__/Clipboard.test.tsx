@@ -45,7 +45,7 @@ describe('Clipboard', () => {
         jest.advanceTimersByTime(6000)
       })
 
-      expect(screen.queryByText('Copiado')).not.toBeInTheDocument()
+      expect(screen.queryByText('Copiado')).not.toBeVisible()
     })
 
     it('should render and call copy to clipboard method and not show success message on render', async () => {

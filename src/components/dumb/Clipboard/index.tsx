@@ -7,24 +7,16 @@ import { ClipboardProps } from './interfaces'
 
 const Clipboard = ({ content }: ClipboardProps) => {
   const { t } = useTranslation()
-  const [hover, setHover] = useState(false)
   const [copied, setCopied] = useState(false)
 
-  const copyToClipboard = (isHover?: boolean) => {
+  const copyToClipboard = () => {
     if (!!content) {
       navigator.clipboard.writeText(content)
 
       setCopied(true)
 
-      if (!isHover) {
-        setHover(true)
-      }
-
       setTimeout(() => {
         setCopied(false)
-        if (!isHover) {
-          setHover(false)
-        }
       }, 2000)
     }
   }
@@ -34,57 +26,55 @@ const Clipboard = ({ content }: ClipboardProps) => {
   }, [content])
 
   return (
-    <ClipboardStyled
-      aria-label={t<string>('components.clipboard.section', {
-        data: content || t('general.noData'),
-      })}
+    <Tooltip
+      arrow
+      open={copied}
+      title={t('general.copied')}
+      color="success"
+      placement="top"
+      componentsProps={{
+        popper: {
+          sx: {
+            '& .MuiTooltip-tooltip': {
+              backgroundColor: (theme) => theme.palette.success.light,
+            },
+            '& .MuiTooltip-arrow::before': {
+              backgroundColor: (theme) => theme.palette.success.light,
+            },
+          },
+        },
+      }}
     >
-      <>
-        <Typography variant="body2">{content || t('general.noData')}</Typography>
-        {!!content && (
-          <Tooltip
-            arrow
-            title={t(`general.${copied ? 'copied' : 'copy'}`)}
-            placement="top-start"
-            open={hover}
-            onMouseEnter={() => setHover(true)}
-            onMouseLeave={() => {
-              setHover(false)
-              setCopied(false)
-            }}
-            color={copied ? 'success' : 'default'}
-            componentsProps={
-              copied
-                ? {
-                    popper: {
-                      sx: {
-                        '& .MuiTooltip-tooltip': {
-                          backgroundColor: (theme) => theme.palette.success.light,
-                        },
-                        '& .MuiTooltip-arrow::before': {
-                          backgroundColor: (theme) => theme.palette.success.light,
-                        },
-                      },
-                    },
-                  }
-                : undefined
-            }
-          >
-            <IconButton
-              size="small"
-              color="inherit"
-              onClick={() => copyToClipboard(true)}
-              aria-label={t<string>('components.clipboard.copyButton')}
+      <ClipboardStyled
+        aria-label={t<string>('components.clipboard.section', {
+          data: content || t('general.noData'),
+        })}
+      >
+        <>
+          <Typography variant="body2">{content || t('general.noData')}</Typography>
+          {!!content && (
+            <Tooltip
+              arrow
+              title={t('general.copy')}
+              color="default"
+              placement="top-start"
             >
-              <ContentCopyIcon
-                fontSize="inherit"
-                aria-label={t('icons.ariaLabels.copy')}
-              />
-            </IconButton>
-          </Tooltip>
-        )}
-      </>
-    </ClipboardStyled>
+              <IconButton
+                size="small"
+                color="inherit"
+                onClick={copyToClipboard}
+                aria-label={t<string>('components.clipboard.copyButton')}
+              >
+                <ContentCopyIcon
+                  fontSize="inherit"
+                  aria-label={t('icons.ariaLabels.copy')}
+                />
+              </IconButton>
+            </Tooltip>
+          )}
+        </>
+      </ClipboardStyled>
+    </Tooltip>
   )
 }
 

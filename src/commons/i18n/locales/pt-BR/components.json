@@ -1,10 +1,7 @@
 {
   "clipboard": {
     "copyButton": "Botão para efetuar a ação de copiar algum texto na área de transferência de arquivos",
-    "section": "Bloco com o conteúdo {{- data}} para ser enviado para a área de transferência de arquivos",
-    "alerts": {
-      "success": "{{- content}} copiado com sucesso"
-    }
+    "section": "Bloco com o conteúdo {{- data}} para ser enviado para a área de transferência de arquivos"
   },
   "card": {
     "section": "Bloco de card",
@@ -24,5 +21,20 @@
     "section": "Componente acordeão",
     "summary": "Título do componente acordeão",
     "details": "Detalhes do componente acordeão"
+  },
+  "documentBatchDialog": {
+    "action": "Gerar em massa",
+    "generate": "Gerar",
+    "close": "Fechar",
+    "withMaskCheckbox": "Com máscara",
+    "quantityInput": "Quantidade",
+    "ariaLabels": {
+      "form": "Formulário para gerar {{document}} em massa",
+      "action": "Botão para abrir diálogo para gerar {{document}} em massa",
+      "generate": "Botão parar gerar {{document}} em massa",
+      "close": "Botão para fechar diálogo",
+      "withMaskCheckbox": "Marcador relacionado a gerar {{document}} em massa com máscara",
+      "quantityInput": "Campo para inserir a quantidade numérica de documentos a serem gerados em massa"
+    }
   }
 }

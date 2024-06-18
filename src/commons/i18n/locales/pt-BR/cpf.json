@@ -4,6 +4,7 @@
   "generate": "Gerar CPF",
   "generateWithMask": "Gerar CPF com máscara",
   "withMask": "CPF com máscara",
+  "generateInBatch": "Gerar diversos CPFs, insira abaixo a quantidade de documentos que deseja",
   "ariaLabels": {
     "withMaskCheckbox": "Checkbox para decidir se o CPF será gerado com máscara ou sem máscara",
     "generateButton": "Botão com um ícone que possui como ação gerar o CPF",

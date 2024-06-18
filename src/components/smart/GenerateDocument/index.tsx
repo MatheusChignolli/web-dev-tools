@@ -1,6 +1,6 @@
 import { memo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { Clipboard, Card, KeysCombo } from '~components'
+import { Clipboard, Card, KeysCombo, DocumentBatchDialog } from '~components'
 import { useKeyPress } from '~hooks'
 import { Button, Stack, Tooltip } from '@mui/material'
 import { GenerateDocumentProps } from './interfaces'
@@ -62,6 +62,7 @@ const GenerateDocument = ({ document, generate, keys }: GenerateDocumentProps) =
           <KeysCombo keys={['Shift', 'Ctrl', documentKey]} />
         </Stack>
         <Clipboard content={documentData} />
+        <DocumentBatchDialog document={document} generate={generate} />
       </Stack>
     </Card>
   )

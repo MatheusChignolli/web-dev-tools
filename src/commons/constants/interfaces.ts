@@ -7,3 +7,5 @@ export enum DocumentsTypes {
   CNPJ = 'cnpj',
   RG = 'rg',
 }
+
+export type DocumentGenerate = (hasMask?: boolean) => string

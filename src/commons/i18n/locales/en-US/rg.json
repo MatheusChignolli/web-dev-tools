@@ -4,6 +4,7 @@
   "generate": "Generate RG",
   "generateWithMask": "Generate CNPJ with mask",
   "withMask": "RG with mask",
+  "generateInBatch": "Generate RGs, input below the quantity of documents you wish",
   "ariaLabels": {
     "withMaskCheckbox": "Checkbox to decide if generates RG data with mask or without mask",
     "generateButton": "Button with an icon which has the action to generate the RG",

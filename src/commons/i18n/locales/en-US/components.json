@@ -24,5 +24,20 @@
     "section": "Accordion component",
     "summary": "Title of accordion component",
     "details": "Details of accordion component"
+  },
+  "documentBatchDialog": {
+    "action": "Generate in batch",
+    "generate": "Generate",
+    "close": "Close",
+    "withMaskCheckbox": "With mask",
+    "quantityInput": "Quantity",
+    "ariaLabels": {
+      "form": "Form to generate {{document}} in batch",
+      "action": "Button to open dialog to  generate {{document}} in batch",
+      "generate": "Button to generate {{document}} in batch",
+      "close": "Button to close dialog",
+      "withMaskCheckbox": "Check to generate {{document}} in batch with mask",
+      "quantityInput": "Input to insert number quantity of documents to be generated in batch"
+    }
   }
 }

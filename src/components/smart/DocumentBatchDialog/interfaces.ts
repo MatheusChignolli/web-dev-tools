@@ -1,7 +1,6 @@
 import { DocumentGenerate, DocumentsTypes } from '~constants/interfaces'
 
-export interface GenerateDocumentProps {
+export interface DocumentBatchDialogProps {
   document: DocumentsTypes
   generate: DocumentGenerate
-  keys: string[]
 }

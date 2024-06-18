@@ -1,5 +1,5 @@
 import { cnpjUtils, cpfUtils, rgUtils } from '~utils'
-import { DocumentsTypes } from '../types'
+import { DocumentsTypes } from './interfaces'
 
 const documentsConfig = [
   {

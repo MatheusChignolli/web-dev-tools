@@ -4,6 +4,7 @@
   "generate": "Generate CPF",
   "generateWithMask": "Generate CPF with mask",
   "withMask": "CPF with mask",
+  "generateInBatch": "Generate CPFs, input below the quantity of documents you wish",
   "ariaLabels": {
     "withMaskCheckbox": "Checkbox to decide if generates CPF data with mask or without mask",
     "generateButton": "Button with an icon which has the action to generate the CPF",

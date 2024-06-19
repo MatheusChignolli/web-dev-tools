@@ -15,7 +15,7 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
-    "types": ["@testing-library/jest-dom"],
+    "types": ["@testing-library/jest-dom", "jest"],
     "paths": {
       "~pages": ["./src/pages"],
       "~commons": ["./src/commons"],

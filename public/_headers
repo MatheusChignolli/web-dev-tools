@@ -1,4 +1,4 @@
-/index.html
+/*
   X-Frame-Options: DENY
   X-XSS-Protection: 1; mode=block
   Content-Security-Policy: default-src 'self'; script-src 'self' https://www.googletagmanager.com 'unsafe-eval' 'unsafe-inline'; connect-src 'self' https://www.google-analytics.com; style-src 'self' 'unsafe-inline'; img-src 'self' data:;

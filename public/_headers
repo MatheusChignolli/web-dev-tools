@@ -1,7 +1,7 @@
 /*
   X-Frame-Options: DENY
   X-XSS-Protection: 1; mode=block
-  Content-Security-Policy: default-src 'self'; script-src 'self' https://www.googletagmanager.com 'unsafe-eval' 'unsafe-inline'; connect-src 'self' https://www.google-analytics.com; style-src https://fonts.googleapis.com 'self' 'unsafe-inline'; img-src 'self' data:; frame-src https://googleads.g.doubleclick.net 'self'
+  Content-Security-Policy: default-src 'self'; script-src 'self' https://www.googletagmanager.com https://pagead2.googlesyndication.com 'unsafe-eval' 'unsafe-inline'; connect-src 'self' https://www.google-analytics.com; style-src https://fonts.googleapis.com 'self' 'unsafe-inline'; img-src 'self' data:; font-src https://fonts.googleapis.com 'self'; frame-src https://googleads.g.doubleclick.net 'self'
   Permissions-Policy: camera=(), microphone=(), geolocation=(), browsing-topics=()
   Referrer-Policy:  no-referrer
   Strict-Transport-Security:  max-age=31536000

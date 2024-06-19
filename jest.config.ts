@@ -1,4 +1,3 @@
-import type { Config } from '@jest/types'
 import tsConfig from './tsconfig.json'
 
 const resolvedAliases = Object.fromEntries(
@@ -8,7 +7,7 @@ const resolvedAliases = Object.fromEntries(
   ])
 )
 
-const config: Config.InitialOptions = {
+const config = {
   verbose: true,
   maxWorkers: 2,
   transform: {

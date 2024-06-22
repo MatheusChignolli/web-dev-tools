@@ -22,7 +22,7 @@ const GenerateDocument = ({ document, generate, keys }: GenerateDocumentProps) =
   })
 
   return (
-    <Card title={t<string>(`${document}.generate`)}>
+    <Card title={t<string>(`${document}.document`)}>
       <Box
         sx={{
           top: 16,
@@ -35,9 +35,9 @@ const GenerateDocument = ({ document, generate, keys }: GenerateDocumentProps) =
       <Stack spacing={1}>
         <Stack flexDirection="row" alignItems="center" gap={0.5}>
           <Button
-            size="small"
+            size="medium"
             color="primary"
-            variant="contained"
+            variant="outlined"
             onClick={() => generateDocument()}
             startIcon={<ArrowForwardIcon />}
             aria-label={t<string>(`${document}.ariaLabels.generateButton`)}
@@ -48,9 +48,9 @@ const GenerateDocument = ({ document, generate, keys }: GenerateDocumentProps) =
         </Stack>
         <Stack flexDirection="row" alignItems="center" gap={0.5}>
           <Button
-            size="small"
+            size="medium"
             color="primary"
-            variant="contained"
+            variant="outlined"
             onClick={() => generateDocument(true)}
             startIcon={<ArrowForwardIcon />}
             aria-label={t<string>(`${document}.ariaLabels.generateWithMaskButton`)}

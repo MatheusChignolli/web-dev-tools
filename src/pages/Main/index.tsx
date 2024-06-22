@@ -14,7 +14,12 @@ const Main = () => {
         </Grid>
       ))}
       <Grid item xs={12}>
-        <Typography variant="body2" textAlign="justify" component="div">
+        <Typography
+          color="primary.contrastText"
+          variant="body2"
+          textAlign="justify"
+          component="div"
+        >
           <div
             dangerouslySetInnerHTML={{
               __html: t<string>('privacyPolicy.notOurResponsibility'),

@@ -51,7 +51,7 @@ describe.each(DocumentsConstants.documentsConfig)(
     })
 
     it(`should show no data text if not generate ${upperCaseDocument}`, () => {
-      expect(screen.getByText('-')).toBeInTheDocument()
+      expect(screen.queryByText('-')).not.toBeInTheDocument()
     })
 
     it(`should generate ${upperCaseDocument} without mask and copy it`, async () => {

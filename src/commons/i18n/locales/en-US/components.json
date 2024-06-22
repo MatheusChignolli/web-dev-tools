@@ -31,6 +31,7 @@
     "close": "Close",
     "withMaskCheckbox": "With mask",
     "quantityInput": "Quantity",
+    "inBatch": "in batch",
     "ariaLabels": {
       "form": "Form to generate {{document}} in batch",
       "action": "Button to open dialog to  generate {{document}} in batch",

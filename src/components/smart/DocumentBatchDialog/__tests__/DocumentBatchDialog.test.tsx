@@ -56,7 +56,9 @@ describe.each(DocumentsConstants.documentsConfig)(
         })
       )
 
-      expect(screen.getByText('-')).toBeInTheDocument()
+      expect(
+        screen.getByText(`${document.toUpperCase()} em massa`)
+      ).toBeInTheDocument()
 
       await userEvent.click(
         screen.getByRole('button', {
@@ -64,7 +66,9 @@ describe.each(DocumentsConstants.documentsConfig)(
         })
       )
 
-      expect(screen.getByText('-')).not.toBeVisible()
+      expect(
+        screen.queryByText(`${document.toUpperCase()} em massa`)
+      ).not.toBeVisible()
     })
 
     it(`should generate ${upperCaseDocument} without mask and copy it`, async () => {

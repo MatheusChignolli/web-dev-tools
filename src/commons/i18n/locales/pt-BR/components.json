@@ -28,6 +28,7 @@
     "close": "Fechar",
     "withMaskCheckbox": "Com máscara",
     "quantityInput": "Quantidade",
+    "inBatch": "em massa",
     "ariaLabels": {
       "form": "Formulário para gerar {{document}} em massa",
       "action": "Botão para abrir diálogo para gerar {{document}} em massa",

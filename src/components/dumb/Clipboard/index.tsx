@@ -1,7 +1,7 @@
 import { memo, useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import ContentCopyIcon from '@mui/icons-material/ContentCopy'
-import { IconButton, Tooltip, Typography } from '@mui/material'
+import { Box, IconButton, Tooltip, Typography } from '@mui/material'
 import { ClipboardStyled } from './styles'
 import { ClipboardProps } from './interfaces'
 
@@ -25,6 +25,8 @@ const Clipboard = ({ content }: ClipboardProps) => {
     copyToClipboard()
   }, [content])
 
+  if (!content) return null
+
   return (
     <Tooltip
       arrow
@@ -47,14 +49,21 @@ const Clipboard = ({ content }: ClipboardProps) => {
     >
       <ClipboardStyled
         aria-label={t<string>('components.clipboard.section', {
-          data: content || t('general.noData'),
+          data: content,
         })}
       >
         <>
-          <Typography variant="body2" component="div" maxWidth="190px">
-            <div
+          <Typography
+            color="primary"
+            variant="body2"
+            component="div"
+            maxWidth="190px"
+            alignContent="center"
+            fontWeight={900}
+          >
+            <Box
               dangerouslySetInnerHTML={{
-                __html: content || t<string>('general.noData'),
+                __html: content,
               }}
             />
           </Typography>
@@ -67,7 +76,7 @@ const Clipboard = ({ content }: ClipboardProps) => {
             >
               <IconButton
                 size="small"
-                color="inherit"
+                color="primary"
                 onClick={copyToClipboard}
                 aria-label={t<string>('components.clipboard.copyButton')}
               >

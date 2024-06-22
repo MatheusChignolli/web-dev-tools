@@ -17,7 +17,7 @@ Object.assign(navigator, {
 describe('Clipboard', () => {
   it('should render "-" message when content prop is not given', () => {
     render(<Clipboard />)
-    expect(screen.getByText('-')).toBeInTheDocument()
+    expect(screen.queryByText('-')).not.toBeInTheDocument()
   })
 
   describe('when pass content prop', () => {

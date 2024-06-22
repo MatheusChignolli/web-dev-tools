@@ -8,7 +8,7 @@ const ThemeProvider = ({ children }: ThemeProviderProps) => {
   const theme = useTheme()
 
   useEffect(() => {
-    document.body.style.backgroundColor = theme.palette.primary.dark
+    document.body.style.backgroundColor = theme.palette.background.default
   })
 
   return (

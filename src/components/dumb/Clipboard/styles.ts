@@ -1,19 +1,29 @@
-import { alpha } from '@mui/material'
 import styled from 'styled-components'
 
 export const ClipboardStyled = styled.div`
-  background-color: ${({ theme }) => alpha(theme.palette.primary.main, 0.5)};
   padding: ${({ theme }) => theme.spacing(1)};
   border-radius: 4px;
-  color: ${({ theme }) => theme.palette.primary.contrastText};
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  min-height: 38px;
+  min-height: 50px;
   max-height: 250px;
   overflow-y: auto;
+  border: 1px solid ${({ theme }) => theme.palette.primary.main};
 
-  .MuiButtonBase-root {
-    margin: ${({ theme }) => theme.spacing(0, 0, 0, 1)};
+  ::-webkit-scrollbar {
+    width: 15px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: ${({ theme }) => theme.palette.background.paper};
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: ${({ theme }) => theme.palette.primary.main};
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: ${({ theme }) => theme.palette.primary.dark};
   }
 `

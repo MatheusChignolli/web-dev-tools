@@ -3,22 +3,38 @@ import { createTheme } from '@mui/material/styles'
 import { spacing } from './utils'
 
 const darkPalette = {
-  primary: {
-    main: '#414141',
-    light: '#525252',
-    dark: '#313131',
-    contrastText: '#ffffff',
+  background: {
+    default: '#1E2227',
+    paper: '#2B333F',
   },
-} as const
+  primary: {
+    main: '#0077CC',
+    light: '#0096FF',
+    dark: '#005EA2',
+    contrastText: '#FFFFFF',
+  },
+  text: {
+    primary: '#FFFFFF',
+    secondary: '#B0BEC5',
+  },
+}
 
 const lightPalette = {
+  background: {
+    default: '#FFFFFF',
+    paper: '#F5F6F7',
+  },
   primary: {
-    main: '#F9F6F7',
-    light: '#FFFFFF',
-    dark: '#E0E0E0',
+    main: '#F48024',
+    light: '#FFB74D',
+    dark: '#C26005',
     contrastText: '#000000',
   },
-} as const
+  text: {
+    primary: '#000000',
+    secondary: '#757575',
+  },
+}
 
 const getCommonConfig = (
   palette: typeof darkPalette | typeof lightPalette
@@ -27,124 +43,33 @@ const getCommonConfig = (
   typography: {
     fontFamily: 'Fira Code',
     fontSize: 16,
-    fontWeightLight: 300,
-    fontWeightRegular: 400,
-    fontWeightMedium: 500,
-    fontWeightBold: 600,
     allVariants: {
       fontFamily: 'Fira Code',
       textTransform: 'none',
     },
   },
   components: {
-    MuiTypography: {
-      styleOverrides: {
-        root: {
-          color: palette.primary.contrastText,
-        },
-      },
-    },
-    MuiList: {
-      styleOverrides: {
-        root: {
-          padding: 0,
-        },
-      },
-    },
-    MuiPaper: {
-      styleOverrides: {
-        root: {
-          backgroundColor: palette.primary.light,
-        },
-      },
-    },
-    MuiTooltip: {
-      styleOverrides: {
-        tooltip: {
-          background: palette.primary.dark,
-          color: palette.primary.contrastText,
-        },
-        arrow: {
-          '::before': {
-            background: palette.primary.dark,
-          },
-        },
-      },
-    },
     MuiTextField: {
       styleOverrides: {
         root: {
           '& label': {
-            color: palette.primary.contrastText,
+            color: palette.primary.main,
           },
           '& label.Mui-focused': {
-            color: palette.primary.contrastText,
+            color: palette.primary.main,
           },
           '& .MuiOutlinedInput-root': {
-            color: palette.primary.contrastText,
+            color: palette.primary.main,
             '& fieldset': {
-              borderColor: palette.primary.contrastText,
+              borderColor: palette.primary.main,
             },
             '&:hover fieldset': {
-              borderColor: palette.primary.contrastText,
+              borderColor: palette.primary.main,
             },
             '&.Mui-focused fieldset': {
-              borderColor: palette.primary.contrastText,
+              borderColor: palette.primary.main,
             },
           },
-        },
-      },
-    },
-    MuiInputLabel: {
-      styleOverrides: {
-        root: {
-          color: palette.primary.contrastText,
-        },
-      },
-    },
-    MuiIconButton: {
-      styleOverrides: {
-        root: {
-          padding: 0,
-          borderRadius: '4px',
-        },
-      },
-    },
-    MuiAccordion: {
-      styleOverrides: {
-        root: {
-          background: palette.primary.main,
-          boxShadow: 'none',
-          color: palette.primary.contrastText,
-          '&::before': {
-            background: palette.primary.dark,
-          },
-        },
-      },
-    },
-    MuiAccordionSummary: {
-      styleOverrides: {
-        root: {
-          '&.Mui-expanded': {
-            borderBottom: `1px solid ${palette.primary.dark}`,
-          },
-        },
-      },
-    },
-    MuiCheckbox: {
-      styleOverrides: {
-        root: {
-          color: palette.primary.contrastText,
-          '&.Mui-checked': {
-            color: palette.primary.contrastText,
-          },
-        },
-      },
-    },
-    MuiButton: {
-      styleOverrides: {
-        text: {
-          color: palette.primary.contrastText,
         },
       },
     },

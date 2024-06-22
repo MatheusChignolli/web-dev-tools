@@ -14,14 +14,14 @@ export const SelectStyled = styled(Select)`
   .MuiSelect-select:hover {
     border: none;
     padding-top: ${({ theme }) => theme.spacing(1)};
-    background-color: ${({ theme }) => theme.palette.primary.light};
-    border-radius: 4px;
+    background-color: ${({ theme }) => theme.palette.primary.main};
+    border-radius: 2px;
     color: ${({ theme }) => theme.palette.primary.contrastText};
     padding: ${({ theme }) => theme.spacing(1, 2)};
 
     &[aria-expanded='false'] {
-      border-radius: 4px;
-      background-color: ${({ theme }) => theme.palette.primary.light};
+      border-radius: 2px;
+      background-color: ${({ theme }) => theme.palette.primary.main};
     }
   }
 
@@ -38,6 +38,6 @@ export const MenuItemStyled = styled(MenuItem)`
   background: ${({ theme }) => theme.palette.primary.light} !important;
 
   &[aria-selected='true'] {
-    background: ${({ theme }) => theme.palette.primary.dark} !important;
+    background: ${({ theme }) => theme.palette.primary.main} !important;
   }
 `

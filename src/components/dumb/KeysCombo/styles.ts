@@ -6,6 +6,6 @@ export const KeysComboStyled = styled.span`
   padding: 4px 6px 8px 6px;
 
   div + div {
-    margin-left: ${({ theme }) => theme.spacing(1)};
+    margin-left: ${({ theme }) => theme.spacing(1.5)};
   }
 `

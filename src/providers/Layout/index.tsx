@@ -4,7 +4,7 @@ import { Box, Container, Stack } from '@mui/material'
 
 const LayoutProvider = ({ children }: LayoutProviderProps) => {
   return (
-    <Container>
+    <Container maxWidth="xl">
       <Stack minHeight="100dvh">
         <Header />
         <Box flex={1}>{children}</Box>

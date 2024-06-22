@@ -2,7 +2,6 @@ import { useState } from 'react'
 import { useQuery } from 'react-query'
 import { dateUtils } from '~utils'
 import { Loader } from '~components'
-import { useTheme } from '~hooks'
 import { githubServices } from '~services'
 import { Release } from './sections'
 import { Grid } from '@mui/material'
@@ -10,7 +9,6 @@ import { Grid } from '@mui/material'
 const referencePath = 'version-accordion-'
 
 const Changelog = () => {
-  const theme = useTheme()
   const [accordionReference, setAccordionReference] = useState(`${referencePath}0`)
 
   const { data, isLoading } = useQuery(
@@ -33,7 +31,7 @@ const Changelog = () => {
   }
 
   return (
-    <Grid container padding={`${theme.spacing(2)} 0px`} direction="column">
+    <Grid container direction="column">
       {data?.map(({ body, created_at, tag_name }, index) => {
         const reference = `${referencePath}${index}`
         return (

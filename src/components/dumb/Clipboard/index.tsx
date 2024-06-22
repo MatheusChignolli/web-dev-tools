@@ -31,7 +31,7 @@ const Clipboard = ({ content }: ClipboardProps) => {
       open={copied}
       title={t('general.copied')}
       color="success"
-      placement="top"
+      placement="top-end"
       componentsProps={{
         popper: {
           sx: {
@@ -51,13 +51,19 @@ const Clipboard = ({ content }: ClipboardProps) => {
         })}
       >
         <>
-          <Typography variant="body2">{content || t('general.noData')}</Typography>
+          <Typography variant="body2" component="div" maxWidth="190px">
+            <div
+              dangerouslySetInnerHTML={{
+                __html: content || t<string>('general.noData'),
+              }}
+            />
+          </Typography>
           {!!content && (
             <Tooltip
               arrow
               title={t('general.copy')}
               color="default"
-              placement="top-start"
+              placement="left"
             >
               <IconButton
                 size="small"

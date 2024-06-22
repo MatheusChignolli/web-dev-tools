@@ -141,6 +141,13 @@ const getCommonConfig = (
         },
       },
     },
+    MuiButton: {
+      styleOverrides: {
+        text: {
+          color: palette.primary.contrastText,
+        },
+      },
+    },
   },
 })
 

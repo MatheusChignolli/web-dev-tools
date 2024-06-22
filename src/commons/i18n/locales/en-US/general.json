@@ -1,8 +1,7 @@
 {
   "copy": "Copy",
   "copied": "Copied",
-  "noData": "No data",
+  "noData": "-",
   "generate": "Generate",
-  "generateWithMask": "Generate masked",
   "withMask": "With mask"
 }

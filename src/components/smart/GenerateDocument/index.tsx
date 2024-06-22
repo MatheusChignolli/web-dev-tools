@@ -1,8 +1,9 @@
 import { memo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward'
 import { Clipboard, Card, KeysCombo, DocumentBatchDialog } from '~components'
 import { useKeyPress } from '~hooks'
-import { Button, Stack, Tooltip } from '@mui/material'
+import { Box, Button, Stack } from '@mui/material'
 import { GenerateDocumentProps } from './interfaces'
 
 const GenerateDocument = ({ document, generate, keys }: GenerateDocumentProps) => {
@@ -22,47 +23,44 @@ const GenerateDocument = ({ document, generate, keys }: GenerateDocumentProps) =
 
   return (
     <Card title={t<string>(`${document}.generate`)}>
+      <Box
+        sx={{
+          top: 16,
+          right: 16,
+          position: 'absolute',
+        }}
+      >
+        <DocumentBatchDialog document={document} generate={generate} />
+      </Box>
       <Stack spacing={1}>
-        <Stack
-          flexDirection="row"
-          alignItems="center"
-          justifyContent="space-between"
-          gap={0.5}
-        >
-          <Tooltip title={t(`${document}.generate`)} arrow placement="right">
-            <Button
-              size="small"
-              color="primary"
-              variant="contained"
-              onClick={() => generateDocument()}
-              aria-label={t<string>(`${document}.ariaLabels.generateButton`)}
-            >
-              {t(`${document}.document`)}
-            </Button>
-          </Tooltip>
+        <Stack flexDirection="row" alignItems="center" gap={0.5}>
+          <Button
+            size="small"
+            color="primary"
+            variant="contained"
+            onClick={() => generateDocument()}
+            startIcon={<ArrowForwardIcon />}
+            aria-label={t<string>(`${document}.ariaLabels.generateButton`)}
+          >
+            {t('components.generateDocument.generate')} {t(`${document}.document`)}
+          </Button>
           <KeysCombo keys={['Ctrl', documentKey]} />
         </Stack>
-        <Stack
-          flexDirection="row"
-          alignItems="center"
-          justifyContent="space-between"
-          gap={0.5}
-        >
-          <Tooltip title={t(`${document}.generateWithMask`)} arrow placement="right">
-            <Button
-              size="small"
-              color="primary"
-              variant="contained"
-              onClick={() => generateDocument(true)}
-              aria-label={t<string>(`${document}.ariaLabels.generateWithMaskButton`)}
-            >
-              {t(`${document}.documentWithMask`)}
-            </Button>
-          </Tooltip>
+        <Stack flexDirection="row" alignItems="center" gap={0.5}>
+          <Button
+            size="small"
+            color="primary"
+            variant="contained"
+            onClick={() => generateDocument(true)}
+            startIcon={<ArrowForwardIcon />}
+            aria-label={t<string>(`${document}.ariaLabels.generateWithMaskButton`)}
+          >
+            {t('components.generateDocument.generate')}{' '}
+            {t(`${document}.documentWithMask`)}
+          </Button>
           <KeysCombo keys={['Shift', 'Ctrl', documentKey]} />
         </Stack>
         <Clipboard content={documentData} />
-        <DocumentBatchDialog document={document} generate={generate} />
       </Stack>
     </Card>
   )

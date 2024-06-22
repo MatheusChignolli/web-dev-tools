@@ -15,9 +15,9 @@ Object.assign(navigator, {
 })
 
 describe('Clipboard', () => {
-  it('should render "Sem dado" message when content prop is not given', () => {
+  it('should render "-" message when content prop is not given', () => {
     render(<Clipboard />)
-    expect(screen.getByText('Sem dado')).toBeInTheDocument()
+    expect(screen.getByText('-')).toBeInTheDocument()
   })
 
   describe('when pass content prop', () => {

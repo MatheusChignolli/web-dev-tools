@@ -19,6 +19,10 @@ const DocumentBatchDialog = ({ document, generate }: DocumentBatchDialogProps) =
   const [open, setOpen] = useState(false)
   const [result, setResult] = useState<string>()
 
+  const onClose = () => {
+    setOpen(false)
+  }
+
   return (
     <>
       <Button
@@ -31,6 +35,7 @@ const DocumentBatchDialog = ({ document, generate }: DocumentBatchDialogProps) =
         {t('components.documentBatchDialog.action')}
       </Button>
       <Dialog
+        onClose={onClose}
         open={open}
         aria-label={t<string>('components.documentBatchDialog.ariaLabels.form', {
           document,
@@ -51,55 +56,58 @@ const DocumentBatchDialog = ({ document, generate }: DocumentBatchDialogProps) =
         <DialogContent>
           <Stack spacing={2}>
             <Typography variant="h5">{t(`${document}.generate`)}</Typography>
-            <Typography variant="body2">
+            <Typography textAlign="justify" variant="body2">
               {t(`${document}.generateInBatch`)}
             </Typography>
-            <TextField
-              fullWidth
-              required
-              autoFocus
-              id="quantity"
-              name="quantity"
-              type="number"
-              margin="dense"
-              label={t('components.documentBatchDialog.quantityInput')}
-              variant="outlined"
-              InputProps={{ inputProps: { min: 1, max: 100000 } }}
-              aria-label={t<string>(
-                'components.documentBatchDialog.ariaLabels.quantityInput'
-              )}
-            />
-            <FormControlLabel
-              control={<Checkbox id="hasMask" name="hasMask" />}
-              label={t('components.documentBatchDialog.withMaskCheckbox')}
-              aria-label={t<string>(
-                'components.documentBatchDialog.ariaLabels.withMaskCheckbox',
-                { document }
-              )}
-            />
+            <Stack gap={2} flexDirection="row">
+              <TextField
+                fullWidth
+                required
+                autoFocus
+                id="quantity"
+                name="quantity"
+                type="number"
+                margin="dense"
+                label={t('components.documentBatchDialog.quantityInput')}
+                variant="outlined"
+                InputProps={{ inputProps: { min: 1, max: 100000, autoFocus: true } }}
+                aria-label={t<string>(
+                  'components.documentBatchDialog.ariaLabels.quantityInput'
+                )}
+              />
+              <FormControlLabel
+                control={<Checkbox id="hasMask" name="hasMask" />}
+                label={t('components.documentBatchDialog.withMaskCheckbox')}
+                sx={{ minWidth: '40%' }}
+                aria-label={t<string>(
+                  'components.documentBatchDialog.ariaLabels.withMaskCheckbox',
+                  { document }
+                )}
+              />
+            </Stack>
             <Clipboard content={result} />
           </Stack>
         </DialogContent>
         <DialogActions>
           <Button
-            variant="contained"
+            size="small"
+            variant="text"
+            onClick={onClose}
+            aria-label={t<string>('components.documentBatchDialog.ariaLabels.close')}
+          >
+            {t('components.documentBatchDialog.close')}
+          </Button>
+          <Button
             color="info"
+            size="large"
             type="submit"
+            variant="contained"
             aria-label={t<string>(
               'components.documentBatchDialog.ariaLabels.generate',
               { document }
             )}
           >
             {t('components.documentBatchDialog.generate')}
-          </Button>
-          <Button
-            autoFocus
-            color="error"
-            variant="contained"
-            onClick={() => setOpen(false)}
-            aria-label={t<string>('components.documentBatchDialog.ariaLabels.close')}
-          >
-            {t('components.documentBatchDialog.close')}
           </Button>
         </DialogActions>
       </Dialog>

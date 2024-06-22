@@ -2,9 +2,8 @@
   "document": "RG",
   "documentWithMask": "RG + máscara",
   "generate": "Gerar RG",
-  "generateWithMask": "Gerar RG com máscara",
   "withMask": "RG com máscara",
-  "generateInBatch": "Gerar diversos RGs, insira abaixo a quantidade de documentos que deseja",
+  "generateInBatch": "Gerar diversos RGs, insira abaixo a quantidade de documentos que deseja. Selecione 'Com máscara' caso deseje gerar os documentos com pontuação",
   "ariaLabels": {
     "withMaskCheckbox": "Checkbox para decidir se o RG será gerado com máscara ou sem máscara",
     "generateButton": "Botão com um ícone que possui como ação gerar o RG",

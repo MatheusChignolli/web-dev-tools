@@ -39,5 +39,8 @@
       "withMaskCheckbox": "Check to generate {{document}} in batch with mask",
       "quantityInput": "Input to insert number quantity of documents to be generated in batch"
     }
+  },
+  "generateDocument": {
+    "generate": "Generate"
   }
 }

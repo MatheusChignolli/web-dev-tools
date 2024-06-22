@@ -2,9 +2,8 @@
   "document": "CNPJ",
   "documentWithMask": "CNPJ + máscara",
   "generate": "Gerar CNPJ",
-  "generateWithMask": "Gerar CNPJ com máscara",
   "withMask": "CNPJ com máscara",
-  "generateInBatch": "Gerar diversos CNPJs, insira abaixo a quantidade de documentos que deseja",
+  "generateInBatch": "Gerar diversos CNPJs, insira abaixo a quantidade de documentos que deseja. Selecione 'Com máscara' caso deseje gerar os documentos com pontuação",
   "ariaLabels": {
     "withMaskCheckbox": "Checkbox para decidir se o CNPJ será gerado com máscara ou sem máscara",
     "generateButton": "Botão com um ícone que possui como ação gerar o CNPJ",

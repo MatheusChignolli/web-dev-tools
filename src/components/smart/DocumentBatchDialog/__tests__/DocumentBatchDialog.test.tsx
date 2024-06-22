@@ -56,7 +56,7 @@ describe.each(DocumentsConstants.documentsConfig)(
         })
       )
 
-      expect(screen.getByText('Sem dado')).toBeInTheDocument()
+      expect(screen.getByText('-')).toBeInTheDocument()
 
       await userEvent.click(
         screen.getByRole('button', {
@@ -64,7 +64,7 @@ describe.each(DocumentsConstants.documentsConfig)(
         })
       )
 
-      expect(screen.getByText('Sem dado')).not.toBeVisible()
+      expect(screen.getByText('-')).not.toBeVisible()
     })
 
     it(`should generate ${upperCaseDocument} without mask and copy it`, async () => {

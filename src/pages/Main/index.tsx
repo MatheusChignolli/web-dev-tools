@@ -9,13 +9,17 @@ const Main = () => {
   return (
     <Grid container spacing={3}>
       {DocumentsConstants.documentsConfig.map((config, index) => (
-        <Grid key={index} item xs={12} sm={6}>
+        <Grid key={index} item xs={12} md={6}>
           <GenerateDocument {...config} />
         </Grid>
       ))}
       <Grid item xs={12}>
-        <Typography variant="body2" textAlign="justify">
-          {t<string>('privacyPolicy.notOurResponsibility')}
+        <Typography variant="body2" textAlign="justify" component="div">
+          <div
+            dangerouslySetInnerHTML={{
+              __html: t<string>('privacyPolicy.notOurResponsibility'),
+            }}
+          />
         </Typography>
       </Grid>
     </Grid>

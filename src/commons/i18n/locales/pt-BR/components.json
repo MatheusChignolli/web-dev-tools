@@ -36,5 +36,8 @@
       "withMaskCheckbox": "Marcador relacionado a gerar {{document}} em massa com máscara",
       "quantityInput": "Campo para inserir a quantidade numérica de documentos a serem gerados em massa"
     }
+  },
+  "generateDocument": {
+    "generate": "Gerar"
   }
 }

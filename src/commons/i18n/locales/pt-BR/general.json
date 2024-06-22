@@ -1,8 +1,7 @@
 {
   "copy": "Copiar",
   "copied": "Copiado",
-  "noData": "Sem dado",
+  "noData": "-",
   "generate": "Gerar",
-  "generateWithMask": "Gerar pontuado",
   "withMask": "Pontuação"
 }

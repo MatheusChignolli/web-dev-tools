@@ -18,19 +18,27 @@ const Main = () => {
         flexDirection="column"
         justifyContent="center"
       >
-        <Typography textAlign="center" color="primary" fontWeight={900} variant="h2">
+        <Typography
+          textAlign="center"
+          color="primary"
+          fontWeight={900}
+          fontSize={76}
+          variant="h1"
+        >
           {t<string>('header.title')}
         </Typography>
         <Typography
           textAlign="center"
           color="primary.contrastText"
           fontWeight={400}
-          variant="h5"
+          fontSize={28}
+          variant="h2"
         >
           {t<string>('header.subtitle')}
         </Typography>
         <Link.External
           href="#documents-generator"
+          aria-label={t<string>('header.ariaLabels.generateDocumentsLink')}
           sx={{
             mt: 10,
             position: 'relative',
@@ -58,13 +66,17 @@ const Main = () => {
             },
           }}
         >
-          <IconButton size="large" color="primary">
+          <IconButton
+            size="large"
+            color="primary"
+            aria-label={t<string>('header.ariaLabels.generateDocumentsLinkButton')}
+          >
             <ArrowDownwardIcon fontSize="large" />
           </IconButton>
         </Link.External>
       </Grid>
       <Grid id="documents-generator" item xs={12}>
-        <Typography color="primary.contrastText" variant="h6" mb={2}>
+        <Typography color="primary.contrastText" variant="h3" fontSize={26} mb={2}>
           {t('components.generateDocument.title')}
         </Typography>
         <Typography color="primary.contrastText" variant="body1">
@@ -77,7 +89,7 @@ const Main = () => {
         </Grid>
       ))}
       <Grid item xs={12}>
-        <Typography color="primary.contrastText" mb={2} variant="h6">
+        <Typography color="primary.contrastText" variant="h3" fontSize={26} mb={2}>
           {t('privacyPolicy.title')}
         </Typography>
         <Typography

@@ -79,6 +79,9 @@ const Header = () => {
           onChange={handleLanguageSelect}
           value={language}
           aria-label={t<string>('header.ariaLabels.languageSelect')}
+          inputProps={{
+            'aria-label': t<string>('header.ariaLabels.languageSelectComboBox'),
+          }}
         >
           {LanguagesConstants.acronyms.map((languageItem, index) => (
             <MenuItemStyled

@@ -5,6 +5,7 @@
     "section": "Cabeçalho do site",
     "themeSwitch": "Chave para selecionar o tema da aplicação, variando entre tema claro e tema escuro",
     "languageSelect": "Selecionador de idioma da aplicação",
+    "languageSelectComboBox": "Elemento para selecionar o idioma da aplicação",
     "languages": {
       "pt": "Português brasileiro",
       "en": "Inglês americano"
@@ -12,7 +13,9 @@
     "repositoryLink": "Link para o repositório do projeto",
     "repositoryLinkButton": "Botão com link para o repositório do projeto",
     "changelog": "Link para a página de changelog da aplicação",
-    "buttonChangelog": "Botão com link para a página de changelog da aplicação"
+    "buttonChangelog": "Botão com link para a página de changelog da aplicação",
+    "generateDocumentsLink": "Link para área de gerar documentos",
+    "generateDcumentsLinkButton": "Botão com link para área de gerar documentos"
   },
   "links": {
     "changelog": "Changelog"

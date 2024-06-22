@@ -49,6 +49,13 @@ const getCommonConfig = (
     },
   },
   components: {
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          fontWeight: 900,
+        },
+      },
+    },
     MuiTextField: {
       styleOverrides: {
         root: {

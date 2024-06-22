@@ -1,5 +1,6 @@
 {
   "title": "To devs",
+  "subtitle": "Enhancing Developer and Tester Productivity",
   "ariaLabels": {
     "section": "Site`s header",
     "themeSwitch": "Switch to choose application theme between light mode and dark mode",
@@ -7,6 +8,13 @@
     "languages": {
       "pt": "Brazilian portuguese",
       "en": "American english"
-    }
+    },
+    "repositoryLink": "Link to project`s repository",
+    "repositoryLinkButton": "Button with link to project`s repository",
+    "changelog": "Link to changelog`s page",
+    "buttonChangelog": "Button with link to changelog`s page"
+  },
+  "links": {
+    "changelog": "Changelog"
   }
 }

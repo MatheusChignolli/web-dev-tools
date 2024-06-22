@@ -60,13 +60,13 @@ const getCommonConfig = (
       styleOverrides: {
         root: {
           '& label': {
-            color: palette.primary.main,
+            color: palette.primary.contrastText,
           },
           '& label.Mui-focused': {
-            color: palette.primary.main,
+            color: palette.primary.contrastText,
           },
           '& .MuiOutlinedInput-root': {
-            color: palette.primary.main,
+            color: palette.primary.contrastText,
             '& fieldset': {
               borderColor: palette.primary.main,
             },

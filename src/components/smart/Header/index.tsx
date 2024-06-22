@@ -1,4 +1,11 @@
-import { IconButton, SelectChangeEvent, Stack, Typography } from '@mui/material'
+import {
+  Button,
+  IconButton,
+  SelectChangeEvent,
+  Stack,
+  Typography,
+} from '@mui/material'
+import GitHubIcon from '@mui/icons-material/GitHub'
 import LightModeIcon from '@mui/icons-material/LightMode'
 import DarkModeIcon from '@mui/icons-material/DarkMode'
 import { useRecoilState } from 'recoil'
@@ -33,6 +40,32 @@ const Header = () => {
         </Stack>
       </Link.Internal>
       <Stack gap={1} flexDirection="row" alignItems="center">
+        <Link.Internal
+          aria-label={t<string>('header.ariaLabels.changelog')}
+          to="/changelog"
+        >
+          <Button
+            variant="outlined"
+            aria-label={t<string>('header.ariaLabels.buttonChangelog')}
+          >
+            {t<string>('header.links.changelog')}
+          </Button>
+        </Link.Internal>
+        <Link.External
+          href="https://github.com/MatheusChignolli/web-dev-tools"
+          underline="none"
+          color="inherit"
+          aria-label={t<string>('header.ariaLabels.repositoryLink')}
+          target="_blank"
+        >
+          <IconButton
+            sx={{ p: 1 }}
+            color="inherit"
+            aria-label={t<string>('header.ariaLabels.repositoryLinkButton')}
+          >
+            <GitHubIcon aria-label={t<string>('icons.ariaLabels.github')} />
+          </IconButton>
+        </Link.External>
         <IconButton
           sx={{ p: 1 }}
           onClick={handleThemeSwitch}

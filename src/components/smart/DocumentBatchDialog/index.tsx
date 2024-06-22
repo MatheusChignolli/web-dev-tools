@@ -59,7 +59,11 @@ const DocumentBatchDialog = ({ document, generate }: DocumentBatchDialogProps) =
               {t(`${document}.document`)}{' '}
               {t('components.documentBatchDialog.inBatch')}
             </Typography>
-            <Typography color="primary" textAlign="justify" variant="body2">
+            <Typography
+              color="primary.contrastText"
+              textAlign="justify"
+              variant="body2"
+            >
               {t(`${document}.generateInBatch`)}
             </Typography>
             <Stack gap={2} flexDirection="row">
@@ -71,7 +75,6 @@ const DocumentBatchDialog = ({ document, generate }: DocumentBatchDialogProps) =
                 name="quantity"
                 type="number"
                 margin="dense"
-                color="primary"
                 label={t('components.documentBatchDialog.quantityInput')}
                 variant="outlined"
                 InputProps={{ inputProps: { min: 1, max: 100000, autoFocus: true } }}
@@ -83,11 +86,6 @@ const DocumentBatchDialog = ({ document, generate }: DocumentBatchDialogProps) =
                 control={<Checkbox id="hasMask" name="hasMask" />}
                 label={t('components.documentBatchDialog.withMaskCheckbox')}
                 sx={{ minWidth: '40%' }}
-                componentsProps={{
-                  typography: {
-                    color: 'primary',
-                  },
-                }}
                 aria-label={t<string>(
                   'components.documentBatchDialog.ariaLabels.withMaskCheckbox',
                   { document }

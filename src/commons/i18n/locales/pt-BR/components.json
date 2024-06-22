@@ -39,6 +39,8 @@
     }
   },
   "generateDocument": {
+    "title": "Gerador de documentos",
+    "subtitle": "Gere facilmente documentos essenciais brasileiros como RG, CPF e CNPJ com nosso gerador intuitivo de documentos. Projetado para desenvolvedores e organizações, nossa ferramenta garante precisão e eficiência na criação de documentos. Otimize suas tarefas administrativas e processos de teste com documentos formatados e válidos ao seu alcance. Simplifique o manejo de dados e reduza erros com a geração automatizada de documentos. Experimente uma integração perfeita ao seu fluxo de trabalho para maior produtividade e conformidade.",
     "generate": "Gerar"
   }
 }

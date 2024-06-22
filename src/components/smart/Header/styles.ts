@@ -7,6 +7,12 @@ export const HeaderStyled = styled.header`
   justify-content: space-between;
   align-items: center;
   color: ${({ theme }) => theme.palette.primary.contrastText};
+
+  ${({ theme }) => {
+    return `${theme.breakpoints.down(
+      'sm'
+    )} { flex-direction: column; align-items: flex-start; gap: 16px}`
+  }}
 `
 
 export const SelectStyled = styled(Select)`

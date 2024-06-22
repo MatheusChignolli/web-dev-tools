@@ -42,6 +42,8 @@
     }
   },
   "generateDocument": {
+    "title": "Documents generator",
+    "subtitle": "Easily generate essential Brazilian documents such as RG, CPF, and CNPJ with our intuitive document generator. Designed for developers and organizations alike, our tool ensures accuracy and efficiency in document creation. Streamline your administrative tasks and testing processes with formatted, valid documents at your fingertips. Simplify data handling and reduce errors with automated document generation. Experience seamless integration into your workflow for enhanced productivity and compliance.",
     "generate": "Generate"
   }
 }

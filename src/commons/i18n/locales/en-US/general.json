@@ -2,5 +2,6 @@
   "copy": "Copy",
   "copied": "Copied",
   "generate": "Generate",
-  "withMask": "With mask"
+  "withMask": "With mask",
+  "result": "Result"
 }

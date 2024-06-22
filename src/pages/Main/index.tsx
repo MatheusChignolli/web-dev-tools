@@ -1,4 +1,4 @@
-import { Grid, IconButton, Typography } from '@mui/material'
+import { Box, Grid, IconButton, Stack, Typography } from '@mui/material'
 import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward'
 import { useTranslation } from 'react-i18next'
 import { GenerateDocument, Link } from '~components'
@@ -8,31 +8,31 @@ const Main = () => {
   const { t } = useTranslation()
 
   return (
-    <Grid container spacing={3}>
+    <Stack spacing={20}>
       <Grid
         item
         xs={12}
-        height="calc(100dvh - 52px)"
+        height="calc(100dvh - 212px)"
         display="flex"
         alignItems="center"
         flexDirection="column"
         justifyContent="center"
       >
         <Typography
-          textAlign="center"
-          color="primary"
-          fontWeight={900}
-          fontSize={76}
           variant="h1"
+          color="primary"
+          textAlign="center"
+          fontSize={76}
+          fontWeight={900}
         >
           {t<string>('header.title')}
         </Typography>
         <Typography
-          textAlign="center"
-          color="primary.contrastText"
-          fontWeight={400}
-          fontSize={28}
           variant="h2"
+          color="primary.contrastText"
+          textAlign="center"
+          fontSize={28}
+          fontWeight={400}
         >
           {t<string>('header.subtitle')}
         </Typography>
@@ -75,21 +75,25 @@ const Main = () => {
           </IconButton>
         </Link.External>
       </Grid>
-      <Grid id="documents-generator" item xs={12}>
-        <Typography color="primary.contrastText" variant="h3" fontSize={26} mb={2}>
+      <Stack id="documents-generator" spacing={5} pt={6}>
+        <Typography variant="h3" color="primary.contrastText" fontSize={26} mb={2}>
           {t('components.generateDocument.title')}
         </Typography>
-        <Typography color="primary.contrastText" variant="body1">
+        <Box>
+          <Grid container spacing={3}>
+            {DocumentsConstants.documentsConfig.map((config, index) => (
+              <Grid key={index} item xs={12} md={6}>
+                <GenerateDocument {...config} />
+              </Grid>
+            ))}
+          </Grid>
+        </Box>
+        <Typography variant="body1" color="primary.contrastText" textAlign="justify">
           {t('components.generateDocument.subtitle')}
         </Typography>
-      </Grid>
-      {DocumentsConstants.documentsConfig.map((config, index) => (
-        <Grid key={index} item xs={12} md={6}>
-          <GenerateDocument {...config} />
-        </Grid>
-      ))}
-      <Grid item xs={12}>
-        <Typography color="primary.contrastText" variant="h3" fontSize={26} mb={2}>
+      </Stack>
+      <Stack spacing={5}>
+        <Typography color="primary.contrastText" variant="h3" fontSize={26}>
           {t('privacyPolicy.title')}
         </Typography>
         <Typography
@@ -104,8 +108,8 @@ const Main = () => {
             }}
           />
         </Typography>
-      </Grid>
-    </Grid>
+      </Stack>
+    </Stack>
   )
 }
 

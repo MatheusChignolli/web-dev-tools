@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next'
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward'
 import { Clipboard, Card, KeysCombo, DocumentBatchDialog } from '~components'
 import { useKeyPress } from '~hooks'
-import { Box, Button, Stack } from '@mui/material'
+import { Box, Button, Stack, Typography } from '@mui/material'
 import { GenerateDocumentProps } from './interfaces'
 
 const GenerateDocument = ({ document, generate, keys }: GenerateDocumentProps) => {
@@ -41,10 +41,17 @@ const GenerateDocument = ({ document, generate, keys }: GenerateDocumentProps) =
             onClick={() => generateDocument()}
             startIcon={<ArrowForwardIcon />}
             aria-label={t<string>(`${document}.ariaLabels.generateButton`)}
+            sx={{ width: { xs: '100%', sm: 'auto' } }}
           >
             {t('components.generateDocument.generate')} {t(`${document}.document`)}
           </Button>
-          <KeysCombo keys={['Ctrl', documentKey]} />
+          <Box
+            sx={{
+              display: { xs: 'none', sm: 'block' },
+            }}
+          >
+            <KeysCombo keys={['Ctrl', documentKey]} />
+          </Box>
         </Stack>
         <Stack flexDirection="row" alignItems="center" gap={0.5}>
           <Button
@@ -54,12 +61,24 @@ const GenerateDocument = ({ document, generate, keys }: GenerateDocumentProps) =
             onClick={() => generateDocument(true)}
             startIcon={<ArrowForwardIcon />}
             aria-label={t<string>(`${document}.ariaLabels.generateWithMaskButton`)}
+            sx={{ width: { xs: '100%', sm: 'auto' } }}
           >
             {t('components.generateDocument.generate')}{' '}
             {t(`${document}.documentWithMask`)}
           </Button>
-          <KeysCombo keys={['Shift', 'Ctrl', documentKey]} />
+          <Box
+            sx={{
+              display: { xs: 'none', sm: 'block' },
+            }}
+          >
+            <KeysCombo keys={['Shift', 'Ctrl', documentKey]} />
+          </Box>
         </Stack>
+        {!!documentData && (
+          <Typography variant="body1" color="primary.contrastText">
+            {t('general.result')}:
+          </Typography>
+        )}
         <Clipboard content={documentData} />
       </Stack>
     </Card>

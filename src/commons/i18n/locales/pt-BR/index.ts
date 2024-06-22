@@ -8,6 +8,7 @@ import * as cnpj from './cnpj.json'
 import * as rg from './rg.json'
 import * as http from './http.json'
 import * as privacyPolicy from './privacyPolicy.json'
+import * as changelog from './changelog.json'
 
 const pt = {
   translation: {
@@ -21,6 +22,7 @@ const pt = {
     rg,
     http,
     privacyPolicy,
+    changelog,
   },
 }
 

@@ -64,7 +64,7 @@ const Main = () => {
         </Link.External>
       </Grid>
       <Grid id="documents-generator" item xs={12}>
-        <Typography color="primary.contrastText" variant="h6">
+        <Typography color="primary.contrastText" variant="h6" mb={2}>
           {t('components.generateDocument.title')}
         </Typography>
         <Typography color="primary.contrastText" variant="body1">

@@ -13,10 +13,10 @@ describe('LayoutProvider', () => {
     expect(screen.getByText('Children')).toBeInTheDocument()
     expect(screen.getByText('To devs')).toBeInTheDocument()
     expect(
-      screen.getByLabelText('Ícone do GitHub arredondado e sem bordas')
-    ).toBeInTheDocument()
+      screen.getAllByLabelText('Ícone do GitHub arredondado e sem bordas')
+    ).toHaveLength(2)
     expect(
-      screen.getByLabelText('Link para o repositório do projeto')
+      screen.getAllByLabelText('Link para o repositório do projeto')[0]
     ).toHaveAttribute('href', 'https://github.com/MatheusChignolli/web-dev-tools')
   })
 })

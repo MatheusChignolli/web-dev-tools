@@ -4,11 +4,13 @@ import { dateUtils } from '~utils'
 import { Loader } from '~components'
 import { githubServices } from '~services'
 import { Release } from './sections'
-import { Grid } from '@mui/material'
+import { Box, Stack, Typography } from '@mui/material'
+import { useTranslation } from 'react-i18next'
 
 const referencePath = 'version-accordion-'
 
 const Changelog = () => {
+  const { t } = useTranslation()
   const [accordionReference, setAccordionReference] = useState(`${referencePath}0`)
 
   const { data, isLoading } = useQuery(
@@ -31,24 +33,34 @@ const Changelog = () => {
   }
 
   return (
-    <Grid container direction="column">
-      {data?.map(({ body, created_at, tag_name }, index) => {
-        const reference = `${referencePath}${index}`
-        return (
-          <Release
-            key={`key-${reference}`}
-            body={body}
-            title={`[${tag_name}] - ${dateUtils.format(created_at)}`}
-            expanded={accordionReference === reference}
-            onChange={() => {
-              setAccordionReference((prevState) =>
-                prevState === reference ? '' : reference
-              )
-            }}
-          />
-        )
-      })}
-    </Grid>
+    <Stack spacing={2}>
+      <Typography color="primary.contrastText" variant="h6">
+        {t('changelog.title')}
+      </Typography>
+      <Typography color="primary.contrastText" variant="body1">
+        {t('changelog.subtitle')}
+      </Typography>
+      {!!data?.length && (
+        <Box>
+          {data.map(({ body, created_at, tag_name }, index) => {
+            const reference = `${referencePath}${index}`
+            return (
+              <Release
+                key={`key-${reference}`}
+                body={body}
+                title={`[${tag_name}] - ${dateUtils.format(created_at)}`}
+                expanded={accordionReference === reference}
+                onChange={() => {
+                  setAccordionReference((prevState) =>
+                    prevState === reference ? '' : reference
+                  )
+                }}
+              />
+            )
+          })}
+        </Box>
+      )}
+    </Stack>
   )
 }
 

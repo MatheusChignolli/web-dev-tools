@@ -3,9 +3,6 @@ import styled from 'styled-components'
 export const FooterStyled = styled.footer`
   padding: ${({ theme }) => theme.spacing(2)};
   margin-top: ${({ theme }) => theme.spacing(6)};
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   color: ${({ theme }) => theme.palette.primary.contrastText};
   background-color: ${({ theme }) => theme.palette.primary.main};
   border-radius: 4px;

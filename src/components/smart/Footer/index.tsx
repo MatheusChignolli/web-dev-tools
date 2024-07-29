@@ -42,61 +42,77 @@ const Footer = () => {
     <>
       <FooterStyled>
         <Stack
-          alignItems="center"
-          justifyContent="center"
-          flexDirection="row"
-          gap={1}
-        >
-          <Logo />
-          <CopyrightIcon
-            fontSize="small"
-            aria-label={t<string>('icons.ariaLabels.copyright')}
-          />
-          <Typography
-            variant="body1"
-            aria-label={t<string>('footer.ariaLabels.copyright')}
-          >
-            {year}
-          </Typography>
-        </Stack>
-        <Stack
-          alignItems="center"
-          divider={
-            <Divider
-              orientation="vertical"
-              flexItem
-              sx={{
-                borderWidth: 1,
-                borderColor: (theme) => theme.palette.primary.dark,
-              }}
-            />
-          }
-          flexDirection="row"
+          justifyContent="space-between"
           gap={2}
+          sx={{
+            flexDirection: {
+              xs: 'collumn',
+              md: 'row',
+            },
+          }}
         >
-          <Link.External
-            href="https://github.com/MatheusChignolli/web-dev-tools"
-            underline="none"
-            color="inherit"
-            aria-label={t<string>('footer.ariaLabels.repositoryLink')}
-            target="_blank"
+          <Stack
+            alignItems="center"
+            justifyContent="center"
+            flexDirection="row"
+            gap={1}
+          >
+            <Logo />
+            <CopyrightIcon
+              fontSize="small"
+              aria-label={t<string>('icons.ariaLabels.copyright')}
+            />
+            <Typography
+              variant="body1"
+              aria-label={t<string>('footer.ariaLabels.copyright')}
+            >
+              {year}
+            </Typography>
+          </Stack>
+          <Stack
+            alignItems="center"
+            divider={
+              <Divider
+                orientation="vertical"
+                flexItem
+                sx={{
+                  borderWidth: 1,
+                  borderColor: (theme) => theme.palette.primary.dark,
+                }}
+              />
+            }
+            gap={2}
             sx={{
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
+              flexDirection: {
+                xs: 'collumn',
+                md: 'row',
+              },
             }}
           >
-            <GitHubIcon aria-label={t<string>('icons.ariaLabels.github')} />
-          </Link.External>
-          {internalLinks.map(({ id, path }, index) => (
-            <Link.Internal
-              key={index}
-              aria-label={t<string>(`footer.ariaLabels.${id}`)}
-              to={`/${path}`}
+            <Link.External
+              href="https://github.com/MatheusChignolli/web-dev-tools"
+              underline="none"
+              color="inherit"
+              aria-label={t<string>('footer.ariaLabels.repositoryLink')}
+              target="_blank"
+              sx={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}
             >
-              {t<string>(`footer.links.${id}`)}
-            </Link.Internal>
-          ))}
+              <GitHubIcon aria-label={t<string>('icons.ariaLabels.github')} />
+            </Link.External>
+            {internalLinks.map(({ id, path }, index) => (
+              <Link.Internal
+                key={index}
+                aria-label={t<string>(`footer.ariaLabels.${id}`)}
+                to={`/${path}`}
+              >
+                {t<string>(`footer.links.${id}`)}
+              </Link.Internal>
+            ))}
+          </Stack>
         </Stack>
       </FooterStyled>
       <ins

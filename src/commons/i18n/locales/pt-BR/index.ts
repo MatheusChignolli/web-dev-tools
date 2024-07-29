@@ -8,6 +8,9 @@ import * as cnpj from './cnpj.json'
 import * as rg from './rg.json'
 import * as http from './http.json'
 import * as privacyPolicy from './privacyPolicy.json'
+import * as termsOfUse from './termsOfUse.json'
+import * as about from './about.json'
+import * as contact from './contact.json'
 import * as changelog from './changelog.json'
 
 const pt = {
@@ -22,6 +25,9 @@ const pt = {
     rg,
     http,
     privacyPolicy,
+    termsOfUse,
+    about,
+    contact,
     changelog,
   },
 }

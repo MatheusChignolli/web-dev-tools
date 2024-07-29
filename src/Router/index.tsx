@@ -1,5 +1,5 @@
 import { Suspense } from 'react'
-import { Route, Routes, Navigate } from 'react-router-dom'
+import { Route, Routes } from 'react-router-dom'
 import routes from './routes'
 import { Loader } from '~components'
 
@@ -15,7 +15,6 @@ const Router = () => {
             caseSensitive
           />
         ))}
-        <Route path="*" element={<Navigate to="/404" />} />
       </Routes>
     </Suspense>
   )

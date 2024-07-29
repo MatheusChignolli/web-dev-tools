@@ -33,8 +33,13 @@ const Changelog = () => {
   }
 
   return (
-    <Stack spacing={2}>
-      <Typography color="primary.contrastText" variant="h6">
+    <Stack spacing={5} my={10}>
+      <Typography
+        color="primary.contrastText"
+        variant="h3"
+        fontSize={26}
+        fontWeight="bold"
+      >
         {t('changelog.title')}
       </Typography>
       <Typography color="primary.contrastText" variant="body1">

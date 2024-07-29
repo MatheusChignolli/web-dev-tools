@@ -1,21 +1,14 @@
-import {
-  Button,
-  IconButton,
-  SelectChangeEvent,
-  Stack,
-  Typography,
-} from '@mui/material'
+import { Button, IconButton, SelectChangeEvent, Stack } from '@mui/material'
 import GitHubIcon from '@mui/icons-material/GitHub'
 import LightModeIcon from '@mui/icons-material/LightMode'
 import DarkModeIcon from '@mui/icons-material/DarkMode'
 import { useRecoilState } from 'recoil'
 import { useTranslation } from 'react-i18next'
-import { Link } from '~components'
+import { Link, Logo } from '~components'
 import { Languages } from '~interfaces/languages'
 import { languageState, themeState } from '~states'
 import { LanguagesConstants } from '~constants'
 import { HeaderStyled, SelectStyled, MenuItemStyled } from './styles'
-import CodeIcon from '@mui/icons-material/Code'
 
 const Header = () => {
   const { t } = useTranslation()
@@ -33,12 +26,7 @@ const Header = () => {
 
   return (
     <HeaderStyled aria-label={t<string>('header.ariaLabels.section')}>
-      <Link.Internal to="/">
-        <Stack flexDirection="row" alignItems="center" gap={0.5}>
-          <CodeIcon fontSize="large" />
-          <Typography variant="h5">{t<string>('header.title')}</Typography>
-        </Stack>
-      </Link.Internal>
+      <Logo large />
       <Stack gap={1} flexDirection="row" alignItems="center">
         <Link.Internal
           aria-label={t<string>('header.ariaLabels.changelog')}

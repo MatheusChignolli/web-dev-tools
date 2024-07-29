@@ -2,9 +2,19 @@
   "ariaLabels": {
     "repositoryLink": "Link para o repositório do projeto",
     "copyright": "Texto com o ano vigente e um ícone de Copyright",
+    "home": "Link para a página inicial",
+    "contact": "Link para a página de contato",
+    "about": "Link para a página sobre a aplicação",
+    "privacyPolicy": "Link para a página de política de privacidade",
+    "termsOfUse": "Link para a página de termos de uso",
     "changelog": "Link para a página de changelog da aplicação"
   },
   "links": {
+    "home": "Início",
+    "contact": "Contato",
+    "about": "Sobre",
+    "privacyPolicy": "Política de privacidade",
+    "termsOfUse": "Termos de uso",
     "changelog": "Changelog"
   }
 }

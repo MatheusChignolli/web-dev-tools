@@ -92,23 +92,6 @@ const Main = () => {
           {t('components.generateDocument.subtitle')}
         </Typography>
       </Stack>
-      <Stack spacing={5}>
-        <Typography color="primary.contrastText" variant="h3" fontSize={26}>
-          {t('privacyPolicy.title')}
-        </Typography>
-        <Typography
-          color="primary.contrastText"
-          variant="body2"
-          textAlign="justify"
-          component="div"
-        >
-          <div
-            dangerouslySetInnerHTML={{
-              __html: t<string>('privacyPolicy.notOurResponsibility'),
-            }}
-          />
-        </Typography>
-      </Stack>
     </Stack>
   )
 }

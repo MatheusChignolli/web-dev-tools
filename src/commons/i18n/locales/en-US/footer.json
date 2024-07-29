@@ -2,9 +2,19 @@
   "ariaLabels": {
     "repositoryLink": "Link to project`s repository",
     "copyright": "Text with current year and copyright icon",
+    "home": "Link to home page",
+    "contact": "Link to contact us page",
+    "about": "Link to about page",
+    "privacyPolicy": "Link to privacy policy page",
+    "termsOfUse": "Link to terms of use page",
     "changelog": "Link to changelog`s page"
   },
   "links": {
+    "home": "Home",
+    "contact": "Contact us",
+    "about": "About",
+    "privacyPolicy": "Privacy policy",
+    "termsOfUse": "Terms of use",
     "changelog": "Changelog"
   }
 }

@@ -1,0 +1,25 @@
+{
+  "title": "Contato",
+  "subtitle": "Valorizamos seu feedback, perguntas e sugestões. Se você precisa de suporte, tem uma dúvida sobre nossas ferramentas ou deseja compartilhar suas ideias, estamos aqui para ajudar. Por favor, utilize as informações de contato abaixo para entrar em contato conosco.",
+  "form": {
+    "submit": {
+      "content": "Enviar",
+      "ariaLabel": "Botão para submeter formulário de contato"
+    },
+    "email": {
+      "label": "E-mail",
+      "placeholder": "seu-email@exemplo.com.br",
+      "ariaLabel": "Campo para digitar o seu e-mail"
+    },
+    "subject": {
+      "label": "Assunto",
+      "placeholder": "Feedback sobre a funcionalidade...",
+      "ariaLabel": "Campo para digitar o assunto da sua mensagem"
+    },
+    "message": {
+      "label": "Mensagem",
+      "placeholder": "A funciondalide de geração de documentos...",
+      "ariaLabel": "Campo para digitar a sua mensagem"
+    }
+  }
+}

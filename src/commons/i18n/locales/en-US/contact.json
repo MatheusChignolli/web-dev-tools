@@ -1,0 +1,25 @@
+{
+  "title": "Contato",
+  "subtitle": "We value your feedback, questions, and suggestions. Whether you need support, have a question about our tools, or just want to share your thoughts, we're here to help. Please use the contact information below to get in touch with us.",
+  "form": {
+    "submit": {
+      "content": "Send",
+      "ariaLabel": "Button to submit contact form"
+    },
+    "email": {
+      "label": "Email",
+      "placeholder": "your-email@example.com",
+      "ariaLabel": "Input for your email"
+    },
+    "subject": {
+      "label": "Subject",
+      "placeholder": "Generator document feedback...",
+      "ariaLabel": "Input for your messages` subject"
+    },
+    "message": {
+      "label": "Message",
+      "placeholder": "The document generator feature is very good...",
+      "ariaLabel": "Input for your meesage"
+    }
+  }
+}

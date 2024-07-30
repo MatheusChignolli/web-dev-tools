@@ -1,8 +1,7 @@
 import { useTranslation } from 'react-i18next'
-import GitHubIcon from '@mui/icons-material/GitHub'
 import CopyrightIcon from '@mui/icons-material/Copyright'
 import { dateUtils } from '~utils'
-import { Link, Logo } from '~components'
+import { Link, Logo, Socials } from '~components'
 import { FooterStyled } from './styles'
 import { Divider, Stack, Typography } from '@mui/material'
 
@@ -89,20 +88,7 @@ const Footer = () => {
               },
             }}
           >
-            <Link.External
-              href="https://github.com/MatheusChignolli/web-dev-tools"
-              underline="none"
-              color="inherit"
-              aria-label={t<string>('footer.ariaLabels.repositoryLink')}
-              target="_blank"
-              sx={{
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-              }}
-            >
-              <GitHubIcon aria-label={t<string>('icons.ariaLabels.github')} />
-            </Link.External>
+            <Socials />
             {internalLinks.map(({ id, path }, index) => (
               <Link.Internal
                 key={index}

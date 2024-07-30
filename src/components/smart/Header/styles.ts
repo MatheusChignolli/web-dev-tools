@@ -21,12 +21,13 @@ export const SelectStyled = styled(Select)`
     border: none;
     padding-top: ${({ theme }) => theme.spacing(1)};
     background-color: ${({ theme }) => theme.palette.primary.main};
-    border-radius: 2px;
+    border-radius: 4px;
     color: ${({ theme }) => theme.palette.primary.contrastText};
+    font-weight: 600;
     padding: ${({ theme }) => theme.spacing(1, 2)};
 
     &[aria-expanded='false'] {
-      border-radius: 2px;
+      border-radius: 4px;
       background-color: ${({ theme }) => theme.palette.primary.main};
     }
   }
@@ -44,6 +45,7 @@ export const MenuItemStyled = styled(MenuItem)`
   background: ${({ theme }) => theme.palette.primary.light} !important;
 
   &[aria-selected='true'] {
+    font-weight: 600;
     background: ${({ theme }) => theme.palette.primary.main} !important;
   }
 `

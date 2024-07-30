@@ -52,7 +52,7 @@ const getCommonConfig = (
     MuiButton: {
       styleOverrides: {
         root: {
-          fontWeight: 900,
+          fontWeight: 600,
         },
       },
     },

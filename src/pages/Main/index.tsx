@@ -12,7 +12,7 @@ const Main = () => {
       <Grid
         item
         xs={12}
-        height="calc(100dvh - 212px)"
+        height="calc(100dvh - 76px)"
         display="flex"
         alignItems="center"
         flexDirection="column"
@@ -75,7 +75,7 @@ const Main = () => {
           </IconButton>
         </Link.External>
       </Grid>
-      <Stack id="documents-generator" spacing={5} pt={6}>
+      <Stack id="documents-generator" spacing={5}>
         <Typography variant="h3" color="primary.contrastText" fontSize={26} mb={2}>
           {t('components.generateDocument.title')}
         </Typography>

@@ -1,4 +1,5 @@
 import { Button, Grid, Stack, TextField, Typography } from '@mui/material'
+import { Socials } from '~components'
 import { useForm } from 'react-hook-form'
 import { useTranslation } from 'react-i18next'
 import { FormData } from './interfaces'
@@ -29,7 +30,7 @@ ${messageEnd}`
         fontSize={26}
         fontWeight="bold"
       >
-        {t('contact.title')}
+        {t('contact.title')} <Socials />
       </Typography>
       <Typography color="primary.contrastText" variant="body1">
         {t('contact.subtitle')}

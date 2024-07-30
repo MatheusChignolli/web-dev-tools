@@ -1,6 +1,6 @@
 {
   "title": "To devs",
-  "subtitle": "Aumentando a Produtividade de Desenvolvedores e Testadores",
+  "subtitle": "Aumentando a Produtividade de Desenvolvedores e Testers",
   "ariaLabels": {
     "section": "Cabeçalho do site",
     "themeSwitch": "Chave para selecionar o tema da aplicação, variando entre tema claro e tema escuro",
@@ -10,8 +10,6 @@
       "pt": "Português brasileiro",
       "en": "Inglês americano"
     },
-    "repositoryLink": "Link para o repositório do projeto",
-    "repositoryLinkButton": "Botão com link para o repositório do projeto",
     "changelog": "Link para a página de changelog da aplicação",
     "buttonChangelog": "Botão com link para a página de changelog da aplicação",
     "generateDocumentsLink": "Link para área de gerar documentos",

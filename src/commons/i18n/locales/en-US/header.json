@@ -10,8 +10,6 @@
       "pt": "Brazilian portuguese",
       "en": "American english"
     },
-    "repositoryLink": "Link to project`s repository",
-    "repositoryLinkButton": "Button with link to project`s repository",
     "changelog": "Link to changelog`s page",
     "buttonChangelog": "Button with link to changelog`s page",
     "generateDocumentsLink": "Link to generate documents section",

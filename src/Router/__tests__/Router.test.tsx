@@ -20,6 +20,10 @@ describe('Router', () => {
           <Link to="/">Link to home</Link>
           <Link to="/404">Link to 404</Link>
           <Link to="/changelog">Link to changelog</Link>
+          <Link to="/terms-of-use">Link to terms of use</Link>
+          <Link to="/privacy-policy">Link to privacy policy</Link>
+          <Link to="/about">Link to about</Link>
+          <Link to="/contact">Link to contact</Link>
         </>
       )
     })
@@ -69,6 +73,62 @@ describe('Router', () => {
 
     await waitFor(() => {
       expect(screen.getByText('Sem conteúdo')).toBeInTheDocument()
+    })
+  })
+
+  it('should render "/terms-of-use" route', async () => {
+    await waitFor(() => {
+      expect(screen.getByText('Gerar CPF')).toBeInTheDocument()
+    })
+
+    const linkButton = screen.getByText('Link to terms of use')
+
+    await userEvent.click(linkButton)
+
+    await waitFor(() => {
+      expect(screen.getByText('Política de Termos e Uso')).toBeInTheDocument()
+    })
+  })
+
+  it('should render "/privacy-policy" route', async () => {
+    await waitFor(() => {
+      expect(screen.getByText('Gerar CPF')).toBeInTheDocument()
+    })
+
+    const linkButton = screen.getByText('Link to privacy policy')
+
+    await userEvent.click(linkButton)
+
+    await waitFor(() => {
+      expect(screen.getByText('Política de Privacidade')).toBeInTheDocument()
+    })
+  })
+
+  it('should render "/about" route', async () => {
+    await waitFor(() => {
+      expect(screen.getByText('Gerar CPF')).toBeInTheDocument()
+    })
+
+    const linkButton = screen.getByText('Link to about')
+
+    await userEvent.click(linkButton)
+
+    await waitFor(() => {
+      expect(screen.getByText('Sobre nós')).toBeInTheDocument()
+    })
+  })
+
+  it('should render "/contact" route', async () => {
+    await waitFor(() => {
+      expect(screen.getByText('Gerar CPF')).toBeInTheDocument()
+    })
+
+    const linkButton = screen.getByText('Link to contact')
+
+    await userEvent.click(linkButton)
+
+    await waitFor(() => {
+      expect(screen.getByText('Contato')).toBeInTheDocument()
     })
   })
 })

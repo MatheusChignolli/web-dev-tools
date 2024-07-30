@@ -13,7 +13,7 @@ const Socials = () => {
         href="https://github.com/MatheusChignolli/web-dev-tools"
         underline="none"
         color="inherit"
-        aria-label={t<string>('footer.ariaLabels.repositoryLink')}
+        aria-label={t<string>('icons.links.github')}
         target="_blank"
         sx={{
           display: 'flex',
@@ -32,7 +32,7 @@ const Socials = () => {
         href="https://www.linkedin.com/in/matheus-chignolli-a0115b155/"
         underline="none"
         color="inherit"
-        aria-label={t<string>('footer.ariaLabels.repositoryLink')}
+        aria-label={t<string>('icons.links.linkedin')}
         target="_blank"
         sx={{
           display: 'flex',

@@ -14,8 +14,17 @@ describe('Footer', () => {
       screen.getByLabelText('Ícone do GitHub arredondado e sem bordas')
     ).toBeInTheDocument()
     expect(
-      screen.getByLabelText('Link para o repositório do projeto')
+      screen.getByLabelText('Link para o repositório da aplicação')
     ).toHaveAttribute('href', 'https://github.com/MatheusChignolli/web-dev-tools')
+    expect(
+      screen.getByLabelText('Ícone do LinkedIn arredondado e sem bordas')
+    ).toBeInTheDocument()
+    expect(
+      screen.getByLabelText('Link para o LinkedIn do autor da aplicação')
+    ).toHaveAttribute(
+      'href',
+      'https://www.linkedin.com/in/matheus-chignolli-a0115b155/'
+    )
   })
 
   it('should render changelog`s link and go to changelog`s page', async () => {

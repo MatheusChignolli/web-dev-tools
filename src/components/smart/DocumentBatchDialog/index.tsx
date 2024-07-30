@@ -1,3 +1,4 @@
+import { useState, FormEvent } from 'react'
 import {
   Button,
   Checkbox,
@@ -9,7 +10,6 @@ import {
   TextField,
   Typography,
 } from '@mui/material'
-import { useState } from 'react'
 import { Clipboard } from '~components'
 import { DocumentBatchDialogProps } from './interfaces'
 import { useTranslation } from 'react-i18next'
@@ -42,7 +42,7 @@ const DocumentBatchDialog = ({ document, generate }: DocumentBatchDialogProps) =
         })}
         PaperProps={{
           component: 'form',
-          onSubmit: (event: React.FormEvent<HTMLFormElement>) => {
+          onSubmit: (event: FormEvent<HTMLFormElement>) => {
             event.preventDefault()
             const { quantity, hasMask } = Object.fromEntries(
               (new FormData(event.currentTarget) as any).entries()

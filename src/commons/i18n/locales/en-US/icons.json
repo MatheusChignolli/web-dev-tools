@@ -5,5 +5,9 @@
     "copyright": "Icon with circle border and letter C inside it",
     "doubleArrow": "Icon with a double arrow pointing to the right",
     "copy": "Icon showing the copy action with a rectangle in front other"
+  },
+  "links": {
+    "github": "Link to app`s repository on Github",
+    "linkedin": "Link to author`s LinkedIn page"
   }
 }

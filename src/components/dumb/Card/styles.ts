@@ -8,6 +8,7 @@ export const CardStyled = styled.div<CardStyledProps>`
   background-color: ${({ theme }) => theme.palette.background.paper};
   border-radius: 4px;
   position: relative;
+  height: 100%;
 
   h2 {
     color: ${({ theme }) => theme.palette.primary.main};

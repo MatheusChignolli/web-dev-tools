@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next'
 import CopyrightIcon from '@mui/icons-material/Copyright'
 import { dateUtils } from '~utils'
-import { Link, Logo, Socials } from '~components'
+import { Link, Logo, Socials, Ad } from '~components'
 import { FooterStyled } from './styles'
 import { Divider, Stack, Typography } from '@mui/material'
 
@@ -39,6 +39,7 @@ const Footer = () => {
 
   return (
     <>
+      <Ad />
       <FooterStyled>
         <Stack
           justifyContent="space-between"

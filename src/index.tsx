@@ -1,4 +1,4 @@
-import { StrictMode } from 'react'
+// import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import '~commons/styles/global.css'
 import '~i18n'
@@ -15,9 +15,9 @@ import App from './App'
 // - Otimizar importações do MUI para usar menos código possível
 
 createRoot(document.querySelector('#root') as Element).render(
-  <StrictMode>
-    <App />
-  </StrictMode>
+  // <StrictMode>
+  <App />
+  // </StrictMode>
 )
 
 reportWebVitals()

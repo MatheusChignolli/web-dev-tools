@@ -59,6 +59,9 @@ dependencies:
   recoil-persist:
     specifier: ^4.2.0
     version: 4.2.0(recoil@0.7.7)
+  sitemap-webpack-plugin:
+    specifier: ^1.1.1
+    version: 1.1.1
   styled-components:
     specifier: ^5.3.6
     version: 5.3.11(@babel/core@7.24.7)(react-dom@18.3.1)(react-is@18.3.1)(react@18.3.1)
@@ -3325,6 +3328,10 @@ packages:
       '@types/node': 18.19.34
     dev: false
 
+  /@types/node@14.18.63:
+    resolution: {integrity: sha512-fAtCfv4jJg+ExtXhvCkCqUKZ+4ok/JQk01qDKhL5BDDoS3AxKXhV5/MAVUZyQnSEd2GT92fkgZl0pz0Q0AzcIQ==}
+    dev: false
+
   /@types/node@18.19.34:
     resolution: {integrity: sha512-eXF4pfBNV5DAMKGbI02NnDtWrQ40hAN558/2vvS4gMpMIxaf6JmD7YjnZbq0Q9TDSSkKBamime8ewRoomHdt4g==}
     dependencies:
@@ -3383,6 +3390,12 @@ packages:
 
   /@types/retry@0.12.0:
     resolution: {integrity: sha512-wWKOClTTiizcZhXnPY4wikVAwmdYHp8q6DmC+EJUzAMsycb7HB32Kh9RN4+0gExjmPmZSAQjgURXIGATPegAvA==}
+    dev: false
+
+  /@types/sax@1.2.7:
+    resolution: {integrity: sha512-rO73L89PJxeYM3s3pPPjiPgVVcymqU490g0YO5n5By0k2Erzj6tay/4lr1CHAAU4JyOWd1rpQ8bCf6cZfHU96A==}
+    dependencies:
+      '@types/node': 18.19.34
     dev: false
 
   /@types/semver@7.5.8:
@@ -11404,6 +11417,25 @@ packages:
 
   /sisteransi@1.0.5:
     resolution: {integrity: sha512-bLGGlR1QxBcynn2d5YmDX4MGjlZvy2MRBDRNHLJ8VI6l6+9FUiyTFNJ0IveOSP0bcXgVDPRcfGqA0pjaqUpfVg==}
+
+  /sitemap-webpack-plugin@1.1.1:
+    resolution: {integrity: sha512-ViKO1uIe7oUMJdjXX098eNRn/Yp04dajC2bmODXhy6qvmYtbBfauGQrir72u/WdMxIpOP0q5y07hyvB10py+OA==}
+    dependencies:
+      schema-utils: 3.3.0
+      sitemap: 6.4.0
+      webpack-sources: 1.4.3
+    dev: false
+
+  /sitemap@6.4.0:
+    resolution: {integrity: sha512-DoPKNc2/apQZTUnfiOONWctwq7s6dZVspxAZe2VPMNtoqNq7HgXRvlRnbIpKjf+8+piQdWncwcy+YhhTGY5USQ==}
+    engines: {node: '>=10.3.0', npm: '>=5.6.0'}
+    hasBin: true
+    dependencies:
+      '@types/node': 14.18.63
+      '@types/sax': 1.2.7
+      arg: 5.0.2
+      sax: 1.2.4
+    dev: false
 
   /slash@3.0.0:
     resolution: {integrity: sha512-g9Q1haeby36OSStwb4ntCGGGaKsaVSjQ68fBxoQcutl5fS1vuY18H3wSt3jFyFtrkx+Kz0V1G85A4MyAdDMi2Q==}

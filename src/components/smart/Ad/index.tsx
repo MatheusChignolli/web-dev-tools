@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import { Stack } from '@mui/material'
 
 const addScript = (src: string) => {
@@ -11,17 +11,9 @@ const addScript = (src: string) => {
 }
 
 const AdProvider = () => {
-  const [open, setOpen] = useState(false)
-
   useEffect(() => {
-    setTimeout(() => {
-      setOpen(true)
-
-      addScript('https://upeex.com.br/adsupeex.js')
-    }, 1000)
+    addScript('https://upeex.com.br/adsupeex.js')
   }, [])
-
-  if (!open) return null
 
   return (
     <Stack className="square-add" alignItems="center" justifyContent="center">

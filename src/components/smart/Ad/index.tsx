@@ -18,10 +18,10 @@ const AdProvider = () => {
   return (
     <Stack className="square-add" alignItems="center" justifyContent="center">
       <ins
-        className="adupeex"
+        class="adupeex"
         data-ad-client="up-ba-332044"
-        data-ad-slot="37597"
-        data-ad-display="square"
+        data-ad-slot="37633"
+        data-ad-display="horizontal"
         style={{ display: 'block', backgroundColor: '#fff' }}
       ></ins>
     </Stack>

@@ -8,7 +8,7 @@ const Logo = ({ large }: LogoProps) => {
   const { t } = useTranslation()
 
   return (
-    <Link.Internal to="/">
+    <Link.Internal to="/" aria-label={t<string>('footer.ariaLabels.home')}>
       <Stack flexDirection="row" alignItems="center" gap={0.5}>
         <CodeIcon fontSize={large ? 'large' : 'medium'} />
         <Typography variant={large ? 'h5' : 'body1'}>

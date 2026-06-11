@@ -1,0 +1,33 @@
+{
+  "keywords": "document generator, CPF generator, CNPJ generator, RG generator, developer tools, tester tools, test data, software testing, web development, Brazil documents, LGPD compliant",
+  "pages": {
+    "home": {
+      "title": "To devs - CPF, CNPJ & RG Generator for Developers & Testers",
+      "description": "Generate valid CPF, CNPJ, and RG documents for software testing and development. Free tools with masked and unmasked modes to speed up QA workflows and demo environments."
+    },
+    "about": {
+      "title": "About To devs - Developer & Tester Productivity Tools",
+      "description": "Learn about To devs, a free platform that helps developers and testers generate realistic Brazilian documents for validation, integration, and performance testing."
+    },
+    "contact": {
+      "title": "Contact To devs - Feedback & Support",
+      "description": "Get in touch with the To devs team for feedback, questions, or suggestions about our document generation tools for developers and testers."
+    },
+    "changelog": {
+      "title": "Changelog - To devs Updates & New Features",
+      "description": "Track the latest updates, improvements, and bug fixes on To devs. Stay informed about new features for CPF, CNPJ, and RG document generation."
+    },
+    "termsOfUse": {
+      "title": "Terms of Use - To devs",
+      "description": "Read the terms of use for To devs. Guidelines for ethical and responsible use of generated CPF, CNPJ, and RG data in development and testing environments."
+    },
+    "privacyPolicy": {
+      "title": "Privacy Policy - To devs",
+      "description": "To devs privacy policy. We do not collect or store personal data. Learn how our document generation tools work and how we protect user privacy."
+    },
+    "notFound": {
+      "title": "Page Not Found - To devs",
+      "description": "The page you are looking for could not be found on To devs. Return to the homepage to generate CPF, CNPJ, and RG documents for testing."
+    }
+  }
+}

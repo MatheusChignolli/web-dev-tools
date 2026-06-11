@@ -1,23 +1,69 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <title>To devs</title>
+    <meta name="color-scheme" content="light dark" />
+    <meta name="format-detection" content="telephone=no" />
 
-    <!-- Start Google Fonts -->
+    <link rel="icon" href="%PUBLIC_URL%/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" sizes="any" />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com" />
     <link
       href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <!-- End Google Fonts -->
 
-    <!-- Start Google Analytics -->
+    <title>To devs - CPF, CNPJ &amp; RG Generator for Developers &amp; Testers</title>
+    <meta
+      name="description"
+      content="Generate valid CPF, CNPJ, and RG documents for software testing and development. Free tools with masked and unmasked modes for developers and testers."
+    />
+    <meta
+      name="keywords"
+      content="document generator, CPF generator, CNPJ generator, RG generator, developer tools, tester tools, test data, software testing"
+    />
+    <meta name="author" content="Matheus Chignolli" />
+    <meta name="creator" content="Matheus Chignolli" />
+    <meta name="application-name" content="To devs" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <link rel="canonical" href="https://todevs.app/" />
+    <link rel="alternate" hreflang="en" href="https://todevs.app/" />
+    <link rel="alternate" hreflang="pt-BR" href="https://todevs.app/" />
+    <link rel="alternate" hreflang="x-default" href="https://todevs.app/" />
+    <link rel="author" href="https://www.linkedin.com/in/matheus-chignolli-a0115b155/" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="To devs" />
+    <meta property="og:title" content="To devs - CPF, CNPJ &amp; RG Generator for Developers &amp; Testers" />
+    <meta
+      property="og:description"
+      content="Generate valid CPF, CNPJ, and RG documents for software testing and development. Free tools with masked and unmasked modes for developers and testers."
+    />
+    <meta property="og:url" content="https://todevs.app/" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:locale:alternate" content="en_US" />
+    <meta property="og:image" content="https://todevs.app/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="To devs - Document generator for developers and testers" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="To devs - CPF, CNPJ &amp; RG Generator for Developers &amp; Testers" />
+    <meta
+      name="twitter:description"
+      content="Generate valid CPF, CNPJ, and RG documents for software testing and development. Free tools with masked and unmasked modes for developers and testers."
+    />
+    <meta name="twitter:image" content="https://todevs.app/og-image.png" />
+    <meta name="twitter:image:alt" content="To devs - Document generator for developers and testers" />
+
     <script
       async
       src="https://www.googletagmanager.com/gtag/js?id=%REACT_APP_ANALYTICS_TOKEN%"
@@ -28,61 +74,58 @@
         dataLayer.push(arguments)
       }
       gtag('js', new Date())
-
       gtag('config', '%REACT_APP_ANALYTICS_TOKEN%')
     </script>
-    <!-- End Google Analytics -->
 
-    <!-- Start Google AdSense -->
     <script
       async
       src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8145397482543766"
       crossorigin="anonymous"
     ></script>
     <meta name="google-adsense-account" content="ca-pub-8145397482543766" />
-    <!-- END Google AdSense -->
 
-    <meta
-      name="description"
-      content="Website to help developers and testers to generate documents to test applications and make it faster than the normal"
-    />
-    <meta name="application-name" content="To devs app" />
-    <link
-      rel="author"
-      href="https://www.linkedin.com/in/matheus-chignolli-a0115b155/"
-    />
-    <meta name="author" content="Matheus Chignolli" />
-    <meta
-      name="keywords"
-      content="web development,react,testers,developers,document generate,document generator"
-    />
-    <meta name="creator" content="Matheus Chignolli" />
-    <meta property="og:determiner" content="the" />
-    <meta property="og:title" content="To devs app" />
-    <meta
-      property="og:description"
-      content="Website to help developers and testers to generate documents to test applications and make it faster than the normal"
-    />
-    <meta property="og:url" content="https://todevs.app/" />
-    <meta property="og:site_name" content="To devs app" />
-    <meta property="og:locale" content="en_US" />
-    <meta property="og:country_name" content="Brazil" />
-    <meta property="og:image" content="https://todevs.app/favicon.ico" />
-    <meta property="og:email" content="matheuschignolli@gmail.com" />
-    <meta property="og:locale:alternate" content="pt_BR" />
-    <meta property="og:type" content="website" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "name": "To devs",
+            "alternateName": "To devs app",
+            "url": "https://todevs.app/",
+            "inLanguage": ["en-US", "pt-BR"],
+            "publisher": {
+              "@type": "Organization",
+              "name": "To devs",
+              "url": "https://todevs.app/",
+              "logo": "https://todevs.app/logo192.png",
+              "email": "matheuschignolli@gmail.com"
+            }
+          },
+          {
+            "@type": "WebApplication",
+            "name": "To devs",
+            "url": "https://todevs.app/",
+            "applicationCategory": "DeveloperApplication",
+            "operatingSystem": "Any",
+            "browserRequirements": "Requires JavaScript",
+            "offers": {
+              "@type": "Offer",
+              "price": "0",
+              "priceCurrency": "USD"
+            }
+          }
+        ]
+      }
+    </script>
   </head>
-
-  <!-- Start Ad: Anúncio de Rodapé -->
-  <script
-    async
-    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8145397482543766"
-    crossorigin="anonymous"
-  ></script>
-  <!-- End Ad: Anúncio de Rodapé -->
   <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <noscript>
+      <p>
+        To devs requires JavaScript to run. Please enable JavaScript in your browser to
+        generate CPF, CNPJ, and RG documents for testing.
+      </p>
+    </noscript>
     <div id="root"></div>
-    </ins>
   </body>
 </html>

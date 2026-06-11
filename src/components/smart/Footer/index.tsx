@@ -70,6 +70,8 @@ const Footer = () => {
             </Typography>
           </Stack>
           <Stack
+            component="nav"
+            aria-label={t<string>('footer.ariaLabels.navigation')}
             alignItems="center"
             divider={
               <Divider

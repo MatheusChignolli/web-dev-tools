@@ -12,7 +12,11 @@ const TranslateProvider = ({ children }: TranslateProviderProps) => {
     if (language) {
       i18n.changeLanguage(language)
     }
-  }, [language])
+  }, [language, i18n])
+
+  useEffect(() => {
+    document.documentElement.lang = i18n.language === 'pt' ? 'pt-BR' : 'en'
+  }, [i18n.language])
 
   return <>{children}</>
 }

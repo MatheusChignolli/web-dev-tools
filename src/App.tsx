@@ -1,3 +1,4 @@
+import { HelmetProvider } from 'react-helmet-async'
 import { BrowserRouter } from 'react-router-dom'
 import {
   TranslateProvider,
@@ -9,19 +10,21 @@ import {
 import Router from './Router'
 
 const App = () => (
-  <FetchProvider>
-    <BrowserRouter>
-      <StateProvider>
-        <ThemeProvider>
-          <TranslateProvider>
-            <LayoutProvider>
-              <Router />
-            </LayoutProvider>
-          </TranslateProvider>
-        </ThemeProvider>
-      </StateProvider>
-    </BrowserRouter>
-  </FetchProvider>
+  <HelmetProvider>
+    <FetchProvider>
+      <BrowserRouter>
+        <StateProvider>
+          <ThemeProvider>
+            <TranslateProvider>
+              <LayoutProvider>
+                <Router />
+              </LayoutProvider>
+            </TranslateProvider>
+          </ThemeProvider>
+        </StateProvider>
+      </BrowserRouter>
+    </FetchProvider>
+  </HelmetProvider>
 )
 
 export default App

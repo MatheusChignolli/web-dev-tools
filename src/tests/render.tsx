@@ -4,6 +4,7 @@ import {
   RenderOptions,
   RenderResult,
 } from '@testing-library/react'
+import { HelmetProvider } from 'react-helmet-async'
 import { BrowserRouter } from 'react-router-dom'
 import { QueryClient, QueryClientProvider } from 'react-query'
 import { ThemeProvider, TranslateProvider, StateProvider } from '~providers'
@@ -19,15 +20,17 @@ const queryClient = new QueryClient({
 
 const render = (ui: ReactElement, options?: RenderOptions): RenderResult => {
   return TestingLibraryRender(
-    <QueryClientProvider client={queryClient}>
-      <BrowserRouter>
-        <StateProvider>
-          <ThemeProvider>
-            <TranslateProvider>{ui}</TranslateProvider>
-          </ThemeProvider>
-        </StateProvider>
-      </BrowserRouter>
-    </QueryClientProvider>,
+    <HelmetProvider>
+      <QueryClientProvider client={queryClient}>
+        <BrowserRouter>
+          <StateProvider>
+            <ThemeProvider>
+              <TranslateProvider>{ui}</TranslateProvider>
+            </ThemeProvider>
+          </StateProvider>
+        </BrowserRouter>
+      </QueryClientProvider>
+    </HelmetProvider>,
     options
   )
 }

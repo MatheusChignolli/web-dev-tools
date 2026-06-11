@@ -1,0 +1,33 @@
+{
+  "keywords": "gerador de documentos, gerador de CPF, gerador de CNPJ, gerador de RG, ferramentas para desenvolvedores, ferramentas para testers, dados de teste, testes de software, desenvolvimento web, documentos brasileiros, LGPD",
+  "pages": {
+    "home": {
+      "title": "To devs - Gerador de CPF, CNPJ e RG para Devs e Testers",
+      "description": "Gere CPF, CNPJ e RG válidos para testes e desenvolvimento de software. Ferramentas gratuitas com modos mascarado e desmascarado para acelerar QA e demonstrações."
+    },
+    "about": {
+      "title": "Sobre o To devs - Ferramentas de Produtividade para Devs",
+      "description": "Conheça o To devs, plataforma gratuita que ajuda desenvolvedores e testers a gerar documentos brasileiros realistas para validação, integração e testes de performance."
+    },
+    "contact": {
+      "title": "Contato To devs - Feedback e Suporte",
+      "description": "Entre em contato com a equipe To devs para feedback, dúvidas ou sugestões sobre nossas ferramentas de geração de documentos para desenvolvedores e testers."
+    },
+    "changelog": {
+      "title": "Changelog - Atualizações e Novidades do To devs",
+      "description": "Acompanhe as últimas atualizações, melhorias e correções do To devs. Fique por dentro das novidades na geração de CPF, CNPJ e RG."
+    },
+    "termsOfUse": {
+      "title": "Termos de Uso - To devs",
+      "description": "Leia os termos de uso do To devs. Diretrizes para uso ético e responsável de dados gerados de CPF, CNPJ e RG em ambientes de desenvolvimento e teste."
+    },
+    "privacyPolicy": {
+      "title": "Política de Privacidade - To devs",
+      "description": "Política de privacidade do To devs. Não coletamos nem armazenamos dados pessoais. Saiba como nossas ferramentas de geração de documentos funcionam."
+    },
+    "notFound": {
+      "title": "Página Não Encontrada - To devs",
+      "description": "A página que você procura não foi encontrada no To devs. Volte à página inicial para gerar CPF, CNPJ e RG para testes."
+    }
+  }
+}

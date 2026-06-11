@@ -117,10 +117,10 @@ exports[`Contact should create a link to mail message to app\`s author 1`] = `
               />
               <fieldset
                 aria-hidden="true"
-                class="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+                class="MuiOutlinedInput-notchedOutline css-r01yff-MuiNotchedOutlined-root-MuiOutlinedInput-notchedOutline"
               >
                 <legend
-                  class="css-14lo706"
+                  class="css-sl37lx-MuiNotchedOutlined-root"
                 >
                   <span>
                     E-mail
@@ -169,10 +169,10 @@ exports[`Contact should create a link to mail message to app\`s author 1`] = `
               />
               <fieldset
                 aria-hidden="true"
-                class="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+                class="MuiOutlinedInput-notchedOutline css-r01yff-MuiNotchedOutlined-root-MuiOutlinedInput-notchedOutline"
               >
                 <legend
-                  class="css-14lo706"
+                  class="css-sl37lx-MuiNotchedOutlined-root"
                 >
                   <span>
                     Assunto
@@ -228,10 +228,10 @@ exports[`Contact should create a link to mail message to app\`s author 1`] = `
               />
               <fieldset
                 aria-hidden="true"
-                class="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+                class="MuiOutlinedInput-notchedOutline css-r01yff-MuiNotchedOutlined-root-MuiOutlinedInput-notchedOutline"
               >
                 <legend
-                  class="css-14lo706"
+                  class="css-sl37lx-MuiNotchedOutlined-root"
                 >
                   <span>
                     Mensagem
@@ -248,7 +248,7 @@ exports[`Contact should create a link to mail message to app\`s author 1`] = `
         >
           <button
             aria-label="Botão para submeter formulário de contato"
-            class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-fullWidth MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-fullWidth css-1t3g34h-MuiButtonBase-root-MuiButton-root"
+            class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-fullWidth Mui-focusVisible MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-fullWidth css-1t3g34h-MuiButtonBase-root-MuiButton-root"
             tabindex="0"
             type="submit"
           >
@@ -262,6 +262,14 @@ exports[`Contact should create a link to mail message to app\`s author 1`] = `
               >
                 <span
                   class="MuiTouchRipple-child MuiTouchRipple-childLeaving"
+                />
+              </span>
+              <span
+                class="css-y4cjyz-MuiTouchRipple-ripple MuiTouchRipple-ripple MuiTouchRipple-rippleVisible MuiTouchRipple-ripplePulsate"
+                style="width: 1px; height: 1px; top: -0.5px; left: -0.5px;"
+              >
+                <span
+                  class="MuiTouchRipple-child MuiTouchRipple-childPulsate"
                 />
               </span>
             </span>

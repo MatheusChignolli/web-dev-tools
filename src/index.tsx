@@ -20,4 +20,13 @@ createRoot(document.querySelector('#root') as Element).render(
   // </StrictMode>
 )
 
-reportWebVitals()
+reportWebVitals((metric) => {
+  if (typeof window.gtag === 'function') {
+    window.gtag('event', metric.name, {
+      value: Math.round(metric.name === 'CLS' ? metric.value * 1000 : metric.value),
+      event_category: 'Web Vitals',
+      event_label: metric.id,
+      non_interaction: true,
+    })
+  }
+})

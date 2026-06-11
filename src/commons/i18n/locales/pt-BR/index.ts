@@ -12,6 +12,7 @@ import * as termsOfUse from './termsOfUse.json'
 import * as about from './about.json'
 import * as contact from './contact.json'
 import * as changelog from './changelog.json'
+import * as seo from './seo.json'
 
 const pt = {
   translation: {
@@ -29,6 +30,7 @@ const pt = {
     about,
     contact,
     changelog,
+    seo,
   },
 }
 

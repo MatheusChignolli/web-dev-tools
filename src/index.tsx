@@ -16,7 +16,7 @@ import App from './App'
 
 createRoot(document.querySelector('#root') as Element).render(
   // <StrictMode>
-  <App />
+  <App />,
   // </StrictMode>
 )
 

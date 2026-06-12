@@ -1,3 +1,3 @@
 export interface KeysComboProps {
-  keys: string[]
+  keys?: string[]
 }

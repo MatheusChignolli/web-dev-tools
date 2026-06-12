@@ -1,32 +1,24 @@
 import { FormEvent } from 'react'
 import { Button, Grid, Stack, TextField, Typography } from '@mui/material'
 import { SEO, Socials } from '~components'
+import { getFormValues } from '~utils'
 import { useTranslation } from 'react-i18next'
 
 const Contact = () => {
   const { t } = useTranslation()
 
   const onSubmit = (event: FormEvent<HTMLFormElement>) => {
-    // @ts-ignore
-    delete window.location
-    // @ts-ignore
-    window.location = { href: '' }
-
-    window.location.href = ''
-
     event.preventDefault()
-    const { email, subject, message } = Object.fromEntries(
-      (new FormData(event.currentTarget) as any).entries()
-    )
 
+    const { email, subject, message } = getFormValues(event.currentTarget)
     const messageEnd = `Email: ${email}`
 
     const mailtoLink = `mailto:matheuschignolli@gmail.com?subject=${encodeURIComponent(
-      subject
+      String(subject),
     )}&body=${encodeURIComponent(
-      `${message}
+      `${String(message)}
 
-      ${messageEnd}`
+      ${messageEnd}`,
     )}`
 
     window.location.href = mailtoLink

@@ -10,7 +10,7 @@ export const HeaderStyled = styled.header`
 
   ${({ theme }) => {
     return `${theme.breakpoints.down(
-      'sm'
+      'sm',
     )} { flex-direction: column; align-items: flex-start; gap: 16px}`
   }}
 `

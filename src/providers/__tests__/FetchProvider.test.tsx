@@ -7,7 +7,7 @@ describe('FetchProvider', () => {
     render(
       <FetchProvider>
         <h1>FetchProvider</h1>
-      </FetchProvider>
+      </FetchProvider>,
     )
 
     expect(screen.getByText('FetchProvider')).toBeInTheDocument()

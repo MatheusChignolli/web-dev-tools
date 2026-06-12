@@ -1,3 +1,5 @@
+import 'styled-components'
+import { Theme as MuiTheme } from '@mui/material/styles'
 import { spacing } from '~utils'
 
 declare module '@mui/material/styles' {
@@ -8,4 +10,8 @@ declare module '@mui/material/styles' {
   interface ThemeOptions {
     spacing?: typeof spacing
   }
+}
+
+declare module 'styled-components' {
+  export interface DefaultTheme extends MuiTheme {}
 }

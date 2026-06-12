@@ -12,7 +12,7 @@ export const spacing = (
   first: number,
   second?: number,
   third?: number,
-  fourth?: number
+  fourth?: number,
 ): string | undefined => {
   if (nonExists(first)) {
     return undefined

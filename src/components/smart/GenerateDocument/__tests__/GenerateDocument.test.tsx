@@ -35,11 +35,11 @@ describe.each(DocumentsConstants.documentsConfig)(
     const documentLength = documentsLength[document]
     const shortRegex = new RegExp(
       `bloco com o conteúdo .{${documentLength.short}} para ser enviado para a área de transferência de arquivos`,
-      'i'
+      'i',
     )
     const longRegex = new RegExp(
       `bloco com o conteúdo .{${documentLength.long}} para ser enviado para a área de transferência de arquivos`,
-      'i'
+      'i',
     )
 
     beforeEach(() => {
@@ -78,7 +78,7 @@ describe.each(DocumentsConstants.documentsConfig)(
 
     it(`should generate ${upperCaseDocument} when press Ctrl + ${keyboardKeyDocument}`, async () => {
       await waitFor(() =>
-        userEvent.keyboard(`{Control>}${keyboardKeyDocument}{/Control}`)
+        userEvent.keyboard(`{Control>}${keyboardKeyDocument}{/Control}`),
       )
 
       expect(screen.getByLabelText(shortRegex)).toBeInTheDocument()
@@ -88,12 +88,12 @@ describe.each(DocumentsConstants.documentsConfig)(
     it(`should generate ${upperCaseDocument} with mask when press Shift + Ctrl + ${keyboardKeyDocument}`, async () => {
       await waitFor(() =>
         userEvent.keyboard(
-          `{Shift>}{Control>}${keyboardKeyDocument}{/Control}{/Shift}`
-        )
+          `{Shift>}{Control>}${keyboardKeyDocument}{/Control}{/Shift}`,
+        ),
       )
 
       expect(screen.getByLabelText(longRegex)).toBeInTheDocument()
       expect(mockWriteText).toHaveBeenCalledTimes(1)
     })
-  }
+  },
 )

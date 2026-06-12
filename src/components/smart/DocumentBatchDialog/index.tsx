@@ -11,6 +11,7 @@ import {
   Typography,
 } from '@mui/material'
 import { Clipboard } from '~components'
+import { getFormValues } from '~utils'
 import { DocumentBatchDialogProps } from './interfaces'
 import { useTranslation } from 'react-i18next'
 
@@ -44,11 +45,11 @@ const DocumentBatchDialog = ({ document, generate }: DocumentBatchDialogProps) =
           component: 'form',
           onSubmit: (event: FormEvent<HTMLFormElement>) => {
             event.preventDefault()
-            const { quantity, hasMask } = Object.fromEntries(
-              (new FormData(event.currentTarget) as any).entries()
-            )
+            const { quantity, hasMask } = getFormValues(event.currentTarget)
             setResult(
-              Array.from({ length: quantity }, () => generate(hasMask)).join('\n')
+              Array.from({ length: Number(quantity) }, () =>
+                generate(hasMask === 'on'),
+              ).join('\n'),
             )
           },
         }}
@@ -79,7 +80,7 @@ const DocumentBatchDialog = ({ document, generate }: DocumentBatchDialogProps) =
                 variant="outlined"
                 InputProps={{ inputProps: { min: 1, max: 100000, autoFocus: true } }}
                 aria-label={t<string>(
-                  'components.documentBatchDialog.ariaLabels.quantityInput'
+                  'components.documentBatchDialog.ariaLabels.quantityInput',
                 )}
               />
               <FormControlLabel
@@ -88,7 +89,7 @@ const DocumentBatchDialog = ({ document, generate }: DocumentBatchDialogProps) =
                 sx={{ minWidth: '40%' }}
                 aria-label={t<string>(
                   'components.documentBatchDialog.ariaLabels.withMaskCheckbox',
-                  { document }
+                  { document },
                 )}
               />
             </Stack>
@@ -111,7 +112,7 @@ const DocumentBatchDialog = ({ document, generate }: DocumentBatchDialogProps) =
             variant="contained"
             aria-label={t<string>(
               'components.documentBatchDialog.ariaLabels.generate',
-              { document }
+              { document },
             )}
           >
             {t('components.documentBatchDialog.generate')}

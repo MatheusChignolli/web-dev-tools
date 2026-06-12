@@ -4,7 +4,7 @@ const resolvedAliases = Object.fromEntries(
   Object.entries(tsConfig.compilerOptions.paths).map(([key, value]) => [
     `^${key}(.*)$`,
     `<rootDir>${value[0].replace('./', '/')}$1`,
-  ])
+  ]),
 )
 
 const config = {

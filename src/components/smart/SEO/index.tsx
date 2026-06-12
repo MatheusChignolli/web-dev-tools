@@ -6,7 +6,7 @@ import { SEOProps } from './interfaces'
 const buildBreadcrumbJsonLd = (
   page: SEOProps['page'],
   title: string,
-  url: string
+  url: string,
 ) => ({
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',

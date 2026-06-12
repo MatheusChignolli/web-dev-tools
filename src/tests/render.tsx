@@ -31,7 +31,7 @@ const render = (ui: ReactElement, options?: RenderOptions): RenderResult => {
         </BrowserRouter>
       </QueryClientProvider>
     </HelmetProvider>,
-    options
+    options,
   )
 }
 

@@ -37,7 +37,7 @@ const lightPalette = {
 }
 
 const getCommonConfig = (
-  palette: typeof darkPalette | typeof lightPalette
+  palette: typeof darkPalette | typeof lightPalette,
 ): ThemeOptions => ({
   spacing,
   typography: {

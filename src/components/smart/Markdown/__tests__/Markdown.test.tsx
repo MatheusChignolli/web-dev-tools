@@ -7,7 +7,7 @@ describe('Markdown', () => {
     render(<Markdown body="# Title ## Block of markdown" />)
 
     expect(
-      screen.getByLabelText('Bloco de linguagem de marcação Markdown')
+      screen.getByLabelText('Bloco de linguagem de marcação Markdown'),
     ).toBeInTheDocument()
     expect(screen.getByText('# Title ## Block of markdown')).toBeInTheDocument()
   })

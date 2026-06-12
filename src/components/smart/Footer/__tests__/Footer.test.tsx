@@ -11,25 +11,25 @@ describe('Footer', () => {
 
   it('should render project`s link', () => {
     expect(
-      screen.getByLabelText('Ícone do GitHub arredondado e sem bordas')
+      screen.getByLabelText('Ícone do GitHub arredondado e sem bordas'),
     ).toBeInTheDocument()
     expect(
-      screen.getByLabelText('Link para o repositório da aplicação')
+      screen.getByLabelText('Link para o repositório da aplicação'),
     ).toHaveAttribute('href', 'https://github.com/MatheusChignolli/web-dev-tools')
     expect(
-      screen.getByLabelText('Ícone do LinkedIn arredondado e sem bordas')
+      screen.getByLabelText('Ícone do LinkedIn arredondado e sem bordas'),
     ).toBeInTheDocument()
     expect(
-      screen.getByLabelText('Link para o LinkedIn do autor da aplicação')
+      screen.getByLabelText('Link para o LinkedIn do autor da aplicação'),
     ).toHaveAttribute(
       'href',
-      'https://www.linkedin.com/in/matheus-chignolli-a0115b155/'
+      'https://www.linkedin.com/in/matheus-chignolli-a0115b155/',
     )
   })
 
   it('should render changelog`s link and go to changelog`s page', async () => {
     const changelogPageLink = screen.getByLabelText(
-      'Link para a página de changelog da aplicação'
+      'Link para a página de changelog da aplicação',
     )
 
     expect(changelogPageLink).toHaveAttribute('href', '/changelog')
@@ -44,11 +44,11 @@ describe('Footer', () => {
   it('should render the current year on copyright text', () => {
     expect(
       screen.getByLabelText(
-        'Ícone de apenas a borda de um círculo com a letra C no centro'
-      )
+        'Ícone de apenas a borda de um círculo com a letra C no centro',
+      ),
     ).toBeInTheDocument()
     expect(
-      screen.getByLabelText('Texto com o ano vigente e um ícone de Copyright')
+      screen.getByLabelText('Texto com o ano vigente e um ícone de Copyright'),
     ).toBeInTheDocument()
     expect(screen.getByText(format(new Date(), 'yyyy'))).toBeInTheDocument()
   })

@@ -50,7 +50,7 @@ const Header = () => {
               key={`${languageItem.value}-${index}`}
               value={languageItem.value}
               aria-label={t<string>(
-                `header.ariaLabels.languages.${languageItem.value}`
+                `header.ariaLabels.languages.${languageItem.value}`,
               )}
             >
               {languageItem.acronym}

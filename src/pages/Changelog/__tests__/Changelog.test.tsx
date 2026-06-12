@@ -1,6 +1,6 @@
 import { screen, waitFor } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
-import { render } from '~tests'
+import { createFetchMock, render } from '~tests'
 import mocks from './mocks'
 import Changelog from '../'
 import { act } from 'react'
@@ -12,18 +12,16 @@ describe('Changelog', () => {
     await act(async () =>
       expect(
         screen.getByLabelText(
-          'Círculo girando no sentido horário de forma não ordenada representando o carregamento de alguma coisa'
-        )
-      ).toBeTruthy()
+          'Círculo girando no sentido horário de forma não ordenada representando o carregamento de alguma coisa',
+        ),
+      ).toBeTruthy(),
     )
   })
 
   it('should redirect to 404 page when request returns an empty array', async () => {
-    global.fetch = jest.fn(() =>
-      Promise.resolve({
-        json: () => mocks.empty,
-      })
-    ) as any
+    global.fetch = createFetchMock({
+      json: () => mocks.empty,
+    })
 
     render(<Changelog />)
 
@@ -36,13 +34,11 @@ describe('Changelog', () => {
     const mockConsoleError = jest.fn()
     console.error = mockConsoleError
 
-    global.fetch = jest.fn(() =>
-      Promise.resolve({
-        json: () => {
-          throw new Error('Error')
-        },
-      })
-    ) as any
+    global.fetch = createFetchMock({
+      json: () => {
+        throw new Error('Error')
+      },
+    })
 
     render(<Changelog />)
 
@@ -53,11 +49,9 @@ describe('Changelog', () => {
 
   describe('when request return and array of releases', () => {
     beforeEach(() => {
-      global.fetch = jest.fn(() =>
-        Promise.resolve({
-          json: () => mocks.releases,
-        })
-      ) as any
+      global.fetch = createFetchMock({
+        json: () => mocks.releases,
+      })
 
       render(<Changelog />)
     })

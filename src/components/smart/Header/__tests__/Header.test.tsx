@@ -20,13 +20,13 @@ describe('Header', () => {
     await userEvent.click(themeSwitch)
 
     expect(screen.getByLabelText('Cabeçalho do site')).toHaveStyle(
-      'color: rgb(255, 255, 255)'
+      'color: rgb(255, 255, 255)',
     )
 
     await userEvent.click(themeSwitch)
 
     expect(screen.getByLabelText('Cabeçalho do site')).toHaveStyle(
-      'color: rgb(0, 0, 0)'
+      'color: rgb(0, 0, 0)',
     )
   })
 

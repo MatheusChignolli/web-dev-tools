@@ -13,7 +13,7 @@ const useKeyPress = (keys: string[], callback: any) => {
         callbackRef.current(event)
       }
     },
-    [keys]
+    [keys],
   )
 
   useEffect(() => {

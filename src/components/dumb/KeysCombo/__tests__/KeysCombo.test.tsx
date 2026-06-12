@@ -18,7 +18,6 @@ describe('KeysCombo', () => {
   })
 
   it('should not render keys combo when keys is undefined', () => {
-    // @ts-expect-error
     render(<KeysCombo keys={undefined} />)
 
     expect(screen.queryByText('Ctrl')).not.toBeInTheDocument()

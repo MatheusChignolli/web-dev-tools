@@ -14,7 +14,7 @@ describe('utils', () => {
       'param: %s should returns %s',
       (param?: number | null | string, expected?: string) => {
         expect(spacing(param as number)).toBe(expected)
-      }
+      },
     )
   })
 
@@ -41,7 +41,7 @@ describe('utils', () => {
       'params: %s should return %s',
       (params?: (number | undefined | null | string)[], expected?: string) => {
         expect(spacing(params?.[0] as number, params?.[1] as number)).toBe(expected)
-      }
+      },
     )
   })
 
@@ -79,10 +79,10 @@ describe('utils', () => {
           spacing(
             params?.[0] as number,
             params?.[1] as number,
-            params?.[2] as number
-          )
+            params?.[2] as number,
+          ),
         ).toBe(expected)
-      }
+      },
     )
   })
 
@@ -125,10 +125,10 @@ describe('utils', () => {
             params?.[0] as number,
             params?.[1] as number,
             params?.[2] as number,
-            params?.[3] as number
-          )
+            params?.[3] as number,
+          ),
         ).toBe(expected)
-      }
+      },
     )
   })
 })

@@ -13,7 +13,6 @@ const ThemeProvider = ({ children }: ThemeProviderProps) => {
 
   return (
     <MuiThemeProvider theme={theme}>
-      {/* @ts-ignore */}
       <StyledComponentsThemeProvider theme={theme}>
         {children}
       </StyledComponentsThemeProvider>

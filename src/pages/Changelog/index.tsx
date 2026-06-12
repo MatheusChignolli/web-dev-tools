@@ -21,7 +21,7 @@ const Changelog = () => {
       onError(error) {
         console.error('getReleasesFromRepo: ', error)
       },
-    }
+    },
   )
 
   if (isLoading) {
@@ -69,7 +69,7 @@ const Changelog = () => {
                   expanded={accordionReference === reference}
                   onChange={() => {
                     setAccordionReference((prevState) =>
-                      prevState === reference ? '' : reference
+                      prevState === reference ? '' : reference,
                     )
                   }}
                 />

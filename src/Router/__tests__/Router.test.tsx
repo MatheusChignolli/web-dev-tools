@@ -1,15 +1,13 @@
 import { screen, waitFor } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { Link } from 'react-router-dom'
-import { render } from '~tests'
+import { createFetchMock, render } from '~tests'
 import Router from '..'
 import { act } from 'react'
 
-global.fetch = jest.fn(() =>
-  Promise.resolve({
-    json: () => [],
-  })
-) as any
+global.fetch = createFetchMock({
+  json: () => [],
+})
 
 describe('Router', () => {
   beforeEach(async () => {
@@ -24,7 +22,7 @@ describe('Router', () => {
           <Link to="/privacy-policy">Link to privacy policy</Link>
           <Link to="/about">Link to about</Link>
           <Link to="/contact">Link to contact</Link>
-        </>
+        </>,
       )
     })
   })

@@ -7,7 +7,7 @@ describe('Keycap', () => {
     render(<Keycap text="Keycap" />)
     expect(screen.getByText('Keycap')).toBeInTheDocument()
     expect(
-      screen.getByLabelText('Elemento representando a tecla Keycap do teclado')
+      screen.getByLabelText('Elemento representando a tecla Keycap do teclado'),
     ).toBeInTheDocument()
   })
 })

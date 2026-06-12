@@ -15,9 +15,9 @@ describe('dateUtils', () => {
       'should call with date: %s, format: %s and return %s',
       (date, format, expectDate) => {
         expect(
-          dateUtils.format(date as unknown as string, format as unknown as string)
+          dateUtils.format(date as unknown as string, format as unknown as string),
         ).toBe(expectDate)
-      }
+      },
     )
   })
 })

@@ -1,0 +1,11 @@
+node_modules
+build
+coverage
+pnpm-lock.yaml
+public/*.png
+public/*.ico
+public/*.svg
+public/ads.txt
+public/_headers
+public/robots.txt
+**/__snapshots__

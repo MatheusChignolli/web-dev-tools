@@ -12,7 +12,7 @@ describe('ThemeProvider', () => {
     render(
       <ThemeProvider>
         <DivStyled data-testid="styled-component" />
-      </ThemeProvider>
+      </ThemeProvider>,
     )
 
     const styledComponent = screen.getByTestId('styled-component')

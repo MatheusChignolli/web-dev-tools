@@ -34,11 +34,11 @@ describe.each(DocumentsConstants.documentsConfig)(
     const documentLength = documentsLength[document]
     const shortRegex = new RegExp(
       `bloco com o conteúdo .{${documentLength.short}} para ser enviado para a área de transferência de arquivos`,
-      'i'
+      'i',
     )
     const longRegex = new RegExp(
       `bloco com o conteúdo .{${documentLength.long}} para ser enviado para a área de transferência de arquivos`,
-      'i'
+      'i',
     )
 
     beforeEach(() => {
@@ -53,21 +53,21 @@ describe.each(DocumentsConstants.documentsConfig)(
       await userEvent.click(
         screen.getByRole('button', {
           name: `Botão para abrir diálogo para gerar ${document} em massa`,
-        })
+        }),
       )
 
       expect(
-        screen.getByText(`${document.toUpperCase()} em massa`)
+        screen.getByText(`${document.toUpperCase()} em massa`),
       ).toBeInTheDocument()
 
       await userEvent.click(
         screen.getByRole('button', {
           name: 'Botão para fechar diálogo',
-        })
+        }),
       )
 
       expect(
-        screen.queryByText(`${document.toUpperCase()} em massa`)
+        screen.queryByText(`${document.toUpperCase()} em massa`),
       ).not.toBeVisible()
     })
 
@@ -75,12 +75,12 @@ describe.each(DocumentsConstants.documentsConfig)(
       await userEvent.click(
         screen.getByRole('button', {
           name: `Botão para abrir diálogo para gerar ${document} em massa`,
-        })
+        }),
       )
 
       await userEvent.type(
         screen.getByRole('spinbutton', { name: 'Quantidade' }),
-        '1'
+        '1',
       )
 
       const generateButton = screen.getByRole('button', {
@@ -97,17 +97,17 @@ describe.each(DocumentsConstants.documentsConfig)(
       await userEvent.click(
         screen.getByRole('button', {
           name: `Botão para abrir diálogo para gerar ${document} em massa`,
-        })
+        }),
       )
 
       await userEvent.type(
         screen.getByRole('spinbutton', { name: 'Quantidade' }),
-        '1'
+        '1',
       )
       await userEvent.click(
         screen.getByRole('checkbox', {
           name: `Marcador relacionado a gerar ${document} em massa com máscara`,
-        })
+        }),
       )
 
       const generateButton = screen.getByRole('button', {
@@ -119,5 +119,5 @@ describe.each(DocumentsConstants.documentsConfig)(
       expect(screen.getByLabelText(longRegex)).toBeInTheDocument()
       expect(mockWriteText).toHaveBeenCalledTimes(1)
     })
-  }
+  },
 )

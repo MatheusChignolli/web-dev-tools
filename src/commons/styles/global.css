@@ -1,8 +1,5 @@
-@import '@fontsource/fira-code/300.css';
-@import '@fontsource/fira-code/400.css';
-@import '@fontsource/fira-code/500.css';
-@import '@fontsource/fira-code/600.css';
-@import '@fontsource/fira-code/700.css';
+@import '@fontsource/fira-code/latin-400.css';
+@import '@fontsource/fira-code/latin-700.css';
 
 * {
   box-sizing: border-box;
@@ -35,7 +32,8 @@ body,
 #root,
 #app {
   height: 100%;
-  font-family: 'Fira Code', monospace;
+  font-family: 'Fira Code', ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo,
+    Consolas, 'DejaVu Sans Mono', monospace;
 }
 
 :focus-visible {

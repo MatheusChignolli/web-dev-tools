@@ -2,6 +2,7 @@ import { MenuItem, Select } from '@mui/material'
 import styled from 'styled-components'
 
 export const HeaderStyled = styled.header`
+  min-height: 72px;
   padding: ${({ theme }) => theme.spacing(2, 0, 2.5)};
   display: flex;
   justify-content: space-between;

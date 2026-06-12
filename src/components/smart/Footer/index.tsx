@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next'
 import CopyrightIcon from '@mui/icons-material/Copyright'
 import { dateUtils } from '~utils'
-import { Link, Logo, Socials, Ad } from '~components'
+import { Link, Logo, Socials, Ad, LazyAds } from '~components'
 import { FooterStyled } from './styles'
 import { Divider, Stack, Typography } from '@mui/material'
 
@@ -39,7 +39,9 @@ const Footer = () => {
 
   return (
     <>
-      <Ad />
+      <LazyAds minHeight={90}>
+        <Ad />
+      </LazyAds>
       <FooterStyled>
         <Stack
           justifyContent="space-between"
@@ -107,14 +109,16 @@ const Footer = () => {
           </Stack>
         </Stack>
       </FooterStyled>
-      <ins
-        className="adsbygoogle"
-        style={{ display: 'block', minHeight: 90 }}
-        data-ad-client="ca-pub-8145397482543766"
-        data-ad-slot="4561903753"
-        data-ad-format="auto"
-        data-full-width-responsive="true"
-      ></ins>
+      <LazyAds minHeight={90}>
+        <ins
+          className="adsbygoogle"
+          style={{ display: 'block', minHeight: 90 }}
+          data-ad-client="ca-pub-8145397482543766"
+          data-ad-slot="4561903753"
+          data-ad-format="auto"
+          data-full-width-responsive="true"
+        ></ins>
+      </LazyAds>
     </>
   )
 }

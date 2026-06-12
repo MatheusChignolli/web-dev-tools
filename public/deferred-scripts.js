@@ -1,7 +1,14 @@
-window.addEventListener('load', function () {
-  var analyticsToken = document.querySelector('meta[name="analytics-token"]')?.content
+;(function () {
+  var ADS_DELAY_MS = 10000
 
-  if (analyticsToken) {
+  var loadAnalytics = function () {
+    var analyticsMeta = document.querySelector('meta[name="analytics-token"]')
+    var analyticsToken = analyticsMeta && analyticsMeta.content
+
+    if (!analyticsToken || analyticsToken.indexOf('REACT_APP_') !== -1) {
+      return
+    }
+
     var analyticsScript = document.createElement('script')
     analyticsScript.async = true
     analyticsScript.src =
@@ -14,15 +21,30 @@ window.addEventListener('load', function () {
     document.head.appendChild(analyticsScript)
   }
 
-  var adsScript = document.createElement('script')
-  adsScript.async = true
-  adsScript.src =
-    'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8145397482543766'
-  adsScript.crossOrigin = 'anonymous'
-  adsScript.onload = function () {
-    try {
-      ;(window.adsbygoogle = window.adsbygoogle || []).push({})
-    } catch (error) {}
+  var loadAdsense = function () {
+    var adsScript = document.createElement('script')
+    adsScript.async = true
+    adsScript.src =
+      'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8145397482543766'
+    adsScript.crossOrigin = 'anonymous'
+    adsScript.onload = function () {
+      try {
+        ;(window.adsbygoogle = window.adsbygoogle || []).push({})
+      } catch (error) {}
+    }
+    document.head.appendChild(adsScript)
   }
-  document.head.appendChild(adsScript)
-})
+
+  var scheduleThirdPartyScripts = function () {
+    window.setTimeout(function () {
+      loadAnalytics()
+      loadAdsense()
+    }, ADS_DELAY_MS)
+  }
+
+  if ('requestIdleCallback' in window) {
+    requestIdleCallback(scheduleThirdPartyScripts, { timeout: ADS_DELAY_MS })
+  } else {
+    window.addEventListener('load', scheduleThirdPartyScripts)
+  }
+})()

@@ -5,7 +5,7 @@ import { SkipLinkStyled } from './styles'
 
 const LayoutProvider = ({ children }: LayoutProviderProps) => {
   return (
-    <Container maxWidth="xl">
+    <Container maxWidth="xl" sx={{ minHeight: '100dvh' }}>
       <SkipLinkStyled href="#main-content">Skip to main content</SkipLinkStyled>
       <Stack minHeight="100dvh">
         <Header />

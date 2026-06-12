@@ -1,7 +1,6 @@
 import { lazy } from 'react'
 import { HttpConstants } from '~constants'
-
-const Main = lazy(() => import('../pages/Main'))
+import Main from '../pages/Main'
 const Exception = lazy(() => import('../pages/Exception'))
 const Changelog = lazy(() => import('../pages/Changelog'))
 const TermsOfUse = lazy(() => import('../pages/TermsOfUse'))

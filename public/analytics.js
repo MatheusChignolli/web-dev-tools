@@ -8,7 +8,8 @@ window.gtag = gtag
 
 gtag('js', new Date())
 
-var analyticsToken = document.querySelector('meta[name="analytics-token"]')?.content
+var analyticsMeta = document.querySelector('meta[name="analytics-token"]')
+var analyticsToken = analyticsMeta && analyticsMeta.content
 
 if (analyticsToken) {
   gtag('config', analyticsToken)

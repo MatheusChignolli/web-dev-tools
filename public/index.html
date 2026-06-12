@@ -12,9 +12,6 @@
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
 
-    <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
-    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com" />
-
     <meta name="analytics-token" content="%REACT_APP_ANALYTICS_TOKEN%" />
 
     <style>
@@ -23,6 +20,8 @@
         margin: 0;
         background-color: #ffffff;
         color: #0d1117;
+        font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas,
+          monospace;
       }
 
       html[data-theme='dark'],
@@ -30,8 +29,61 @@
         background-color: #0d1117;
         color: #f0f6fc;
       }
+
+      #static-shell {
+        max-width: 1536px;
+        margin: 0 auto;
+        padding: 16px 24px 0;
+      }
+
+      #static-shell header {
+        min-height: 72px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid #d0d7de;
+        padding-bottom: 20px;
+        margin-bottom: 40px;
+      }
+
+      html[data-theme='dark'] #static-shell header {
+        border-bottom-color: #30363d;
+      }
+
+      #static-shell .hero {
+        min-height: 50vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        gap: 16px;
+        padding-bottom: 80px;
+      }
+
+      #static-shell h1 {
+        margin: 0;
+        font-size: clamp(2.5rem, 5vw, 3.75rem);
+        font-weight: 700;
+        line-height: 1.1;
+        letter-spacing: -0.02em;
+      }
+
+      #static-shell p {
+        margin: 0;
+        max-width: 640px;
+        font-size: clamp(1.125rem, 2vw, 1.375rem);
+        line-height: 1.5;
+        color: #57606a;
+      }
+
+      html[data-theme='dark'] #static-shell p {
+        color: #8b949e;
+      }
+
     </style>
     <script src="%PUBLIC_URL%/theme-init.js"></script>
+    <script src="%PUBLIC_URL%/a11y-init.js"></script>
 
     <title>
       To devs - CPF, CNPJ &amp; RG Generator for Developers &amp; Testers
@@ -141,6 +193,14 @@
         to generate CPF, CNPJ, and RG documents for testing.
       </p>
     </noscript>
-    <div id="root"></div>
+    <div id="root">
+      <div id="static-shell" aria-hidden="true">
+        <header></header>
+        <section class="hero">
+          <h1>To devs</h1>
+          <p>Aumentando a Produtividade de Desenvolvedores e Testers</p>
+        </section>
+      </div>
+    </div>
   </body>
 </html>

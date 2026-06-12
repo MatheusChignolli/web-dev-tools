@@ -1,7 +1,7 @@
 import { Box, Grid, IconButton, Stack, Typography } from '@mui/material'
 import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward'
 import { useTranslation } from 'react-i18next'
-import { GenerateDocument, Link, SEO } from '~components'
+import { GenerateDocument, SEO } from '~components'
 import { DocumentsConstants } from '~constants'
 
 const Main = () => {
@@ -47,24 +47,21 @@ const Main = () => {
           >
             {t<string>('header.subtitle')}
           </Typography>
-          <Link.External
+          <IconButton
+            component="a"
             href="#documents-generator"
-            aria-label={t<string>('header.ariaLabels.generateDocumentsLink')}
-            sx={{ mt: 4 }}
+            size="large"
+            color="primary"
+            aria-label={t<string>('header.ariaLabels.generateDocumentsLinkButton')}
+            sx={{
+              mt: 4,
+              border: 1,
+              borderColor: 'divider',
+              backgroundColor: 'background.paper',
+            }}
           >
-            <IconButton
-              size="large"
-              color="primary"
-              aria-label={t<string>('header.ariaLabels.generateDocumentsLinkButton')}
-              sx={{
-                border: 1,
-                borderColor: 'divider',
-                backgroundColor: 'background.paper',
-              }}
-            >
-              <ArrowDownwardIcon fontSize="large" />
-            </IconButton>
-          </Link.External>
+            <ArrowDownwardIcon fontSize="large" aria-hidden />
+          </IconButton>
         </Box>
         <Stack id="documents-generator" spacing={4}>
           <Typography variant="h3" color="text.primary" fontSize={24}>

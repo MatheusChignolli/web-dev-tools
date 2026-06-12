@@ -7,3 +7,15 @@ global.fetch = createFetchMock({
 })
 
 jest.mock('react-markdown', () => ReactMarkdown)
+
+class IntersectionObserverMock {
+  observe() {}
+  unobserve() {}
+  disconnect() {}
+}
+
+Object.defineProperty(window, 'IntersectionObserver', {
+  writable: true,
+  configurable: true,
+  value: IntersectionObserverMock,
+})

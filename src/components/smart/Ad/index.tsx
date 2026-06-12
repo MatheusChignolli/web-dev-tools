@@ -10,37 +10,17 @@ const addScript = (src: string) => {
   }
 }
 
-const setIframeTitles = () => {
-  document.querySelectorAll('iframe:not([title])').forEach((iframe) => {
-    iframe.setAttribute('title', 'Advertisement')
-  })
-}
-
 const AdProvider = () => {
   useEffect(() => {
-    const loadAds = () => addScript('https://upeex.com.br/adsupeex.js')
+    const timeoutId = window.setTimeout(() => {
+      addScript('https://upeex.com.br/adsupeex.js')
+    }, 8000)
 
-    if ('requestIdleCallback' in window) {
-      requestIdleCallback(loadAds)
-    } else {
-      setTimeout(loadAds, 1)
-    }
-
-    setIframeTitles()
-
-    const observer = new MutationObserver(setIframeTitles)
-    observer.observe(document.body, { childList: true, subtree: true })
-
-    return () => observer.disconnect()
+    return () => window.clearTimeout(timeoutId)
   }, [])
 
   return (
-    <Stack
-      className="square-add"
-      alignItems="center"
-      justifyContent="center"
-      sx={{ minHeight: 90 }}
-    >
+    <Stack className="square-add" alignItems="center" justifyContent="center">
       <ins
         className="adupeex"
         data-ad-client="up-ba-332044"

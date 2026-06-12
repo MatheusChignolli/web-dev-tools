@@ -80,10 +80,7 @@ const Clipboard = ({ content }: ClipboardProps) => {
                 onClick={copyToClipboard}
                 aria-label={t<string>('components.clipboard.copyButton')}
               >
-                <ContentCopyIcon
-                  fontSize="inherit"
-                  aria-label={t('icons.ariaLabels.copy')}
-                />
+                <ContentCopyIcon fontSize="inherit" aria-hidden />
               </IconButton>
             </Tooltip>
           )}

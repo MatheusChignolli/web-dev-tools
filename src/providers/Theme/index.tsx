@@ -1,17 +1,19 @@
 import { useEffect } from 'react'
+import { useRecoilValue } from 'recoil'
 import { ThemeProvider as StyledComponentsThemeProvider } from 'styled-components'
 import { ThemeProvider as MuiThemeProvider } from '@mui/material/styles'
 import CssBaseline from '@mui/material/CssBaseline'
 import { useTheme } from '~hooks'
+import { themeState } from '~states'
 import { ThemeProviderProps } from './interfaces'
 
 const ThemeProvider = ({ children }: ThemeProviderProps) => {
   const theme = useTheme()
+  const appTheme = useRecoilValue(themeState)
 
   useEffect(() => {
-    document.body.style.backgroundColor = theme.palette.background.default
-    document.body.style.color = theme.palette.text.primary
-  })
+    document.documentElement.dataset.theme = appTheme
+  }, [appTheme])
 
   return (
     <MuiThemeProvider theme={theme}>

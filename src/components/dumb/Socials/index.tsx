@@ -2,51 +2,34 @@ import GitHubIcon from '@mui/icons-material/GitHub'
 import LinkedInIcon from '@mui/icons-material/LinkedIn'
 import { IconButton, Stack } from '@mui/material'
 import { useTranslation } from 'react-i18next'
-import { Link } from '~components'
 
 const Socials = () => {
   const { t } = useTranslation()
 
   return (
     <Stack gap={1} flexDirection="row">
-      <Link.External
+      <IconButton
+        component="a"
         href="https://github.com/MatheusChignolli/web-dev-tools"
-        underline="none"
+        target="_blank"
+        rel="noopener noreferrer"
         color="inherit"
+        size="small"
         aria-label={t<string>('icons.links.github')}
-        target="_blank"
-        sx={{
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-        }}
       >
-        <IconButton color="inherit" size="small">
-          <GitHubIcon
-            color="inherit"
-            aria-label={t<string>('icons.ariaLabels.github')}
-          />
-        </IconButton>
-      </Link.External>
-      <Link.External
+        <GitHubIcon color="inherit" aria-hidden />
+      </IconButton>
+      <IconButton
+        component="a"
         href="https://www.linkedin.com/in/matheus-chignolli-a0115b155/"
-        underline="none"
-        color="inherit"
-        aria-label={t<string>('icons.links.linkedin')}
         target="_blank"
-        sx={{
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-        }}
+        rel="noopener noreferrer"
+        color="inherit"
+        size="small"
+        aria-label={t<string>('icons.links.linkedin')}
       >
-        <IconButton color="inherit" size="small">
-          <LinkedInIcon
-            color="inherit"
-            aria-label={t<string>('icons.ariaLabels.linkedin')}
-          />
-        </IconButton>
-      </Link.External>
+        <LinkedInIcon color="inherit" aria-hidden />
+      </IconButton>
     </Stack>
   )
 }

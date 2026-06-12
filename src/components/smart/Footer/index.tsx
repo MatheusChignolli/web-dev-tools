@@ -109,7 +109,7 @@ const Footer = () => {
       </FooterStyled>
       <ins
         className="adsbygoogle"
-        style={{ display: 'block' }}
+        style={{ display: 'block', minHeight: 90 }}
         data-ad-client="ca-pub-8145397482543766"
         data-ad-slot="4561903753"
         data-ad-format="auto"

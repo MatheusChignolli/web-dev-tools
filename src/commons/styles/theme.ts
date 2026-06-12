@@ -48,9 +48,6 @@ const getCommonConfig = (
   components: {
     MuiCssBaseline: {
       styleOverrides: {
-        body: {
-          transition: 'background-color 0.2s ease, color 0.2s ease',
-        },
         '::selection': {
           backgroundColor: brand.accent,
           color: brand.darkBg,

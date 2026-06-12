@@ -13,10 +13,10 @@ describe('LayoutProvider', () => {
     expect(screen.getByText('Children')).toBeInTheDocument()
     expect(screen.getAllByText('To devs')[0]).toBeInTheDocument()
     expect(
-      screen.getAllByLabelText('Ícone do GitHub arredondado e sem bordas'),
+      screen.getAllByLabelText('Link para o repositório da aplicação'),
     ).toHaveLength(2)
     expect(
-      screen.getAllByLabelText('Ícone do LinkedIn arredondado e sem bordas'),
+      screen.getAllByLabelText('Link para o LinkedIn do autor da aplicação'),
     ).toHaveLength(2)
     expect(
       screen.getAllByLabelText('Link para o repositório da aplicação')[0],

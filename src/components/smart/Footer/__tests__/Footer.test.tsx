@@ -11,14 +11,8 @@ describe('Footer', () => {
 
   it('should render project`s link', () => {
     expect(
-      screen.getByLabelText('Ícone do GitHub arredondado e sem bordas'),
-    ).toBeInTheDocument()
-    expect(
       screen.getByLabelText('Link para o repositório da aplicação'),
     ).toHaveAttribute('href', 'https://github.com/MatheusChignolli/web-dev-tools')
-    expect(
-      screen.getByLabelText('Ícone do LinkedIn arredondado e sem bordas'),
-    ).toBeInTheDocument()
     expect(
       screen.getByLabelText('Link para o LinkedIn do autor da aplicação'),
     ).toHaveAttribute(

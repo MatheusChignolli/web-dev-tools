@@ -12,14 +12,26 @@
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
     <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
+
+    <meta name="analytics-token" content="%REACT_APP_ANALYTICS_TOKEN%" />
+
+    <style>
+      html,
+      body {
+        margin: 0;
+        background-color: #ffffff;
+        color: #0d1117;
+      }
+
+      html[data-theme='dark'],
+      html[data-theme='dark'] body {
+        background-color: #0d1117;
+        color: #f0f6fc;
+      }
+    </style>
+    <script src="%PUBLIC_URL%/theme-init.js"></script>
 
     <title>
       To devs - CPF, CNPJ &amp; RG Generator for Developers &amp; Testers
@@ -84,24 +96,6 @@
       content="To devs - Document generator for developers and testers"
     />
 
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=%REACT_APP_ANALYTICS_TOKEN%"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || []
-      function gtag() {
-        dataLayer.push(arguments)
-      }
-      gtag('js', new Date())
-      gtag('config', '%REACT_APP_ANALYTICS_TOKEN%')
-    </script>
-
-    <script
-      async
-      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8145397482543766"
-      crossorigin="anonymous"
-    ></script>
     <meta name="google-adsense-account" content="ca-pub-8145397482543766" />
 
     <script type="application/ld+json">
@@ -138,6 +132,7 @@
         ]
       }
     </script>
+    <script defer src="%PUBLIC_URL%/deferred-scripts.js"></script>
   </head>
   <body>
     <noscript>

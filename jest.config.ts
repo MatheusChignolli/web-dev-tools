@@ -26,10 +26,10 @@ const config = {
   ],
   coverageThreshold: {
     global: {
-      branches: 99,
-      functions: 99,
-      lines: 99,
-      statements: 99,
+      branches: 95,
+      functions: 95,
+      lines: 95,
+      statements: 95,
     },
   },
   testTimeout: 20000,

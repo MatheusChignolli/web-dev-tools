@@ -1,7 +1,12 @@
+[build]
+  command = "corepack enable && corepack prepare pnpm@10.3.0 --activate && pnpm install --frozen-lockfile && pnpm run build"
+  publish = "build"
+
 [build.environment]
   NODE_VERSION = "22"
+  NETLIFY_USE_PNPM = "true"
 
 [[redirects]]
-from = "/*"
-to = "/"
-status = 200
+  from = "/*"
+  to = "/"
+  status = 200

@@ -26,32 +26,25 @@ jobs:
           node-version: 22
           cache: pnpm
 
-      - if: steps.skip_check.outputs.should_skip != 'true'
-        name: Install packages
+      - name: Install packages
         working-directory: ${{ env.working-directory }}
         run: pnpm install --frozen-lockfile
 
       - name: Run tests
         run: pnpm test:coverage
 
-      - if: steps.skip_check.outputs.should_skip != 'true'
-        name: Create .env
+      - name: Create .env
         run: |
           touch .env
           echo REACT_APP_GITHUB_PERSONAL_ACCESS_TOKEN=${{ secrets.REACT_APP_GITHUB_PERSONAL_ACCESS_TOKEN }} >> .env
           echo REACT_APP_ANALYTICS_TOKEN=${{ secrets.REACT_APP_ANALYTICS_TOKEN }} >> .env
-          cat .env
 
-      - if: steps.skip_check.outputs.should_skip != 'true'
-        name: Build project
+      - name: Build project
         working-directory: ${{ env.working-directory }}
         run: pnpm build
 
-      - if: steps.skip_check.outputs.should_skip != 'true'
-        name: Deploy to netlify
-        uses: netlify/actions/cli@master
-        with:
-          args: deploy --auth ${{ secrets.NETLIFY_AUTH_TOKEN }} --dir=build --prod
+      - name: Deploy to Netlify
+        run: npx netlify-cli@17 deploy --prod --dir=build
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}

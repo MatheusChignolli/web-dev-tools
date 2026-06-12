@@ -1,10 +1,15 @@
 [build]
-  command = "corepack enable && corepack prepare pnpm@10.3.0 --activate && pnpm install --frozen-lockfile && pnpm run build"
+  # Tag releases are built and deployed by GitHub Actions.
+  # Returning 0 here cancels Netlify git builds on tagged commits.
+  ignore = "git describe --tags --exact-match HEAD >/dev/null 2>&1"
+  # Netlify auto-runs `pnpm install` when pnpm-lock.yaml is present.
+  # Invoke craco via Node to avoid relying on pnpm/bash in the build command.
+  command = "node ./node_modules/@craco/craco/dist/bin/craco.js build"
   publish = "build"
 
 [build.environment]
   NODE_VERSION = "22"
-  NETLIFY_USE_PNPM = "true"
+  PNPM_VERSION = "10.3.0"
 
 [[redirects]]
   from = "/*"

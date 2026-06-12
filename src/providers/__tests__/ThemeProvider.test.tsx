@@ -17,6 +17,6 @@ describe('ThemeProvider', () => {
 
     const styledComponent = screen.getByTestId('styled-component')
 
-    expect(styledComponent).toHaveStyle('background-color: rgb(244, 128, 36)')
+    expect(styledComponent).toHaveStyle('background-color: rgb(88, 166, 255)')
   })
 })

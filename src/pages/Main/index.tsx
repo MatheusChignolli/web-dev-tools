@@ -10,75 +10,64 @@ const Main = () => {
   return (
     <>
       <SEO page="home" />
-      <Stack spacing={20}>
-        <Grid
-          item
-          xs={12}
-          height="calc(100dvh - 76px)"
+      <Stack spacing={{ xs: 10, md: 14 }}>
+        <Box
           display="flex"
           alignItems="center"
           flexDirection="column"
           justifyContent="center"
+          minHeight={{ xs: '50dvh', md: 'calc(100dvh - 96px)' }}
+          textAlign="center"
+          gap={2}
         >
+          <Box
+            component="img"
+            src="/favicon.svg"
+            alt=""
+            aria-hidden
+            width={72}
+            height={72}
+            sx={{ mb: 1 }}
+          />
           <Typography
             variant="h1"
-            color="primary"
-            textAlign="center"
-            fontSize={76}
-            fontWeight={900}
+            color="text.primary"
+            fontSize={{ xs: 40, sm: 52, md: 60 }}
+            fontWeight={700}
+            lineHeight={1.1}
           >
             {t<string>('header.title')}
           </Typography>
           <Typography
             variant="h2"
-            color="primary.contrastText"
-            textAlign="center"
-            fontSize={28}
+            color="text.secondary"
+            fontSize={{ xs: 18, sm: 22 }}
             fontWeight={400}
+            maxWidth={640}
           >
             {t<string>('header.subtitle')}
           </Typography>
           <Link.External
             href="#documents-generator"
             aria-label={t<string>('header.ariaLabels.generateDocumentsLink')}
-            sx={{
-              mt: 10,
-              position: 'relative',
-              '&::before': {
-                content: `" "`,
-                width: '3.5px',
-                height: '20px',
-                background: (theme) => theme.palette.primary.main,
-                position: 'absolute',
-                top: '0px',
-                left: '50%',
-                right: '50%',
-                transform: 'translate(-50%, -50%)',
-              },
-              '&::after': {
-                content: `" "`,
-                width: '3.5px',
-                height: '20px',
-                background: (theme) => theme.palette.primary.main,
-                position: 'absolute',
-                top: '-28px',
-                left: '50%',
-                right: '50%',
-                transform: 'translate(-50%, -50%)',
-              },
-            }}
+            sx={{ mt: 4 }}
           >
             <IconButton
               size="large"
               color="primary"
               aria-label={t<string>('header.ariaLabels.generateDocumentsLinkButton')}
+              sx={{
+                border: 1,
+                borderColor: 'divider',
+                backgroundColor: 'background.paper',
+              }}
             >
               <ArrowDownwardIcon fontSize="large" />
             </IconButton>
           </Link.External>
-        </Grid>
-        <Stack id="documents-generator" spacing={5}>
-          <Typography variant="h3" color="primary.contrastText" fontSize={26} mb={2}>
+        </Box>
+        <Stack id="documents-generator" spacing={4}>
+          <Typography variant="h3" color="text.primary" fontSize={24}>
             {t('components.generateDocument.title')}
           </Typography>
           <Box>
@@ -90,11 +79,7 @@ const Main = () => {
               ))}
             </Grid>
           </Box>
-          <Typography
-            variant="body1"
-            color="primary.contrastText"
-            textAlign="justify"
-          >
+          <Typography variant="body1" color="text.secondary" textAlign="justify">
             {t('components.generateDocument.subtitle')}
           </Typography>
         </Stack>

@@ -58,8 +58,8 @@ const Clipboard = ({ content }: ClipboardProps) => {
             variant="body2"
             component="div"
             maxWidth="190px"
-            alignContent="center"
             fontWeight={900}
+            sx={{ lineHeight: 1.5 }}
           >
             <Box
               dangerouslySetInnerHTML={{

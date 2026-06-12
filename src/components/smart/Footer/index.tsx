@@ -46,7 +46,7 @@ const Footer = () => {
           gap={2}
           sx={{
             flexDirection: {
-              xs: 'collumn',
+              xs: 'column',
               md: 'row',
             },
           }}
@@ -63,7 +63,8 @@ const Footer = () => {
               aria-label={t<string>('icons.ariaLabels.copyright')}
             />
             <Typography
-              variant="body1"
+              variant="body2"
+              color="text.secondary"
               aria-label={t<string>('footer.ariaLabels.copyright')}
             >
               {year}
@@ -79,14 +80,14 @@ const Footer = () => {
                 flexItem
                 sx={{
                   borderWidth: 1,
-                  borderColor: (theme) => theme.palette.primary.dark,
+                  borderColor: 'divider',
                 }}
               />
             }
             gap={2}
             sx={{
               flexDirection: {
-                xs: 'collumn',
+                xs: 'column',
                 md: 'row',
               },
             }}
@@ -98,7 +99,9 @@ const Footer = () => {
                 aria-label={t<string>(`footer.ariaLabels.${id}`)}
                 to={`/${path}`}
               >
-                {t<string>(`footer.links.${id}`)}
+                <Typography variant="body2" color="text.secondary" component="span">
+                  {t<string>(`footer.links.${id}`)}
+                </Typography>
               </Link.Internal>
             ))}
           </Stack>

@@ -7,6 +7,6 @@ export const WrapperStyled = styled.div`
   }
 
   a {
-    color: ${({ theme }) => theme.palette.primary.contrastText};
+    color: ${({ theme }) => theme.palette.primary.main};
   }
 `

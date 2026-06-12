@@ -10,7 +10,7 @@ const PrivacyPolicy = () => {
       <SEO page="privacyPolicy" />
       <Stack spacing={5} my={10}>
         <Typography
-          color="primary.contrastText"
+          color="text.primary"
           variant="h3"
           fontSize={26}
           fontWeight="bold"
@@ -18,7 +18,7 @@ const PrivacyPolicy = () => {
           {t('privacyPolicy.title')}
         </Typography>
         <Typography
-          color="primary.contrastText"
+          color="text.primary"
           variant="body2"
           textAlign="justify"
           component="div"

@@ -1,4 +1,4 @@
-import { screen } from '@testing-library/react'
+import { fireEvent, screen } from '@testing-library/react'
 import { render } from '~tests'
 import { LayoutProvider } from '..'
 
@@ -27,5 +27,18 @@ describe('LayoutProvider', () => {
       'href',
       'https://www.linkedin.com/in/matheus-chignolli-a0115b155/',
     )
+  })
+
+  it('should expose skip link to main content', () => {
+    render(
+      <LayoutProvider>
+        <h1>Children</h1>
+      </LayoutProvider>,
+    )
+
+    const skipLink = screen.getByText('Skip to main content')
+
+    expect(skipLink).toHaveAttribute('href', '#main-content')
+    fireEvent.focus(skipLink)
   })
 })

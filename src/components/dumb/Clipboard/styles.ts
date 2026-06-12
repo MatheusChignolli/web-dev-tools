@@ -4,7 +4,7 @@ export const ClipboardStyled = styled.div`
   padding: ${({ theme }) => theme.spacing(1)};
   border-radius: 4px;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
   min-height: 50px;
   max-height: 250px;

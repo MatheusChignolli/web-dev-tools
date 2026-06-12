@@ -75,7 +75,7 @@ const GenerateDocument = ({ document, generate, keys }: GenerateDocumentProps) =
           </Box>
         </Stack>
         {!!documentData && (
-          <Typography variant="body1" color="primary.contrastText">
+          <Typography variant="body1" color="text.secondary">
             {t('general.result')}:
           </Typography>
         )}

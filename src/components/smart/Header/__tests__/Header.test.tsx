@@ -12,6 +12,10 @@ describe('Header', () => {
     expect(screen.getByText('To devs')).toBeInTheDocument()
   })
 
+  it('should render brand logo', () => {
+    expect(document.querySelector('img[src="/favicon.svg"]')).toBeInTheDocument()
+  })
+
   it('should switch app`s theme', async () => {
     const themeSwitch = screen.getByRole('button', {
       name: 'Chave para selecionar o tema da aplicação, variando entre tema claro e tema escuro',
@@ -20,13 +24,13 @@ describe('Header', () => {
     await userEvent.click(themeSwitch)
 
     expect(screen.getByLabelText('Cabeçalho do site')).toHaveStyle(
-      'color: rgb(255, 255, 255)',
+      'color: rgb(240, 246, 252)',
     )
 
     await userEvent.click(themeSwitch)
 
     expect(screen.getByLabelText('Cabeçalho do site')).toHaveStyle(
-      'color: rgb(0, 0, 0)',
+      'color: rgb(13, 17, 23)',
     )
   })
 

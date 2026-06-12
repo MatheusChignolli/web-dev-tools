@@ -47,14 +47,14 @@ const Changelog = () => {
       <SEO page="changelog" />
       <Stack spacing={5} my={10}>
         <Typography
-          color="primary.contrastText"
+          color="text.primary"
           variant="h3"
           fontSize={26}
           fontWeight="bold"
         >
           {t('changelog.title')}
         </Typography>
-        <Typography color="primary.contrastText" variant="body1">
+        <Typography color="text.primary" variant="body1">
           {t('changelog.subtitle')}
         </Typography>
         {!!data?.length && (

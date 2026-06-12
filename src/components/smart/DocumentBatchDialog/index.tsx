@@ -60,11 +60,7 @@ const DocumentBatchDialog = ({ document, generate }: DocumentBatchDialogProps) =
               {t(`${document}.document`)}{' '}
               {t('components.documentBatchDialog.inBatch')}
             </Typography>
-            <Typography
-              color="primary.contrastText"
-              textAlign="justify"
-              variant="body2"
-            >
+            <Typography color="text.secondary" textAlign="justify" variant="body2">
               {t(`${document}.generateInBatch`)}
             </Typography>
             <Stack gap={2} flexDirection="row">
